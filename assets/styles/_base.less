@@ -1,0 +1,154 @@
+@import url(_variables);
+
+._lock {
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  margin: 0 !important;
+}
+
+.hb-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.padding-block {
+  padding-block: var(--gap-md);
+}
+
+.padding-block-lg {
+  padding-block: var(--gap-lg);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.block-center {
+  margin-inline: auto;
+}
+
+.text-light {
+  color: var(--color-light);
+}
+
+.colored {
+  color: var(--color2);
+}
+
+.colored2 {
+  color: var(--color1);
+}
+
+[class*=__container],
+.hb-container {
+  &:not(.pswp__container) {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}
+
+.btn {
+  color: var(--color-light);
+
+  &:visited {
+    color: var(--color-light);
+  }
+
+
+
+  padding: var(--gap-sm);
+  background-color: var(--color1);
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  //word-spacing: 5px;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  border-radius: 5px;
+  display: table;
+
+  &:hover {
+    background-color: var(--color1-alter);
+    box-shadow: var(--shadow);
+    color: var(--color-light);
+  }
+
+  &.btn-contrast {
+    background-color: var(--color8);
+    &:hover {
+      background-color: var(--color7);
+    }
+  }
+  &.btn-contrast2 {
+    background-color: var(--color3);
+    &:hover {
+      background-color: var(--color3-alter);
+    }
+  }
+}
+
+.heading {
+  font-size: 48px;
+  line-height: var(--lh);
+  @media (max-width: @mobile) {
+    font-size: 35px;
+  }
+}
+
+.heading-2 {
+  font-size: 38px;
+  line-height: var(--lh);
+  @media (max-width: @mobile) {
+    font-size: 28px;
+  }
+}
+
+.simple-form {
+  form {
+    input {
+      display: inline-block;
+      width: 100%;
+      max-width: 150px;
+      padding: 5px;
+      border: 1px solid var(--color1);
+    }
+
+    button[type="submit"],
+    input[type="submit"] {
+      display: inline-block;
+      padding: 5px 15px;
+      background: var(--color1);
+      color: var(--color-light);
+      min-height: 36px;
+      border: none;
+      cursor: pointer;
+      width: unset;
+      max-width: unset;
+    }
+  }
+}
+
+
+//flex grow for main
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#primary {
+  flex: 1 1 100%;
+}
+
+//link color for pages
+.type-page a {
+  color: var(--color2);
+}

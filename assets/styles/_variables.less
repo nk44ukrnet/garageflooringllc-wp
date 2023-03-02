@@ -1,0 +1,48 @@
+@mobile: 768px;
+
+:root {
+  font-size: 16px;
+  line-height: 150%;
+
+  --color-light: #fff;
+  --color-dark: #0a0404;
+  --color-dark1: hsla(345, 5%, 36%, .5);
+  --color-dark2: rgba(0, 0, 0, .7);
+
+  --color1: hsl(215, 75%, 34%);
+  --color1-alter: hsl(205, 55%, 34%);
+  --color1-light: hsla(215, 75%, 34%, .6);
+  --color1-light2: hsla(215, 75%, 34%, .2);
+
+  --color2: hsl(198, 75%, 51%);
+  --color2-alter: hsl(198, 55%, 51%);
+  --color2-light: hsla(198, 75%, 51%, .6);
+  --color2-light2: hsla(198, 75%, 51%, .2);
+  --color2-light3: hsla(198, 75%, 51%, .1);
+
+  //additional colors that suggested by chatGTP
+  --color3: hsl(166, 75%, 34%);
+  --color3-alter: hsl(166, 45%, 34%);
+  --color4: hsl(198, 50%, 34%);
+  --color5: hsl(338, 75%, 34%);
+  --color6: hsl(30, 75%, 50%);
+  --color7: hsl(39, 100%, 50%);
+  --color8: hsl(24, 75%, 50%);
+  //end of additional colors that suggested by chatGTP
+
+  --lh: 150%;
+  --transition: all .25s linear;
+
+  --shadow: 0px 0px 5px var(--color1-alter);
+
+  --gap-lg: 100px;
+  --gap-md: 50px;
+  --gap-sm: 20px;
+  --gap-xsm: 10px;
+
+  @media (max-width: @mobile) {
+    --gap-lg: 50px;
+    --gap-md: 30px;
+    --gap-sm: 15px;
+  }
+}
