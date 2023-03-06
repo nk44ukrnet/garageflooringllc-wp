@@ -1,12 +1,16 @@
 @import "_variables";
 
+
 .main-navigation {
 
   //padding-block: var(--gap-xsm);
-  border-top: 1px solid var(--color1-light2);
-  border-bottom: 1px solid var(--color1-light2);
+  //border-top: 1px solid var(--color1-light2);
+  //border-bottom: 1px solid var(--color1-light2);
 
-  @header-navigation-mobile: 1070px;
+  a {
+    color: var(--color-dark);
+  }
+
 
   .menu-toggle {
     @media (min-width: @header-navigation-mobile) {
@@ -29,6 +33,7 @@
         //flex-direction: column;
       }
     }
+
     &.toggled {
       ul#primary-menu {
         display: flex;
@@ -45,6 +50,7 @@
     gap: var(--gap-sm);
 
     @media (max-width: @header-navigation-mobile) {
+      display: none !important;
       position: fixed;
       top: 0;
       left: 0;
@@ -100,7 +106,11 @@
 
       & > .sub-menu {
 
-        padding: var(--gap-xsm);
+        @media (min-width: @header-navigation-mobile) {
+          transform: translateX(-300px);
+        }
+
+        padding: var(--gap-sm);
         background-color: var(--color-light);
 
 
@@ -126,6 +136,67 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+//slinky
+.slinky-mobile-menu {
+  .mobile-menu.slinky-menu.slinky-theme-default {
+    min-height: 100vh !important;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  @media (min-width: @header-navigation-mobile) {
+    display: none;
+    .close-slinky-menu {
+      display: none;
+    }
+  }
+
+  &:not(.active) {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &.active {
+    .close-slinky-menu {
+      background: none;
+      border: 1px solid var(--color1-light2);
+      //display: table;
+      font-size: 25px;
+      line-height: 100%;
+      margin-left: auto;
+      //padding: var(--gap-sm);
+      padding: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: @header-navigation-mobile ) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: var(--gap-sm);
+      background-color: var(--slinky-bg);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      z-index: 999999999;
+
+      ul {
+        padding-left: 0;
       }
     }
   }
