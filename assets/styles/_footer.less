@@ -1,5 +1,6 @@
 @import "_variables";
 
+.woocommerce .site-footer,
 .site-footer {
   margin-top: var(--gap-xsm);
   background-color: #444645;
@@ -9,6 +10,10 @@
   a {
     color: inherit;
     transition: var(--transition);
+
+    &, &:visited {
+      color: var(--color-light);
+    }
 
     &:hover {
       text-decoration: underline;
