@@ -727,6 +727,14 @@ body {
 .woocommerce .button.wp-element-button[aria-disabled="true"]:hover {
   color: var(--color-dark) !important;
 }
+.woocommerce .variation {
+  margin-top: var(--gap-xsm);
+  display: flex;
+  flex-direction: column;
+}
+.woocommerce .variation p {
+  margin: 0;
+}
 .woocommerce #add_payment_method #payment,
 .woocommerce .woocommerce-cart #payment,
 .woocommerce .woocommerce-checkout #payment {
@@ -814,11 +822,14 @@ table.variations {
 }
 table.variations tr {
   display: flex;
+  flex-direction: column;
   gap: var(--gap-xsm);
 }
 table.variations tr .value select {
   padding: 5px;
   border-color: var(--color2-light2);
+  min-width: 100% !important;
+  margin-right: 0 !important;
 }
 .quantity-plus,
 .quantity-minus {
@@ -832,8 +843,24 @@ table.variations tr .value select {
   padding: 0;
   line-height: 100%;
   min-height: 31px;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   cursor: pointer;
+}
+.product-options-js {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xsm);
+  margin-block: var(--gap-xsm);
+}
+.product-options-js a {
+  display: inline-block;
+  padding: var(--gap-xsm);
+  text-decoration: none;
+  border: 1px solid var(--color1);
+}
+.product-options-js a.active {
+  color: var(--color-light);
+  background-color: var(--color1);
 }
 .quantity-plus {
   margin-right: 15px;

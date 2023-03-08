@@ -73,11 +73,14 @@ table.variations {
 
   tr {
     display: flex;
+    flex-direction: column;
     gap: var(--gap-xsm);
 
     .value select {
       padding: 5px;
       border-color: var(--color2-light2);
+      min-width: 100% !important;
+      margin-right: 0 !important;
     }
   }
 }
@@ -94,8 +97,27 @@ table.variations {
   padding: 0;
   line-height: 100%;
   min-height: 31px;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   cursor: pointer;
+}
+
+.product-options-js {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xsm);
+  margin-block: var(--gap-xsm);
+
+  a {
+    display: inline-block;
+    padding: var(--gap-xsm);
+    text-decoration: none;
+    border: 1px solid var(--color1);
+
+    &.active {
+      color: var(--color-light);
+      background-color: var(--color1);
+    }
+  }
 }
 
 .quantity-plus {
