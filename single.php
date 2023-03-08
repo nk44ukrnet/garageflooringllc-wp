@@ -11,7 +11,10 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-        <div class="hb-container">
+        <?php if (!is_product()) { //add container to non product single templates ?>
+        <div class="hb-container"> <!-- hb-container -->
+            <?php } ?>
+
             <?php
             while (have_posts()) :
                 the_post();
@@ -32,7 +35,13 @@ get_header();
 
             endwhile; // End of the loop.
             ?>
-        </div>
+            <?php
+            if (!is_product()) {
+            ?>
+        </div> <!--hb-container-->
+    <?php
+    }
+    ?>
     </main><!-- #main -->
 
 <?php

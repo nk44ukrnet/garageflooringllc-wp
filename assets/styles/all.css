@@ -596,6 +596,14 @@ body {
 .woocommerce a:not(header, footer) {
   color: var(--color2);
 }
+.woocommerce .woocommerce-notices-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
 .woocommerce button[type="submit"],
 .woocommerce input[type="submit"],
 .woocommerce .single_add_to_cart_button.button.alt.wp-element-button,
@@ -735,6 +743,100 @@ body {
 }
 .woocommerce a.added_to_cart.wc-forward {
   display: block;
+}
+.single-product-container-woo-thumbs-and-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.single-product-container-woo-thumbs-and-meta .woocommerce-product-gallery {
+  order: 2;
+}
+.product-title-summary {
+  margin-top: 0;
+  margin-bottom: var(--gap-sm);
+}
+.summary.entry-summary {
+  margin-top: 0;
+}
+.up-sells.upsells.products,
+.related.products {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+.woocommerce-product-gallery {
+  display: flex;
+  gap: var(--gap-xsm);
+}
+@media (max-width: 768px) {
+  .woocommerce-product-gallery {
+    flex-wrap: wrap;
+  }
+}
+.flex-control-nav.flex-control-thumbs {
+  display: flex;
+  flex-direction: column;
+  order: 2;
+  width: 100% !important;
+  max-width: 50px !important;
+}
+@media (max-width: 768px) {
+  .flex-control-nav.flex-control-thumbs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    order: 3;
+    max-width: unset !important;
+  }
+}
+.flex-control-nav.flex-control-thumbs li {
+  width: 50px !important;
+  height: 50px !important;
+}
+.flex-control-nav.flex-control-thumbs li img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.flex-viewport {
+  order: 3;
+}
+table.variations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xsm);
+}
+table.variations tr {
+  display: flex;
+  gap: var(--gap-xsm);
+}
+table.variations tr .value select {
+  padding: 5px;
+  border-color: var(--color2-light2);
+}
+.quantity-plus,
+.quantity-minus {
+  border: none;
+  background-color: var(--color1);
+  color: var(--color-light);
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  line-height: 100%;
+  min-height: 31px;
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+.quantity-plus {
+  margin-right: 15px;
 }
 .type-post a,
 .entry-title a a {

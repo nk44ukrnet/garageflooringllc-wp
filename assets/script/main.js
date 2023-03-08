@@ -33,4 +33,56 @@ window.addEventListener('DOMContentLoaded', function () {
         console.log('hamburger mobile menu error ', e);
     }
 
-})
+    //product page quantity + - change qty filed
+    try {
+        document.addEventListener('click', function (e) {
+            let current = e.target,
+                targetPlusClass = 'quantity-plus',
+                targetMinusClass = 'quantity-minus';
+
+            function runValModification(cssClassName) {
+                let quantityInput = document.querySelector('input.qty');
+                if(quantityInput) {
+                    let val = quantityInput.value;
+                    val = val.trim();
+
+                    if(cssClassName === 'quantity-plus') {
+                        if(!val) val = 0;
+
+                        if(!Number.isInteger(+val)) {
+                            val = 1;
+                        } else {
+                            if(val < 0) val = 0;
+                            +val++;
+                        }
+                    } else if (cssClassName === 'quantity-minus') {
+                        if(!val) val = 1;
+
+                        if(!Number.isInteger(+val)) {
+                            val = 1;
+                        } else {
+                            +val--;
+                        }
+                    }
+
+                    if(val <= 0) val = 1;
+
+                    quantityInput.setAttribute('value', `${val + ''}`);
+                    quantityInput.value = val + '';
+                }
+            }
+
+            if(current.classList.contains(targetPlusClass)) {
+                runValModification(targetPlusClass);
+            }
+
+            if(current.classList.contains(targetMinusClass)) {
+                runValModification(targetMinusClass);
+            }
+        })
+
+    } catch (e) {
+        console.log('Qunatity sinlge page error ', e);
+    }
+
+});

@@ -10,6 +10,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+    <?php if( !is_product() ) { ?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -28,6 +31,8 @@
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
+
+    <?php } ?>
 
 	<?php garageflooringllc_post_thumbnail(); ?>
 
