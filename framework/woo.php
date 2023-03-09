@@ -40,18 +40,109 @@ function single_product_container_end()
 {
     echo '</div> <!-- hb-container end -->';
     echo '<div class="product-long-description hb-container">' . get_the_content() . '</div>';
+    ?>
+
+    <div class="hb-single-badges padding-block">
+        <div class="hb-container">
+            <div class="hb-single-badges__holder">
+
+                <a href="#!" class="hb-single-badges__item">
+                    <div class="hb-single-badges__img">
+                        <i class="fa-solid fa-sheet-plastic"></i>
+                    </div>
+                    <p class="hb-single-badges__text">Datasheet</p>
+                </a>
+
+                <a href="#!" class="hb-single-badges__item">
+                    <div class="hb-single-badges__img">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <p class="hb-single-badges__text">Instructions</p>
+                </a>
+
+                <a href="#!" class="hb-single-badges__item">
+                    <div class="hb-single-badges__img">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <p class="hb-single-badges__text">Photos</p>
+                </a>
+
+                <a href="#!" class="hb-single-badges__item">
+                    <div class="hb-single-badges__img">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <p class="hb-single-badges__text">Videos</p>
+                </a>
+
+                <a href="#!" class="hb-single-badges__item">
+                    <div class="hb-single-badges__img">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <p class="hb-single-badges__text">Shipping</p>
+                </a>
+
+                <a href="#!" class="hb-single-badges__item">
+                    <div class="hb-single-badges__img">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+                    <p class="hb-single-badges__text">Samples</p>
+                </a>
+
+                <a href="#!" class="hb-single-badges__item">
+                    <div class="hb-single-badges__img">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <p class="hb-single-badges__text">Warranty</p>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="hb-single-quote">
+        <div class="hb-container">
+            <div class="hb-single-quote__quotation padding-block">
+                <div class="hb-single-quote__inner">
+                    Justin says: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis dicta fugiat
+                    nostrum optio quibusdam recusandae saepe soluta suscipit. Ad aliquam corporis, delectus ducimus
+                    eaque est ex fugiat impedit iusto laborum magni maxime nihil non odit repellendus sapiente sunt ut!
+                    Eaque eligendi enim eveniet iste itaque laborum nam neque, nulla quisquam saepe sed similique
+                    tempora, voluptates. Ab atque autem consequatur doloribus eius excepturi hic id ipsam, maxime nam
+                    natus neque obcaecati odit officiis pariatur perspiciatis provident quam quasi quidem quos repellat
+                    reprehenderit similique suscipit ullam velit veniam veritatis. Corporis doloribus eaque id maxime,
+                    sequi suscipit."
+                </div>
+            </div>
+            <div class="hb-single-quote__description">
+                <div class="hb-single-quote__text">
+                    <h2>Just Roll With It</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur distinctio ex
+                        necessitatibus perspiciatis quam quibusdam reiciendis sed sunt tenetur veritatis. Aspernatur
+                        dolores earum eveniet expedita fugit hic in itaque laboriosam laborum libero natus nihil
+                        obcaecati placeat praesentium provident quae, quas, qui quia quibusdam quos ratione repellat
+                        reprehenderit rerum saepe sequi soluta suscipit, tempora velit veniam vero.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
 }
 
 //quantity add before and after elements
-add_action( 'woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_plus' );
+add_action('woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_plus');
 
-function bbloomer_display_quantity_plus() {
+function bbloomer_display_quantity_plus()
+{
     echo '<button type="button" class="quantity-plus">+</button>';
 }
 
-add_action( 'woocommerce_before_quantity_input_field', 'bbloomer_display_quantity_minus' );
+add_action('woocommerce_before_quantity_input_field', 'bbloomer_display_quantity_minus');
 
-function bbloomer_display_quantity_minus() {
+function bbloomer_display_quantity_minus()
+{
     echo '<button type="button" class="quantity-minus">-</button>';
 }
 
@@ -76,11 +167,11 @@ function add_heading_of_product_name()
 }
 
 //move price under short description
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 25);
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
 
 //change upsales heading text
 add_filter('woocommerce_product_upsells_products_heading', 'change_upsells_heading_text');

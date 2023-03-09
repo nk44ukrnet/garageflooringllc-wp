@@ -865,6 +865,93 @@ table.variations tr .value select {
 .quantity-plus {
   margin-right: 15px;
 }
+.hb-single-badges {
+  background-color: var(--color2-light3);
+  color: var(--color-light);
+  margin-block: var(--gap-sm) 0;
+}
+.hb-single-badges__holder {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: var(--gap-sm);
+}
+.hb-single-badges__holder a {
+  color: inherit;
+  text-decoration: none;
+}
+.hb-single-badges__item {
+  color: inherit;
+  text-decoration: none;
+  flex: 1 1 90px;
+}
+.hb-single-badges__text,
+.hb-single-badges i {
+  color: var(--color1);
+  margin-bottom: 0;
+}
+.hb-single-badges i {
+  font-size: 25px;
+  display: inline-block;
+  padding: var(--gap-sm);
+  border: 1px solid var(--color1);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+.hb-single-badges i:hover {
+  background-color: var(--color1);
+  color: var(--color-light);
+}
+.hb-single-quote {
+  background-color: var(--color1);
+}
+.hb-single-quote .hb-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hb-single-quote__quotation {
+  background: var(--color-light);
+  padding: var(--gap-md);
+  color: var(--color1);
+  position: relative;
+  z-index: 2;
+  flex: 1 1 300px;
+}
+.hb-single-quote__inner {
+  color: inherit;
+  position: relative;
+  text-align: justify;
+  font-style: italic;
+}
+.hb-single-quote__inner::before {
+  content: '\201C';
+  position: absolute;
+  display: block;
+  top: -40px;
+  left: -30px;
+  font-size: 50px;
+  font-family: Arial, sans-serif;
+  line-height: 100%;
+}
+.hb-single-quote__inner::after {
+  content: '\201D';
+  position: absolute;
+  display: block;
+  bottom: -60px;
+  right: -20px;
+  font-size: 50px;
+  font-family: Arial, sans-serif;
+  line-height: 100%;
+}
+.hb-single-quote__description {
+  flex: 1 1 300px;
+  color: var(--color-light);
+  padding: var(--gap-md);
+}
+.hb-single-quote__text > * {
+  margin-top: 0;
+}
 .type-post a,
 .entry-title a a {
   color: var(--color2);
