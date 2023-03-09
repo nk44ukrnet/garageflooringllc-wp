@@ -103,7 +103,8 @@ function single_product_container_end()
         <div class="hb-container">
             <div class="hb-single-quote__quotation padding-block">
                 <div class="hb-single-quote__inner">
-                    Justin says: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis dicta fugiat
+                    Justin says: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis dicta
+                    fugiat
                     nostrum optio quibusdam recusandae saepe soluta suscipit. Ad aliquam corporis, delectus ducimus
                     eaque est ex fugiat impedit iusto laborum magni maxime nihil non odit repellendus sapiente sunt ut!
                     Eaque eligendi enim eveniet iste itaque laborum nam neque, nulla quisquam saepe sed similique
@@ -123,6 +124,71 @@ function single_product_container_end()
                         obcaecati placeat praesentium provident quae, quas, qui quia quibusdam quos ratione repellat
                         reprehenderit rerum saepe sequi soluta suscipit, tempora velit veniam vero.
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hb-single-text-rows padding-block">
+        <div class="hb-container">
+            <div class="hb-single-text-rows__cell">
+                <h2>Ready To Ship</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias blanditiis, cupiditate
+                    dolor dolore fugiat fugit iste, maiores nihil non nulla possimus tempora, ullam. Accusantium, alias
+                    beatae, eaque enim facere incidunt ipsum officiis possimus quidem quis ratione recusandae suscipit,
+                    temporibus? Natus, nihil, sunt! Consequuntur debitis earum est natus numquam quas quisquam veritatis
+                    voluptatem. Accusantium amet, enim esse est in officia porro quos sint ut voluptatibus! Asperiores
+                    aspernatur debitis dolores eaque fuga ipsum provident soluta. Esse.
+                </p>
+            </div>
+            <div class="hb-single-text-rows__cell">
+                <h2>Now in Stock</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias blanditiis, cupiditate
+                    dolor dolore fugiat fugit iste, maiores nihil non nulla possimus tempora, ullam. Accusantium, alias
+                    beatae, eaque enim facere incidunt ipsum officiis possimus quidem quis ratione recusandae suscipit,
+                    temporibus? Natus, nihil, sunt!
+                </p>
+            </div>
+            <div class="hb-single-text-rows__cell">
+                <h2>Limited Lifetime Warranty</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam consectetur culpa eligendi
+                    fuga ipsam laboriosam neque nihil officiis quis sequi, similique sit sunt totam, veniam. Beatae iste
+                    molestiae ratione.
+                </p>
+                <h2>Freight Shipment</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, animi assumenda aut deserunt earum est
+                    impedit laboriosam perferendis provident, saepe sapiente velit veniam? Ab eveniet repellat sunt.
+                    Alias beatae cum cupiditate, dicta dolorem ducimus eius enim fuga ipsum nesciunt officiis quaerat
+                    quas quia rerum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hb-single-product-suggest padding-block">
+        <div class="hb-container">
+            <div class="hb-single-product-suggest__holder">
+                <div class="hb-single-product-suggest__item">
+                    <h2>
+                        Consider A Garage Tile
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate deleniti, error praesentium
+                        quas recusandae, reprehenderit sit, soluta tempora tempore ullam vel voluptate. A accusantium
+                        aliquid amet aut consectetur consequuntur, debitis deserunt esse est expedita id illo impedit
+                        labore magni natus nisi officiis placeat quam quia quibusdam repellendus repudiandae, sit
+                        temporibus voluptate voluptatum! A cupiditate delectus distinctio ea eos, eveniet facere harum
+                        molestiae nam nihil nisi omnis praesentium quasi quisquam, quod ratione saepe sunt voluptate
+                        voluptatem voluptates. Voluptatibus.
+                    </p>
+                </div>
+                <div class="hb-single-product-suggest__item hb-single-product-suggest__item_img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg" alt="Product"
+                         loading="lazy">
                 </div>
             </div>
         </div>
@@ -180,6 +246,139 @@ function change_upsells_heading_text($heading)
 {
     $new_heading = __('Related Products', 'woocommerce'); // Replace this with your desired text
     return $new_heading;
+}
+
+add_filter('woocommerce_after_single_product', 'single_product_pre_footer_html');
+
+function single_product_pre_footer_html()
+{
+    ?>
+    <div class="hb-single-product-accessories">
+        <div class="hb-container">
+            <h2 class="hb-single-product-accessories__heading text-center">Accessories</h2>
+            <ul class="products">
+                <li class="product">
+                    <a href="#!" class="woocommerce-LoopProduct-link">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg"
+                             alt="Product" loading="lazy">
+                        <span class="price">
+                            <?php _e('From: ', 'garageflooringllc'); ?>
+                            <span class="woocommerce-Price-amount amount">
+                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>129.13</bdi>
+                            </span>
+                        </span>
+
+                        <h2 class="woocommerce-loop-product__title">Product Name</h2>
+
+                        <p class="hb-single-product-accessories__desc">
+                            <?php echo wp_trim_words('Product short description Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit. A aliquid, repellendus? A ad cupiditate sapiente.', 10); ?>
+                        </p>
+                    </a>
+                    <a href="#!"
+                       class="button wp-element-button single_add_to_cart_button button alt wp-element-button">Learn
+                        More</a>
+                </li>
+                <li class="product">
+                    <a href="#!" class="woocommerce-LoopProduct-link">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg"
+                             alt="Product" loading="lazy">
+                        <span class="price">
+                            <?php _e('From: ', 'garageflooringllc'); ?>
+                            <span class="woocommerce-Price-amount amount">
+                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>129.13</bdi>
+                            </span>
+                        </span>
+
+                        <h2 class="woocommerce-loop-product__title">Product Name</h2>
+
+                        <p class="hb-single-product-accessories__desc">
+                            <?php echo wp_trim_words('A ad cupiditate sapiente.', 10); ?>
+                        </p>
+                    </a>
+                    <a href="#!"
+                       class="button wp-element-button single_add_to_cart_button button alt wp-element-button">Learn
+                        More</a>
+                </li>
+                <li class="product">
+                    <a href="#!" class="woocommerce-LoopProduct-link">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg"
+                             alt="Product" loading="lazy">
+                        <span class="price">
+                            <?php _e('From: ', 'garageflooringllc'); ?>
+                            <span class="woocommerce-Price-amount amount">
+                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>129.13</bdi>
+                            </span>
+                        </span>
+
+                        <h2 class="woocommerce-loop-product__title">Product Name Is Very Long for This Field</h2>
+
+                        <p class="hb-single-product-accessories__desc">
+                            <?php echo wp_trim_words('Product short description Lorem ipsum dolor sit
+                            amet', 10); ?>
+                        </p>
+                    </a>
+                    <a href="#!"
+                       class="button wp-element-button single_add_to_cart_button button alt wp-element-button">Learn
+                        More</a>
+                </li>
+                <li class="product">
+                    <a href="#!" class="woocommerce-LoopProduct-link">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg"
+                             alt="Product" loading="lazy">
+                        <span class="price">
+                            <?php _e('From: ', 'garageflooringllc'); ?>
+                            <span class="woocommerce-Price-amount amount">
+                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>129.13</bdi>
+                            </span>
+                        </span>
+
+                        <h2 class="woocommerce-loop-product__title">Product Name</h2>
+
+                        <p class="hb-single-product-accessories__desc">
+                            <?php echo wp_trim_words('Product short description Lorem ipsum dolor sit
+                            amet, consectetur adipisicing elit. A aliquid, repellendus? A ad cupiditate sapiente.', 10); ?>
+                        </p>
+                    </a>
+                    <a href="#!"
+                       class="button wp-element-button single_add_to_cart_button button alt wp-element-button">Learn
+                        More</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hb-single-product-warning padding-block">
+        <div class="hb-container">
+            <div class="hb-single-product-warning__cell">
+                <h2>Warning</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dicta, eos explicabo
+                    perspiciatis quidem quis ratione saepe. Aut earum ipsa, iusto laudantium tempora voluptates. Debitis
+                    dolor dolore ea iste itaque nisi quas soluta tempore! Autem debitis deleniti error expedita incidunt
+                    necessitatibus numquam totam vitae? Consequuntur, culpa cum cupiditate dignissimos est fugiat,
+                    impedit, nostrum nulla quas quo quod sequi sunt voluptatum? Aliquid dolorum in iure optio
+                    repellendus? Ad alias aliquam aliquid amet asperiores cupiditate ea eius magnam, necessitatibus
+                </p>
+            </div>
+            <div class="hb-single-product-warning__cell">
+                <h2>Important Info</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur consequatur
+                    consequuntur dicta dolore dolores eius et fugit harum id iure magnam molestiae, mollitia quam quas
+                    vel vitae voluptatum? Ad adipisci assumenda consequatur consequuntur cum cupiditate error esse
+                    minus. Alias asperiores distinctio eaque eveniet facere fugiat ipsa maxime nihil placeat voluptatem.
+                    Aliquam aspernatur assumenda blanditiis commodi cupiditate debitis deleniti distinctio dolorum eius
+                    eos esse eum eveniet fugiat fugit illo impedit laboriosam modi odit, officiis pariatur perferendis
+                    quas quasi quidem quos repellat saepe similique sint sunt tempore tenetur, ullam unde vero
+                    voluptatibus! Adipisci commodi dolore doloribus facilis fugit illo necessitatibus nobis porro
+                    ratione rerum! <a href="#!">Link to somewhere</a>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <?php
 }
 
 //------------------end of single product------------------

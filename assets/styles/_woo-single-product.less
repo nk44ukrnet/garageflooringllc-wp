@@ -25,6 +25,10 @@
 .up-sells.upsells.products,
 .related.products {
   .hb-container();
+
+  h2 {
+    text-align: center;
+  }
 }
 
 .woocommerce-product-gallery {
@@ -186,6 +190,10 @@ table.variations {
     position: relative;
     z-index: 2;
     flex: 1 1 300px;
+
+    @media (max-width: @mobile) {
+      padding: var(--gap-sm);
+    }
   }
 
   &__inner {
@@ -204,6 +212,7 @@ table.variations {
       font-family: Arial, sans-serif;
       line-height: 100%;
     }
+
     &::after {
       content: '\201D';
       position: absolute;
@@ -214,12 +223,23 @@ table.variations {
       font-family: Arial, sans-serif;
       line-height: 100%;
     }
+
+    @media (max-width: 800px) {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &__description {
     flex: 1 1 300px;
     color: var(--color-light);
     padding: var(--gap-md);
+
+    @media (max-width: @mobile) {
+      padding: var(--gap-sm);
+    }
   }
 
   &__text {
@@ -228,4 +248,110 @@ table.variations {
     }
   }
 }
+
+.hb-single-text-rows {
+
+  .hb-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-md);
+
+    @media (max-width: @mobile) {
+      gap: var(--gap-sm);
+    }
+  }
+
+  &__cell {
+    flex: 1 1 300px;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--color1);
+    }
+  }
+}
+
+.hb-single-product-suggest {
+  background-color: var(--color2-light3);
+
+  .hb-container {
+
+  }
+
+  &__holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--gap-md);
+  }
+
+  &__item {
+
+    flex: 1 1 300px;
+
+    &_img {
+      img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.hb-single-product-accessories {
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    //display: grid;
+    //grid-template-columns: repeat(auto-fit, 250px);
+    //justify-content: center;
+    gap: var(--gap-sm);
+
+    @media (max-width: @mobile) {
+      justify-content: center;
+    }
+  }
+
+  .woocommerce-LoopProduct-link {
+
+  }
+
+  .woocommerce-loop-product__title {
+    padding: 0 !important;
+  }
+
+  .product {
+    margin: 0 !important;
+    flex: 0 1 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    .button.wp-element-button.single_add_to_cart_button.button.alt.wp-element-button {
+      margin-top: auto;
+      width: fit-content;
+    }
+  }
+}
+
+.hb-single-product-warning {
+  background-color: var(--color2-light3);
+  margin-block: var(--gap-lg) var(--gap-lg);
+  margin-bottom: 0;
+
+  .hb-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-md);
+    justify-content: space-between;
+  }
+
+  &__cell {
+    flex: 1 1 300px;
+  }
+}
+
+
+
+
 
