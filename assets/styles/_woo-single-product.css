@@ -173,6 +173,9 @@ body {
 .price {
   color: var(--color1);
 }
+.woocommerce-variation-price span {
+  color: var(--color1) !important;
+}
 .variable-items-wrapper {
   color: var(--color1);
 }

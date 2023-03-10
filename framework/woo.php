@@ -381,4 +381,43 @@ function single_product_pre_footer_html()
     <?php
 }
 
+//test
+
+function my_custom_wrapper_for_single_product_gallery( $html, $post_id ) {
+    global $product;
+
+    if ( $product && $product->get_gallery_image_ids() ) {
+        $attachment_ids = $product->get_gallery_image_ids();
+        $output = '<div class="custom-gallery-wrapper">';
+        $output .= '<div class="woocommerce-product-gallery woocommerce-product-gallery--' . esc_attr( $product->get_gallery_image_size() ) . ' images" data-columns="4">';
+        $output .= '<figure class="woocommerce-product-gallery__wrapper">';
+
+        foreach ( $attachment_ids as $attachment_id ) {
+            $image_link = wp_get_attachment_url( $attachment_id );
+            $image_title = esc_attr( get_the_title( $attachment_id ) );
+            $image_caption = esc_attr( get_post_field( 'post_excerpt', $attachment_id ) );
+            $image = wp_get_attachment_image( $attachment_id, 'woocommerce_single', false, array(
+                'data-src'   => $image_link,
+                'data-large_image' => $image_link,
+                'data-large_image_width' => 800,
+                'data-large_image_height' => 800,
+                'class' => 'woocommerce-product-gallery__image',
+                'alt' => $image_title,
+                'title' => $image_caption
+            ) );
+
+            $output .= '<div class="woocommerce-product-gallery__image--placeholder">' . $image . '</div>';
+        }
+
+        $output .= '</figure></div></div>';
+
+        return $output;
+    } else {
+        return $html;
+    }
+}
+add_filter( 'woocommerce_single_product_image_html', 'my_custom_wrapper_for_single_product_gallery', 10, 2 );
+
+    //test
+
 //------------------end of single product------------------
