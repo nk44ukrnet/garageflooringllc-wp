@@ -69,6 +69,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
                     quantityInput.setAttribute('value', `${val + ''}`);
                     quantityInput.value = val + '';
+                    quantityInput.dispatchEvent(new Event('change', {bubbles: true}));
                 }
             }
 
@@ -86,53 +87,54 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     //product options element duplication (single product page)
-    try {
-        let selects = document.querySelectorAll(".variations select");
-        selects.forEach(function(select) {
-            let options = select.options;
-            let container = document.createElement("div");
-            container.classList.add("product-options-js");
-
-            for (var i = 0; i < options.length; i++) {
-                let option = options[i];
-                if (option.value === "") continue;
-                let link = document.createElement("a");
-                link.href = "#";
-                link.textContent = option.textContent;
-                link.dataset.value = option.value;
-                link.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    let value = this.dataset.value;
-                    select.value = value;
-                    setActiveLink(link);
-                    select.dispatchEvent(new Event("change", { bubbles: true }));
-                });
-                container.appendChild(link);
-            }
-
-            select.parentNode.insertBefore(container, select.nextSibling);
-
-            // Set active link on load
-            setActiveLink(container.querySelector(`a[data-value="${select.value}"]`));
-
-            // Set active link when select value changes
-            select.addEventListener("change", function() {
-                let value = select.value;
-                setActiveLink(container.querySelector(`a[data-value="${value}"]`));
-            });
-
-            function setActiveLink(link) {
-                container.querySelectorAll("a").forEach(function(a) {
-                    if (a === link) {
-                        a.classList.add("active");
-                    } else {
-                        a.classList.remove("active");
-                    }
-                });
-            }
-        });
-    } catch (e) {
-        console.log("Product options element duplication error (single product page) ", e);
-    }
+    //--Used Plugin swatches instead of this code--
+    // try {
+    //     let selects = document.querySelectorAll(".variations select");
+    //     selects.forEach(function(select) {
+    //         let options = select.options;
+    //         let container = document.createElement("div");
+    //         container.classList.add("product-options-js");
+    //
+    //         for (var i = 0; i < options.length; i++) {
+    //             let option = options[i];
+    //             if (option.value === "") continue;
+    //             let link = document.createElement("a");
+    //             link.href = "#";
+    //             link.textContent = option.textContent;
+    //             link.dataset.value = option.value;
+    //             link.addEventListener("click", function(e) {
+    //                 e.preventDefault();
+    //                 let value = this.dataset.value;
+    //                 select.value = value;
+    //                 setActiveLink(link);
+    //                 select.dispatchEvent(new Event("change", { bubbles: true }));
+    //             });
+    //             container.appendChild(link);
+    //         }
+    //
+    //         select.parentNode.insertBefore(container, select.nextSibling);
+    //
+    //         // Set active link on load
+    //         setActiveLink(container.querySelector(`a[data-value="${select.value}"]`));
+    //
+    //         // Set active link when select value changes
+    //         select.addEventListener("change", function() {
+    //             let value = select.value;
+    //             setActiveLink(container.querySelector(`a[data-value="${value}"]`));
+    //         });
+    //
+    //         function setActiveLink(link) {
+    //             container.querySelectorAll("a").forEach(function(a) {
+    //                 if (a === link) {
+    //                     a.classList.add("active");
+    //                 } else {
+    //                     a.classList.remove("active");
+    //                 }
+    //             });
+    //         }
+    //     });
+    // } catch (e) {
+    //     console.log("Product options element duplication error (single product page) ", e);
+    // }
 
 });

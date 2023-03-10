@@ -762,6 +762,18 @@ body {
 .single-product-container-woo-thumbs-and-meta .woocommerce-product-gallery {
   order: 2;
 }
+.price {
+  color: var(--color1);
+}
+.variable-items-wrapper {
+  color: var(--color1);
+}
+.variable-items-wrapper span {
+  color: inherit;
+}
+.product_meta {
+  color: var(--color2);
+}
 .product-title-summary {
   margin-top: 0;
   margin-bottom: var(--gap-sm);

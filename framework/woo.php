@@ -228,7 +228,7 @@ add_filter('woocommerce_single_product_summary', 'add_heading_of_product_name', 
 function add_heading_of_product_name()
 {
     ?>
-    <h1 class="product-title-summary"><?php echo get_the_title(); ?></h1>
+    <h1 class="product-title-summary colored2"><?php echo get_the_title(); ?></h1>
     <?php
 }
 
