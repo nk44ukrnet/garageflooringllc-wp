@@ -1,0 +1,109 @@
+:root {
+  font-size: 16px;
+  line-height: 150%;
+  --color-light: #fff;
+  --color-dark: #4c484e;
+  --color-dark1: #848485;
+  --color-dark2: rgba(0, 0, 0, 0.7);
+  --color-dark3: #35363a;
+  --color1: hsl(209, 59%, 14%);
+  --color1-alter: hsl(209, 39%, 14%);
+  --color1-light: hsla(209, 59%, 14%, 0.6);
+  --color1-light2: hsla(209, 59%, 14%, 0.2);
+  --color2: hsl(220, 58%, 20%);
+  --color2-alter: hsl(220, 38%, 20%);
+  --color2-light: hsla(220, 58%, 20%, 0.6);
+  --color2-light2: hsla(220, 58%, 20%, 0.2);
+  --color2-light3: hsla(220, 58%, 20%, 0.1);
+  --slinky-bg: #f6f7f8;
+  --color3: hsl(166, 75%, 34%);
+  --color3-alter: hsl(166, 45%, 34%);
+  --color4: hsl(198, 50%, 34%);
+  --color5: hsl(338, 75%, 34%);
+  --color6: hsl(30, 75%, 50%);
+  --color7: hsl(39, 100%, 50%);
+  --color8: hsl(24, 75%, 50%);
+  --lh: 150%;
+  --transition: all 0.25s linear;
+  --border-radius: 5px;
+  --shadow: 0px 0px 5px var(--color1-alter);
+  --gap-lg: 100px;
+  --gap-md: 50px;
+  --gap-sm: 20px;
+  --gap-xsm: 10px;
+}
+@media (max-width: 768px) {
+  :root {
+    --gap-lg: 50px;
+    --gap-md: 30px;
+    --gap-sm: 15px;
+  }
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color1-light2);
+  z-index: 1050;
+  transition: var(--transition);
+  padding-right: 17px;
+}
+.modal-backdrop:not(.active) {
+  display: none;
+}
+.modal {
+  padding-inline: 10px;
+  box-sizing: border-box;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  width: 100vw;
+  height: 100vh;
+}
+.modal-dialog {
+  width: 100%;
+  max-width: 50rem;
+  min-height: calc(100% - 3.5rem);
+  margin: 1.75rem auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.modal-content {
+  border-radius: 2rem;
+  padding: var(--gap-sm);
+  box-sizing: border-box;
+  border-color: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  outline: none;
+}
+.modal-content .close-modal {
+  text-decoration: none;
+  font-size: 40px;
+  margin-left: auto;
+  display: table;
+  color: var(--color-dark);
+  margin-bottom: var(--gap-sm);
+}
+.modal-content .custom-form-wrapper {
+  color: var(--color-dark);
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 20px;
+  }
+}
+/*# sourceMappingURL=_modal.css.map */

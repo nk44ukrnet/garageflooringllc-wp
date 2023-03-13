@@ -1,0 +1,74 @@
+@import "_variables";
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color1-light2);
+  z-index: 1050;
+  transition: var(--transition);
+  padding-right: 17px;
+
+  &:not(.active) {
+    display: none;
+  }
+}
+
+.modal {
+  padding-inline: 10px;
+  box-sizing: border-box;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-dialog {
+  width: 100%;
+  max-width: 50rem;
+  min-height: calc(100% - 3.5rem);
+  margin: 1.75rem auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.modal-content {
+  border-radius: 2rem;
+  padding: var(--gap-sm);
+  box-sizing: border-box;
+  border-color: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  outline: none;
+
+  .close-modal {
+    text-decoration: none;
+    font-size: 40px;
+    margin-left: auto;
+    display: table;
+    color: var(--color-dark);
+    margin-bottom: var(--gap-sm);
+  }
+
+  .custom-form-wrapper {
+    color: var(--color-dark);
+    text-align: left;
+  }
+
+  @media (max-width: @mobile) {
+    padding: 20px;
+  }
+}

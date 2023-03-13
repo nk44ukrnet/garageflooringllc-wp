@@ -39,8 +39,411 @@ add_action('woocommerce_after_single_product_summary', 'single_product_container
 function single_product_container_end()
 {
     echo '</div> <!-- hb-container end -->';
-    echo '<div class="product-long-description hb-container">' . get_the_content() . '</div>';
+    echo '<div class="product-long-description hb-container padding-block-sm">' . get_the_content() . '</div>';
+    $badges = get_field('enable_badges_section');
+    $badge_instructions = get_field('badge_instructions');
+    $badge_project_profiles = get_field('badge_project_profiles');
+    $badge_data_sheet = get_field('badge_data_sheet');
+    $badge_safety_data_sheet = get_field('badge_safety_data_sheet');
+    $badge_photos = get_field('badge_photos');
+
     ?>
+    <?php if (!empty($badges)) { ?>
+    <div class="hb-single-badges padding-block">
+        <div class="hb-container">
+            <div class="hb-single-badges__holder">
+
+                <?php if (!empty($badge_instructions) && $badge_instructions['enabled_instructions'][0]) { ?>
+                    <?php
+                    $title = $badge_instructions['title'];
+                    $url = '';
+                    $popupContent = '';
+                    $url_or_popup = $badge_instructions['is_it_direct_url_or_popup'];
+                    $uniqID = '';
+                    $modalTrigger = '';
+                    if (!empty($url_or_popup)) {
+                        switch ($url_or_popup) {
+                            case 'url':
+                                $url  = $badge_instructions['specify_only_url_leave_text_blank'];
+                                if(empty($url)) $url = '#!';
+                                $popupContent = '';
+                                break;
+                            case 'popup':
+                                $popupContent =  $badge_instructions['popup_content'];
+                                $url = '#!';
+                                $randValue = rand(0, 999999999999);
+                                $uniqID = uniqid('popup_single_') . '_rand_value_' . $randValue;
+                                if (!empty($popupContent)) {
+                                    $modalTrigger = 'data-modal-id="' . $uniqID . '"';
+                                }
+                                break;
+                        }
+                    }
+                    $iconSelection = $badge_instructions['do_you_want_to_use_default_icon_for_specific_image_instead'];
+                    $iconHTML = $badge_instructions['icon_html'];
+                    $iconImage = $badge_instructions['image'];
+
+                    ?>
+
+                    <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> class="hb-single-badges__item">
+                        <?php if (!empty($iconHTML) || !empty($iconImage)) { ?>
+                            <div class="hb-single-badges__img">
+                                <?php if (!empty($iconSelection)) { ?>
+                                    <?php switch ($iconSelection) {
+                                        case  'Default Icon':
+                                            echo $iconHTML;
+                                            break;
+                                        case 'Specific Image':
+                                            ?>
+                                            <img src="<?php echo $iconImage; ?>" alt="<?php echo $title; ?>"
+                                                 loading="lazy">
+                                            <?php
+                                            break;
+                                        default:
+                                            break;
+                                    } ?>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (!empty($title)) { ?>
+                            <p class="hb-single-badges__text"><?php echo $title; ?></p>
+                        <?php } ?>
+                    </a>
+
+                    <?php if (!empty($popupContent)) { ?>
+                        <!--Popup-->
+
+                        <div class="modal-backdrop" id="<?php echo $uniqID; ?>">
+                            <div class="modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <a href="#!" class="close-modal">×</a>
+                                        <div class="custom-form-wrapper">
+                                            <?php echo $popupContent; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of popup-->
+                    <?php } ?>
+
+                <?php } ?>
+
+                <?php if (!empty($badge_project_profiles) && $badge_project_profiles['enabled_project_profiles'][0]) { ?>
+                    <?php
+                    $title = $badge_project_profiles['title'];
+                    $url = '';
+                    $popupContent = '';
+                    $url_or_popup = $badge_project_profiles['is_it_direct_url_or_popup'];
+                    $uniqID = '';
+                    $modalTrigger = '';
+                    if (!empty($url_or_popup)) {
+                        switch ($url_or_popup) {
+                            case 'url':
+                                $url  = $badge_project_profiles['specify_only_url_leave_text_blank'];
+                                if(empty($url)) $url = '#!';
+                                $popupContent = '';
+                                break;
+                            case 'popup':
+                                $popupContent =  $badge_project_profiles['popup_content'];
+                                $url = '#!';
+                                $randValue = rand(0, 999999999999);
+                                $uniqID = uniqid('popup_single_') . '_rand_value_' . $randValue;
+                                if (!empty($popupContent)) {
+                                    $modalTrigger = 'data-modal-id="' . $uniqID . '"';
+                                }
+                                break;
+                        }
+                    }
+                    $iconSelection = $badge_project_profiles['do_you_want_to_use_default_icon_for_specific_image_instead'];
+                    $iconHTML = $badge_project_profiles['icon_html'];
+                    $iconImage = $badge_project_profiles['image'];
+
+                    ?>
+
+                    <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> class="hb-single-badges__item">
+                        <?php if (!empty($iconHTML) || !empty($iconImage)) { ?>
+                            <div class="hb-single-badges__img">
+                                <?php if (!empty($iconSelection)) { ?>
+                                    <?php switch ($iconSelection) {
+                                        case  'Default Icon':
+                                            echo $iconHTML;
+                                            break;
+                                        case 'Specific Image':
+                                            ?>
+                                            <img src="<?php echo $iconImage; ?>" alt="<?php echo $title; ?>"
+                                                 loading="lazy">
+                                            <?php
+                                            break;
+                                        default:
+                                            break;
+                                    } ?>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (!empty($title)) { ?>
+                            <p class="hb-single-badges__text"><?php echo $title; ?></p>
+                        <?php } ?>
+                    </a>
+
+                    <?php if (!empty($popupContent)) { ?>
+                        <!--Popup-->
+
+                        <div class="modal-backdrop" id="<?php echo $uniqID; ?>">
+                            <div class="modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <a href="#!" class="close-modal">×</a>
+                                        <div class="custom-form-wrapper">
+                                            <?php echo $popupContent; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of popup-->
+                    <?php } ?>
+
+                <?php } ?>
+
+                <?php if (!empty($badge_data_sheet) && $badge_data_sheet['enabled_data_sheet'][0]) { ?>
+                    <?php
+                    $title = $badge_data_sheet['title'];
+                    $url = '';
+                    $popupContent = '';
+                    $url_or_popup = $badge_data_sheet['is_it_direct_url_or_popup'];
+                    $uniqID = '';
+                    $modalTrigger = '';
+                    if (!empty($url_or_popup)) {
+                        switch ($url_or_popup) {
+                            case 'url':
+                                $url  = $badge_data_sheet['specify_only_url_leave_text_blank'];
+                                if(empty($url)) $url = '#!';
+                                $popupContent = '';
+                                break;
+                            case 'popup':
+                                $popupContent =  $badge_data_sheet['popup_content'];
+                                $url = '#!';
+                                $randValue = rand(0, 999999999999);
+                                $uniqID = uniqid('popup_single_') . '_rand_value_' . $randValue;
+                                if (!empty($popupContent)) {
+                                    $modalTrigger = 'data-modal-id="' . $uniqID . '"';
+                                }
+                                break;
+                        }
+                    }
+                    $iconSelection = $badge_data_sheet['do_you_want_to_use_default_icon_for_specific_image_instead'];
+                    $iconHTML = $badge_data_sheet['icon_html'];
+                    $iconImage = $badge_data_sheet['image'];
+
+                    ?>
+
+                    <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> class="hb-single-badges__item">
+                        <?php if (!empty($iconHTML) || !empty($iconImage)) { ?>
+                            <div class="hb-single-badges__img">
+                                <?php if (!empty($iconSelection)) { ?>
+                                    <?php switch ($iconSelection) {
+                                        case  'Default Icon':
+                                            echo $iconHTML;
+                                            break;
+                                        case 'Specific Image':
+                                            ?>
+                                            <img src="<?php echo $iconImage; ?>" alt="<?php echo $title; ?>"
+                                                 loading="lazy">
+                                            <?php
+                                            break;
+                                        default:
+                                            break;
+                                    } ?>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (!empty($title)) { ?>
+                            <p class="hb-single-badges__text"><?php echo $title; ?></p>
+                        <?php } ?>
+                    </a>
+
+                    <?php if (!empty($popupContent)) { ?>
+                        <!--Popup-->
+
+                        <div class="modal-backdrop" id="<?php echo $uniqID; ?>">
+                            <div class="modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <a href="#!" class="close-modal">×</a>
+                                        <div class="custom-form-wrapper">
+                                            <?php echo $popupContent; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of popup-->
+                    <?php } ?>
+
+                <?php } ?>
+
+                <?php if (!empty($badge_safety_data_sheet) && $badge_safety_data_sheet['enabled_safety_data_sheet'][0]) { ?>
+                    <?php
+                    $title = $badge_safety_data_sheet['title'];
+                    $url = '';
+                    $popupContent = '';
+                    $url_or_popup = $badge_safety_data_sheet['is_it_direct_url_or_popup'];
+                    $uniqID = '';
+                    $modalTrigger = '';
+                    if (!empty($url_or_popup)) {
+                        switch ($url_or_popup) {
+                            case 'url':
+                                $url  = $badge_safety_data_sheet['specify_only_url_leave_text_blank'];
+                                if(empty($url)) $url = '#!';
+                                $popupContent = '';
+                                break;
+                            case 'popup':
+                                $popupContent =  $badge_safety_data_sheet['popup_content'];
+                                $url = '#!';
+                                $randValue = rand(0, 999999999999);
+                                $uniqID = uniqid('popup_single_') . '_rand_value_' . $randValue;
+                                if (!empty($popupContent)) {
+                                    $modalTrigger = 'data-modal-id="' . $uniqID . '"';
+                                }
+                                break;
+                        }
+                    }
+                    $iconSelection = $badge_safety_data_sheet['do_you_want_to_use_default_icon_for_specific_image_instead'];
+                    $iconHTML = $badge_safety_data_sheet['icon_html'];
+                    $iconImage = $badge_safety_data_sheet['image'];
+
+                    ?>
+
+                    <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> class="hb-single-badges__item">
+                        <?php if (!empty($iconHTML) || !empty($iconImage)) { ?>
+                            <div class="hb-single-badges__img">
+                                <?php if (!empty($iconSelection)) { ?>
+                                    <?php switch ($iconSelection) {
+                                        case  'Default Icon':
+                                            echo $iconHTML;
+                                            break;
+                                        case 'Specific Image':
+                                            ?>
+                                            <img src="<?php echo $iconImage; ?>" alt="<?php echo $title; ?>"
+                                                 loading="lazy">
+                                            <?php
+                                            break;
+                                        default:
+                                            break;
+                                    } ?>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (!empty($title)) { ?>
+                            <p class="hb-single-badges__text"><?php echo $title; ?></p>
+                        <?php } ?>
+                    </a>
+
+                    <?php if (!empty($popupContent)) { ?>
+                        <!--Popup-->
+
+                        <div class="modal-backdrop" id="<?php echo $uniqID; ?>">
+                            <div class="modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <a href="#!" class="close-modal">×</a>
+                                        <div class="custom-form-wrapper">
+                                            <?php echo $popupContent; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of popup-->
+                    <?php } ?>
+
+                <?php } ?>
+
+                <?php if (!empty($badge_photos) && $badge_photos['enabled_photos'][0]) { ?>
+                    <?php
+                    $title = $badge_photos['title'];
+                    $url = '';
+                    $popupContent = '';
+                    $url_or_popup = $badge_photos['is_it_direct_url_or_popup'];
+                    $uniqID = '';
+                    $modalTrigger = '';
+                    if (!empty($url_or_popup)) {
+                        switch ($url_or_popup) {
+                            case 'url':
+                                $url  = $badge_photos['specify_only_url_leave_text_blank'];
+                                if(empty($url)) $url = '#!';
+                                $popupContent = '';
+                                break;
+                            case 'popup':
+                                $popupContent =  $badge_photos['popup_content'];
+                                $url = '#!';
+                                $randValue = rand(0, 999999999999);
+                                $uniqID = uniqid('popup_single_') . '_rand_value_' . $randValue;
+                                if (!empty($popupContent)) {
+                                    $modalTrigger = 'data-modal-id="' . $uniqID . '"';
+                                }
+                                break;
+                        }
+                    }
+                    $iconSelection = $badge_photos['do_you_want_to_use_default_icon_for_specific_image_instead'];
+                    $iconHTML = $badge_photos['icon_html'];
+                    $iconImage = $badge_photos['image'];
+
+                    ?>
+
+                    <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> class="hb-single-badges__item">
+                        <?php if (!empty($iconHTML) || !empty($iconImage)) { ?>
+                            <div class="hb-single-badges__img">
+                                <?php if (!empty($iconSelection)) { ?>
+                                    <?php switch ($iconSelection) {
+                                        case  'Default Icon':
+                                            echo $iconHTML;
+                                            break;
+                                        case 'Specific Image':
+                                            ?>
+                                            <img src="<?php echo $iconImage; ?>" alt="<?php echo $title; ?>"
+                                                 loading="lazy">
+                                            <?php
+                                            break;
+                                        default:
+                                            break;
+                                    } ?>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (!empty($title)) { ?>
+                            <p class="hb-single-badges__text"><?php echo $title; ?></p>
+                        <?php } ?>
+                    </a>
+
+                    <?php if (!empty($popupContent)) { ?>
+                        <!--Popup-->
+
+                        <div class="modal-backdrop" id="<?php echo $uniqID; ?>">
+                            <div class="modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <a href="#!" class="close-modal">×</a>
+                                        <div class="custom-form-wrapper">
+                                            <?php echo $popupContent; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of popup-->
+                    <?php } ?>
+
+                <?php } ?>
+
+
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
 
     <div class="hb-single-badges padding-block">
         <div class="hb-container">
@@ -48,16 +451,16 @@ function single_product_container_end()
 
                 <a href="#!" class="hb-single-badges__item">
                     <div class="hb-single-badges__img">
-                        <i class="fa-solid fa-sheet-plastic"></i>
+                        <i class="fa-solid fa-chalkboard-user"></i>
                     </div>
-                    <p class="hb-single-badges__text">Datasheet</p>
+                    <p class="hb-single-badges__text">Instructions</p>
                 </a>
 
                 <a href="#!" class="hb-single-badges__item">
                     <div class="hb-single-badges__img">
-                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <i class="fa-solid fa-sheet-plastic"></i>
                     </div>
-                    <p class="hb-single-badges__text">Instructions</p>
+                    <p class="hb-single-badges__text">Datasheet</p>
                 </a>
 
                 <a href="#!" class="hb-single-badges__item">

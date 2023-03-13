@@ -86,6 +86,49 @@ window.addEventListener('DOMContentLoaded', function () {
         console.log('Qunatity sinlge page error ', e);
     }
 
+    //modal actions
+    try {
+        let modalBackDrop = document.querySelectorAll('.modal-backdrop'),
+            modalClose = document.querySelectorAll('.close-modal'),
+            modalContent = document.querySelectorAll('.modal-content'),
+            dataModal = document.querySelectorAll('[data-modal-id]'),
+            activeClass = 'active',
+            lockClass = '_lock';
+
+        dataModal.forEach(item=>{
+            item.addEventListener('click', e=>{
+                let dataId = item.getAttribute('data-modal-id');
+                let modalBackdrop = document.querySelector(`#${dataId}`);
+                if(modalBackdrop) {
+                    modalBackdrop.classList.add(activeClass);
+                    document.body.classList.add(lockClass);
+                }
+            })
+        })
+
+        modalContent.forEach(item=>{
+            item.addEventListener('click', e=>{
+                e.stopPropagation();
+            })
+        })
+        modalClose.forEach(item=>{
+            item.addEventListener('click', e=>{
+                let current = e.target;
+                current.closest('.modal-backdrop').classList.remove(activeClass);
+                document.body.classList.remove(lockClass);
+            })
+        })
+        modalBackDrop.forEach(item=>{
+            item.addEventListener('click',e=>{
+                item.classList.remove(activeClass);
+                document.body.classList.remove(lockClass);
+            })
+        })
+
+    } catch (e) {
+        console.log('modal error ', e);
+    }
+
     //product options element duplication (single product page)
     //--Used Plugin swatches instead of this code--
     // try {
