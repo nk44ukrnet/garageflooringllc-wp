@@ -614,7 +614,7 @@ body {
   padding-block: 0 var(--gap-xsm);
   font-size: 14px;
 }
-.woocommerce a:not(header, footer, [class^="hb-"]) {
+.woocommerce a:not(header, footer) {
   color: var(--color2);
 }
 .woocommerce .woocommerce-notices-wrapper {
