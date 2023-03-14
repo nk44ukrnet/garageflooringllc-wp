@@ -1,8 +1,9 @@
 @import "_variables";
 
 .woocommerce {
+
   a {
-    &:not(header, footer) {
+    &:not(header, footer, [class^="hb-"]) {
       color: var(--color2);
     }
   }

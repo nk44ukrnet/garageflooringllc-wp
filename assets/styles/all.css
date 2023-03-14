@@ -614,7 +614,7 @@ body {
   padding-block: 0 var(--gap-xsm);
   font-size: 14px;
 }
-.woocommerce a:not(header, footer) {
+.woocommerce a:not(header, footer, [class^="hb-"]) {
   color: var(--color2);
 }
 .woocommerce .woocommerce-notices-wrapper {
@@ -1006,6 +1006,9 @@ table.variations tr .value select {
   flex: 1 1 300px;
   color: var(--color-light);
   padding: var(--gap-md);
+}
+.hb-single-quote__description a {
+  color: var(--color-light) !important;
 }
 @media (max-width: 768px) {
   .hb-single-quote__description {
