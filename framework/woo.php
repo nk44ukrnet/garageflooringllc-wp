@@ -34,12 +34,19 @@ function single_product_container_add()
     echo '<div class="hb-container single-product-container-woo-thumbs-and-meta"> <!-- hb-container start -->';
 }
 
+function my_custom_content_after_short_description() {
+    ?>
+    <a href="#theContentSingleProduct"><?php _e('Read More', 'garageflooringllc'); ?> <i class="fa-solid fa-arrow-right"></i></a>
+    <?php
+}
+add_action( 'woocommerce_single_product_summary', 'my_custom_content_after_short_description', 22 );
+
 //after single product
 add_action('woocommerce_after_single_product_summary', 'single_product_container_end', 10);
 function single_product_container_end()
 {
     echo '</div> <!-- hb-container end -->';
-    echo '<div class="product-long-description hb-container padding-block-sm">' . get_the_content() . '</div>';
+    echo '<div class="product-long-description hb-container padding-block-sm" id="theContentSingleProduct">' . get_the_content() . '</div>';
     $badges = get_field('enable_badges_section');
     $badge_instructions = get_field('badge_instructions');
     $badge_project_profiles = get_field('badge_project_profiles');

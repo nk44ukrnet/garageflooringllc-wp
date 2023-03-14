@@ -41,6 +41,9 @@
     --gap-sm: 15px;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 ._lock {
   overflow: hidden;
 }
@@ -104,6 +107,17 @@ body {
 }
 .btn:visited {
   color: var(--color-light);
+}
+.btn_sm {
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 100%;
+}
+.btn.btn-color-light {
+  color: var(--color-light) !important;
+}
+.btn.btn-bold {
+  font-weight: bold;
 }
 .btn:hover {
   background-color: var(--color1-alter);

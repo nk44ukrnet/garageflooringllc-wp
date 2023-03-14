@@ -1,5 +1,9 @@
 @import url(_variables);
 
+html {
+  scroll-behavior: smooth;
+}
+
 ._lock {
   overflow: hidden;
   @media (min-width: @mobile) {
@@ -76,6 +80,18 @@ body {
   transition: var(--transition);
   border-radius: 5px;
   display: table;
+
+  &_sm {
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 100%;
+  }
+  &.btn-color-light {
+    color: var(--color-light) !important;
+  }
+  &.btn-bold {
+    font-weight: bold;
+  }
 
   &:hover {
     background-color: var(--color1-alter);
