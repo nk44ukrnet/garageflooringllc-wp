@@ -901,7 +901,7 @@ table.variations tr .value select {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: var(--gap-sm);
 }
 .hb-single-badges__holder a {
