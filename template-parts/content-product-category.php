@@ -118,69 +118,71 @@
         <!-- /the content -->
 
         <!--testimonials-->
-        <div class="hb-category-page-testimonials padding-block">
-            <div class="hb-container">
-                <?php
-                $testimonials_heading = get_field('testimonials_heading');
-                ?>
+        <?php
+        $testimonials_heading = get_field('testimonials_heading');
+        ?>
+        <?php if (!empty($testimonials_heading) || have_rows('testimonials_repeater')) { ?>
+            <div class="hb-category-page-testimonials padding-block">
+                <div class="hb-container">
 
-                <?php if (!empty($testimonials_heading)) { ?>
-                    <h2 class="hb-category-page-testimonials__heading text-center colored2">
-                        <?php echo $testimonials_heading; ?>
-                    </h2>
-                <?php } ?>
+                    <?php if (!empty($testimonials_heading)) { ?>
+                        <h2 class="hb-category-page-testimonials__heading text-center colored2">
+                            <?php echo $testimonials_heading; ?>
+                        </h2>
+                    <?php } ?>
 
-                <?php
-                if (have_rows('testimonials_repeater')) {
-                    ?>
-                    <div class="hb-category-page-testimonials__swiper">
-                        <!-- Slider main container -->
-                        <div class="swiper hb-category-page-testimonials-swiper">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <?php
-                                while (have_rows('testimonials_repeater')) {
-                                    the_row();
-                                    $sub_field_text = get_sub_field('text');
-                                    $sub_field_author_name = get_sub_field('author_name');
-                                    ?>
-
-                                    <div class="swiper-slide">
-                                        <div class="hb-category-page-testimonials__item text-center">
-
-                                            <?php if (!empty($sub_field_text)) { ?>
-                                                <div class="hb-category-page-testimonials__text">
-                                                    <?php echo $sub_field_text; ?>
-                                                </div>
-                                            <?php } ?>
-
-                                            <?php if (!empty($sub_field_author_name)) { ?>
-                                                <h3 class="hb-category-page-testimonials__author text-center colored2"><?php echo $sub_field_author_name; ?></h3>
-                                            <?php } ?>
-
-                                        </div>
-                                    </div>
-                                    <?php
-                                }
-                                ?>
-                                <!-- block end -->
-                            </div>
-
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-
-                        </div>
-                    </div>
                     <?php
-                }
-                ?>
+                    if (have_rows('testimonials_repeater')) {
+                        ?>
+                        <div class="hb-category-page-testimonials__swiper">
+                            <!-- Slider main container -->
+                            <div class="swiper hb-category-page-testimonials-swiper">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <?php
+                                    while (have_rows('testimonials_repeater')) {
+                                        the_row();
+                                        $sub_field_text = get_sub_field('text');
+                                        $sub_field_author_name = get_sub_field('author_name');
+                                        ?>
+
+                                        <div class="swiper-slide">
+                                            <div class="hb-category-page-testimonials__item text-center">
+
+                                                <?php if (!empty($sub_field_text)) { ?>
+                                                    <div class="hb-category-page-testimonials__text">
+                                                        <?php echo $sub_field_text; ?>
+                                                    </div>
+                                                <?php } ?>
+
+                                                <?php if (!empty($sub_field_author_name)) { ?>
+                                                    <h3 class="hb-category-page-testimonials__author text-center colored2"><?php echo $sub_field_author_name; ?></h3>
+                                                <?php } ?>
+
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                    <!-- block end -->
+                                </div>
+
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
-        </div>
+        <?php } ?>
         <!--/testimonials-->
 
         <!-- bottom extra text -->
