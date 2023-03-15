@@ -36,7 +36,7 @@
 //end of options plugin
 
 .product_meta {
-  color: var(--color2);
+  color: var(--color1);
 }
 
 .product-title-summary {
@@ -54,6 +54,7 @@
 
   h2 {
     text-align: center;
+    color: var(--color1);
   }
 }
 
@@ -305,6 +306,10 @@ table.variations {
     flex-wrap: wrap;
     gap: var(--gap-md);
 
+    h1,h2,h3,h4,h5,h6 {
+      color: var(--color1);
+    }
+
     @media (max-width: @mobile) {
       gap: var(--gap-sm);
     }
@@ -323,7 +328,9 @@ table.variations {
   background-color: var(--color2-light3);
 
   .hb-container {
-
+    h1,h2,h3,h4,h5,h6 {
+      color: var(--color1);
+    }
   }
 
   &__holder {
@@ -337,7 +344,7 @@ table.variations {
 
     flex: 1 1 300px;
 
-    color: var(--color2);
+    color: var(--color1);
 
     &_img {
       img {
@@ -403,5 +410,11 @@ table.variations {
 
   &__cell {
     flex: 1 1 300px;
+  }
+}
+
+.product-long-description  {
+  h1,h2,h3,h4,h5,h6 {
+    color: var(--color1);
   }
 }

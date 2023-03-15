@@ -75,12 +75,14 @@ function single_product_container_end()
             $url_or_popup = $arr['is_it_direct_url_or_popup'];
             $uniqID = '';
             $modalTrigger = '';
+            $open_in_a_new_tab = '';
             if (!empty($url_or_popup)) {
                 switch ($url_or_popup) {
                     case 'url':
                         $url = $arr['specify_only_url_leave_text_blank'];
                         if (empty($url)) $url = '#!';
                         $popupContent = '';
+                        $open_in_a_new_tab = 'target="_blank"';
                         break;
                     case 'popup':
                         $popupContent = $arr['popup_content'];
@@ -98,7 +100,7 @@ function single_product_container_end()
             $iconImage = $arr['image'];
             ?>
 
-            <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> class="hb-single-badges__item">
+            <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> <?php echo $open_in_a_new_tab; ?> class="hb-single-badges__item">
                 <?php if (!empty($iconHTML) || !empty($iconImage)) { ?>
                     <div class="hb-single-badges__img">
                         <?php if (!empty($iconSelection)) { ?>
@@ -330,7 +332,7 @@ add_filter('woocommerce_single_product_summary', 'add_heading_of_product_name', 
 function add_heading_of_product_name()
 {
     ?>
-    <h1 class="product-title-summary colored2"><?php echo get_the_title(); ?></h1>
+    <h1 class="product-title-summary colored"><?php echo get_the_title(); ?></h1>
     <?php
 }
 
@@ -362,7 +364,7 @@ function single_product_pre_footer_html()
     <div class="hb-single-product-accessories">
         <div class="hb-container">
             <?php if (!empty($accessories_title)) { ?>
-                <h2 class="hb-single-product-accessories__heading text-center colored2"><?php echo $accessories_title; ?></h2>
+                <h2 class="hb-single-product-accessories__heading text-center colored"><?php echo $accessories_title; ?></h2>
             <?php } ?>
 
             <?php

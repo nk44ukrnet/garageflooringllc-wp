@@ -8,8 +8,15 @@
  */
 
 get_header();
+yoast_breadcrumbs();
 ?>
 
+<?php
+$acf_is_product_category = get_field('acf_is_product_category');
+if( is_category() && !empty($acf_is_product_category) ) {
+    get_template_part( 'template-parts/content', 'post-category' );
+} else {
+?>
 	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -45,7 +52,7 @@ get_header();
 		?>
 
 	</main><!-- #main -->
-
+<?php } //else ?>
 <?php
 get_sidebar();
 get_footer();

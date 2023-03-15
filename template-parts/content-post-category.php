@@ -28,7 +28,7 @@
             <div class="hb-container">
                 <div class="hb-category-page-hero__holder">
                     <div class="hb-category-page-hero__item">
-                        <h1 class="colored"><?php echo get_the_title(); ?></h1>
+                        <h1 class="colored2"><?php echo get_the_title(); ?></h1>
                         <?php if (!empty($term->description)) { ?>
                             <div class="hb-category-page-hero__text">
                                 <?php echo $term->description; ?>
@@ -68,7 +68,7 @@
             <div class="hb-category-page-featured">
                 <div class="hb-container">
                     <?php if (!empty($featured_products_title)) { ?>
-                        <h2 class="hb-category-page-featured__heading text-center colored"><?php echo $featured_products_title; ?></h2>
+                        <h2 class="hb-category-page-featured__heading text-center colored2"><?php echo $featured_products_title; ?></h2>
                     <?php } ?>
                     <?php if (have_rows('featured_products_list')) { ?>
                         <div class="hb-category-page-featured__holder">
@@ -87,7 +87,7 @@
                                                  loading="lazy" class="hb-category-page-featured__img">
                                         </a>
                                         <a href="<?php echo $sub_val_product->guid; ?>">
-                                            <h3 class="hb-category-page-featured__title colored"><?php echo $sub_val_product->post_title; ?></h3>
+                                            <h3 class="hb-category-page-featured__title colored2"><?php echo $sub_val_product->post_title; ?></h3>
                                         </a>
                                         <p class="hb-category-page-featured__price">
                                             <strong><?php _e('From: ', 'garageflooringllc'); ?></strong>
@@ -112,7 +112,7 @@
         <!-- the content -->
         <div class="hb-category-page-content padding-block">
             <div class="hb-container">
-                <?php echo get_the_content(); ?>
+<!--                --><?php //echo get_the_content(); ?>
             </div>
         </div>
         <!-- /the content -->
@@ -126,7 +126,7 @@
                 <div class="hb-container">
 
                     <?php if (!empty($testimonials_heading)) { ?>
-                        <h2 class="hb-category-page-testimonials__heading text-center colored">
+                        <h2 class="hb-category-page-testimonials__heading text-center colored2">
                             <?php echo $testimonials_heading; ?>
                         </h2>
                     <?php } ?>
@@ -157,7 +157,7 @@
                                                 <?php } ?>
 
                                                 <?php if (!empty($sub_field_author_name)) { ?>
-                                                    <h3 class="hb-category-page-testimonials__author text-center colored"><?php echo $sub_field_author_name; ?></h3>
+                                                    <h3 class="hb-category-page-testimonials__author text-center colored2"><?php echo $sub_field_author_name; ?></h3>
                                                 <?php } ?>
 
                                             </div>
