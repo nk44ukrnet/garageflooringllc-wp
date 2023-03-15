@@ -13,8 +13,14 @@
  */
 
 get_header();
-?>
 
+yoast_breadcrumbs();
+?>
+<?php if(is_product_category()) {
+
+    get_template_part('template-parts/content', 'product-category');
+
+} else { ?>
     <main id="primary" class="site-main">
         <div class="hb-container">
             <?php
@@ -32,6 +38,8 @@ get_header();
             ?>
         </div>
     </main><!-- #main -->
+
+    <?php } //end of else ?>
 
 <?php
 get_sidebar();

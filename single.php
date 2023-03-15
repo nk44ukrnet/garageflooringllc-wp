@@ -8,6 +8,8 @@
  */
 
 get_header();
+
+yoast_breadcrumbs();
 ?>
 
     <main id="primary" class="site-main">

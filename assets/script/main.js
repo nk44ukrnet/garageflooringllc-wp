@@ -180,4 +180,31 @@ window.addEventListener('DOMContentLoaded', function () {
     //     console.log("Product options element duplication error (single product page) ", e);
     // }
 
+    try {
+        //testimonials product category swiper
+        let pageSwiperTestimonials = document.querySelector('.hb-category-page-testimonials-swiper');
+        if (pageSwiperTestimonials) {
+            const swiper = new Swiper('.hb-category-page-testimonials-swiper', {
+                // Optional parameters
+                //loop: true,
+                clickable: true,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+            });
+        }
+    } catch (e) {
+        console.log('testimonials swiper error ', e);
+    }
+
 });

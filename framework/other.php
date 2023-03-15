@@ -64,3 +64,9 @@ function show_svg_in_media_library( $response ) {
 
 //end of allow svg from wp-kama
 
+//yoast breadcrumbs
+function yoast_breadcrumbs(){
+    if ( function_exists('yoast_breadcrumb') ) {
+        yoast_breadcrumb( '<div class="hb-container"><p id="yoast-breadcrumbs" class="yoast-breadcrumbs">','</p></div>' );
+    }
+}
