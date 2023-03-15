@@ -78,6 +78,9 @@ body {
 .text-light {
   color: var(--color-light);
 }
+.text-light a {
+  color: var(--color-light) !important;
+}
 .colored {
   color: var(--color2);
 }
@@ -860,6 +863,13 @@ table.variations {
   flex-direction: column;
   gap: var(--gap-xsm);
   color: var(--color1);
+}
+table.variations th.label {
+  text-align: left;
+  margin-top: var(--gap-xsm);
+}
+table.variations > tbody > tr:nth-child(1) > th.label {
+  margin-top: 0;
 }
 table.variations tr {
   display: flex;

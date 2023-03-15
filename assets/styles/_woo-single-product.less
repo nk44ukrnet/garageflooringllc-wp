@@ -104,6 +104,15 @@ table.variations {
   gap: var(--gap-xsm);
   color: var(--color1);
 
+  th.label {
+    text-align: left;
+    margin-top: var(--gap-xsm);
+  }
+
+  & > tbody > tr:nth-child(1) > th.label {
+    margin-top: 0;
+  }
+
   tr {
     display: flex;
     flex-direction: column;
