@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 mobileNavigationMenu.classList.add(activeClass);
                 document.body.classList.add(lockClass);
             });
-            closeMobileMenuBtn.addEventListener('click', ()=>{
+            closeMobileMenuBtn.addEventListener('click', () => {
                 mobileNavigationMenu.classList.remove(activeClass);
                 document.body.classList.remove(lockClass);
             });
@@ -42,30 +42,30 @@ window.addEventListener('DOMContentLoaded', function () {
 
             function runValModification(cssClassName) {
                 let quantityInput = document.querySelector('input.qty');
-                if(quantityInput) {
+                if (quantityInput) {
                     let val = quantityInput.value;
                     val = val.trim();
 
-                    if(cssClassName === 'quantity-plus') {
-                        if(!val) val = 0;
+                    if (cssClassName === 'quantity-plus') {
+                        if (!val) val = 0;
 
-                        if(!Number.isInteger(+val)) {
+                        if (!Number.isInteger(+val)) {
                             val = 1;
                         } else {
-                            if(val < 0) val = 0;
+                            if (val < 0) val = 0;
                             +val++;
                         }
                     } else if (cssClassName === 'quantity-minus') {
-                        if(!val) val = 1;
+                        if (!val) val = 1;
 
-                        if(!Number.isInteger(+val)) {
+                        if (!Number.isInteger(+val)) {
                             val = 1;
                         } else {
                             +val--;
                         }
                     }
 
-                    if(val <= 0) val = 1;
+                    if (val <= 0) val = 1;
 
                     quantityInput.setAttribute('value', `${val + ''}`);
                     quantityInput.value = val + '';
@@ -73,11 +73,11 @@ window.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            if(current.classList.contains(targetPlusClass)) {
+            if (current.classList.contains(targetPlusClass)) {
                 runValModification(targetPlusClass);
             }
 
-            if(current.classList.contains(targetMinusClass)) {
+            if (current.classList.contains(targetMinusClass)) {
                 runValModification(targetMinusClass);
             }
         })
@@ -95,31 +95,31 @@ window.addEventListener('DOMContentLoaded', function () {
             activeClass = 'active',
             lockClass = '_lock';
 
-        dataModal.forEach(item=>{
-            item.addEventListener('click', e=>{
+        dataModal.forEach(item => {
+            item.addEventListener('click', e => {
                 let dataId = item.getAttribute('data-modal-id');
                 let modalBackdrop = document.querySelector(`#${dataId}`);
-                if(modalBackdrop) {
+                if (modalBackdrop) {
                     modalBackdrop.classList.add(activeClass);
                     document.body.classList.add(lockClass);
                 }
             })
         })
 
-        modalContent.forEach(item=>{
-            item.addEventListener('click', e=>{
+        modalContent.forEach(item => {
+            item.addEventListener('click', e => {
                 e.stopPropagation();
             })
         })
-        modalClose.forEach(item=>{
-            item.addEventListener('click', e=>{
+        modalClose.forEach(item => {
+            item.addEventListener('click', e => {
                 let current = e.target;
                 current.closest('.modal-backdrop').classList.remove(activeClass);
                 document.body.classList.remove(lockClass);
             })
         })
-        modalBackDrop.forEach(item=>{
-            item.addEventListener('click',e=>{
+        modalBackDrop.forEach(item => {
+            item.addEventListener('click', e => {
                 item.classList.remove(activeClass);
                 document.body.classList.remove(lockClass);
             })
@@ -209,18 +209,39 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //single product open lightbox when click on thumbnails
     try {
-        document.addEventListener('click', function (e){
+        document.addEventListener('click', function (e) {
             let current = e.target;
-            if(current.closest('.flex-control-nav')
-            || current.classList.contains('.flex-control-nav')) {
-                console.log('YEEEEEEEEEEEES');
-                if(document.querySelector('.woocommerce-product-gallery__trigger')) {
+            if (current.closest('.flex-control-nav')
+                || current.classList.contains('.flex-control-nav')) {
+                if (document.querySelector('.woocommerce-product-gallery__trigger')) {
                     document.querySelector('.woocommerce-product-gallery__trigger').click();
                 }
             }
         })
     } catch (e) {
         console.log('Single product page thumbnails click to open lightbox error ', e);
+    }
+
+    //lunch lightbox on specific hash
+    try {
+        function hashDetectLightBoxLunch(hash) {
+            switch (hash) {
+                case '#triggerLightbox':
+                    if (document.querySelector('.woocommerce-product-gallery__trigger')) {
+                        document.querySelector('.woocommerce-product-gallery__trigger').click();
+                    }
+                    break;
+            }
+        }
+
+        window.addEventListener('hashchange', function () {
+            let hash = window.location.hash;
+            hashDetectLightBoxLunch(hash);
+        });
+        let hash = window.location.hash;
+        hashDetectLightBoxLunch(hash);
+    } catch (e) {
+        console.log('lightbox lunch on hash change error ', e);
     }
 
 });

@@ -34,12 +34,15 @@ function single_product_container_add()
     echo '<div class="hb-container single-product-container-woo-thumbs-and-meta"> <!-- hb-container start -->';
 }
 
-function my_custom_content_after_short_description() {
+function my_custom_content_after_short_description()
+{
     ?>
-    <a href="#theContentSingleProduct"><?php _e('Read More', 'garageflooringllc'); ?> <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#theContentSingleProduct"><?php _e('Read More', 'garageflooringllc'); ?> <i
+                class="fa-solid fa-arrow-right"></i></a>
     <?php
 }
-add_action( 'woocommerce_single_product_summary', 'my_custom_content_after_short_description', 22 );
+
+add_action('woocommerce_single_product_summary', 'my_custom_content_after_short_description', 22);
 
 //after single product
 add_action('woocommerce_after_single_product_summary', 'single_product_container_end', 10);
@@ -82,7 +85,9 @@ function single_product_container_end()
                         $url = $arr['specify_only_url_leave_text_blank'];
                         if (empty($url)) $url = '#!';
                         $popupContent = '';
-                        $open_in_a_new_tab = 'target="_blank"';
+                        if ($url[0] != '#') {
+                            $open_in_a_new_tab = 'target="_blank"';
+                        }
                         break;
                     case 'popup':
                         $popupContent = $arr['popup_content'];
@@ -100,7 +105,8 @@ function single_product_container_end()
             $iconImage = $arr['image'];
             ?>
 
-            <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> <?php echo $open_in_a_new_tab; ?> class="hb-single-badges__item">
+            <a href="<?php echo $url; ?>" <?php echo $modalTrigger; ?> <?php echo $open_in_a_new_tab; ?>
+               class="hb-single-badges__item">
                 <?php if (!empty($iconHTML) || !empty($iconImage)) { ?>
                     <div class="hb-single-badges__img">
                         <?php if (!empty($iconSelection)) { ?>
