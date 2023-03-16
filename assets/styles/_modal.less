@@ -63,9 +63,16 @@
     margin-bottom: var(--gap-sm);
   }
 
-  .custom-form-wrapper {
+  .custom-form-wrapper,
+  &__inner {
     color: var(--color-dark);
     text-align: left;
+
+    iframe {
+      display: block;
+      width: 100%;
+      min-height: 400px;
+    }
   }
 
   @media (max-width: @mobile) {

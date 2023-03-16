@@ -207,4 +207,20 @@ window.addEventListener('DOMContentLoaded', function () {
         console.log('testimonials swiper error ', e);
     }
 
+    //single product open lightbox when click on thumbnails
+    try {
+        document.addEventListener('click', function (e){
+            let current = e.target;
+            if(current.closest('.flex-control-nav')
+            || current.classList.contains('.flex-control-nav')) {
+                console.log('YEEEEEEEEEEEES');
+                if(document.querySelector('.woocommerce-product-gallery__trigger')) {
+                    document.querySelector('.woocommerce-product-gallery__trigger').click();
+                }
+            }
+        })
+    } catch (e) {
+        console.log('Single product page thumbnails click to open lightbox error ', e);
+    }
+
 });

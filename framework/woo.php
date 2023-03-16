@@ -132,7 +132,7 @@ function single_product_container_end()
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <a href="#!" class="close-modal">×</a>
-                                <div class="custom-form-wrapper">
+                                <div class="modal-content__inner">
                                     <?php echo $popupContent; ?>
                                 </div>
                             </div>
