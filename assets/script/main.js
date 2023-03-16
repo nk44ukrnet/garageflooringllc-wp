@@ -230,6 +230,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     if (document.querySelector('.woocommerce-product-gallery__trigger')) {
                         document.querySelector('.woocommerce-product-gallery__trigger').click();
                     }
+                    window.location.hash = '#!';
                     break;
             }
         }
