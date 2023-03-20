@@ -190,6 +190,35 @@ body {
 .yoast-breadcrumbs {
   margin-block: var(--gap-xsm);
 }
+.hb-products-loop__heading {
+  margin-top: 0;
+}
+.hb-products-loop__holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 270px));
+  justify-content: center;
+  gap: var(--gap-sm);
+}
+.hb-products-loop__item {
+  padding: var(--gap-sm);
+  background-color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+}
+.hb-products-loop__item a {
+  text-decoration: none;
+}
+.hb-products-loop .btn {
+  margin-top: auto;
+  width: fit-content;
+}
+.hb-products-loop img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 225px;
+  object-fit: cover;
+}
 .site-header {
   padding-bottom: var(--gap-sm);
 }

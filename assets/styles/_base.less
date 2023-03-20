@@ -181,3 +181,42 @@ body {
 .yoast-breadcrumbs {
   margin-block: var(--gap-xsm);
 }
+
+
+//product loop template
+.hb-products-loop {
+
+  &__heading {
+    margin-top: 0;
+  }
+
+  &__holder {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min-content, 270px));
+    justify-content: center;
+    gap: var(--gap-sm);
+  }
+
+  &__item {
+    padding: var(--gap-sm);
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+    width: fit-content;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 225px;
+    object-fit: cover;
+  }
+}
