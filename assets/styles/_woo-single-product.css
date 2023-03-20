@@ -276,7 +276,6 @@ body {
 .flex-control-nav.flex-control-thumbs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   order: 5;
 }
 @media (max-width: 768px) {
@@ -293,8 +292,8 @@ body {
   }
 }
 .flex-control-nav.flex-control-thumbs li {
-  width: 100px !important;
-  height: 100px !important;
+  width: 107.3px !important;
+  height: 107.3px !important;
 }
 .flex-control-nav.flex-control-thumbs li img {
   display: block;
