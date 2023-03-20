@@ -246,6 +246,8 @@ body {
 }
 .flex-control-nav.flex-control-thumbs {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   order: 5;
 }
 @media (max-width: 768px) {
