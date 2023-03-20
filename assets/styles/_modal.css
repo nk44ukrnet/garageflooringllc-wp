@@ -97,9 +97,16 @@
   color: var(--color-dark);
   margin-bottom: var(--gap-sm);
 }
-.modal-content .custom-form-wrapper {
+.modal-content .custom-form-wrapper,
+.modal-content__inner {
   color: var(--color-dark);
   text-align: left;
+}
+.modal-content .custom-form-wrapper iframe,
+.modal-content__inner iframe {
+  display: block;
+  width: 100%;
+  min-height: 400px;
 }
 @media (max-width: 768px) {
   .modal-content {

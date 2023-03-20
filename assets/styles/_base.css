@@ -39,6 +39,9 @@
     --gap-sm: 15px;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 ._lock {
   overflow: hidden;
 }
@@ -73,6 +76,9 @@ body {
 .text-light {
   color: var(--color-light);
 }
+.text-light a {
+  color: var(--color-light) !important;
+}
 .colored {
   color: var(--color2);
 }
@@ -102,6 +108,17 @@ body {
 }
 .btn:visited {
   color: var(--color-light);
+}
+.btn_sm {
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 100%;
+}
+.btn.btn-color-light {
+  color: var(--color-light) !important;
+}
+.btn.btn-bold {
+  font-weight: bold;
 }
 .btn:hover {
   background-color: var(--color1-alter);
@@ -167,5 +184,8 @@ body {
 }
 .type-page a {
   color: var(--color2);
+}
+.yoast-breadcrumbs {
+  margin-block: var(--gap-xsm);
 }
 /*# sourceMappingURL=_base.css.map */

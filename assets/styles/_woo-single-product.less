@@ -60,7 +60,7 @@
 
 .woocommerce-product-gallery {
   display: flex;
-  //flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: var(--gap-xsm);
 
   @media (max-width: @mobile) {
@@ -70,10 +70,15 @@
 
 .flex-control-nav.flex-control-thumbs {
   display: flex;
-  flex-direction: column;
-  order: 2;
-  width: 100% !important;
-  max-width: 50px !important;
+  //flex-direction: column;
+  order: 5;
+  //width: 100% !important;
+  //max-width: 50px !important;
+
+  @media (max-width: @mobile) {
+    //flex: 1 1 100%;
+    width: 100%;
+  }
 
   @media (max-width: @mobile) {
     flex-direction: row;
@@ -83,14 +88,23 @@
   }
 
   li {
-    width: 50px !important;
-    height: 50px !important;
+    width: 100px !important;
+    height: 100px !important;
 
     img {
       display: block;
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
+    }
+    
+    @media (max-width: @mobile) {
+      width: 50px !important;
+      height: 50px !important;
+      img {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 }
@@ -306,7 +320,7 @@ table.variations {
     flex-wrap: wrap;
     gap: var(--gap-md);
 
-    h1,h2,h3,h4,h5,h6 {
+    h1, h2, h3, h4, h5, h6 {
       color: var(--color1);
     }
 
@@ -328,7 +342,7 @@ table.variations {
   background-color: var(--color2-light3);
 
   .hb-container {
-    h1,h2,h3,h4,h5,h6 {
+    h1, h2, h3, h4, h5, h6 {
       color: var(--color1);
     }
   }
@@ -376,6 +390,7 @@ ul.products {
     @media (max-width: @mobile) {
       justify-content: center;
     }
+
     img {
       min-height: 225px;
       max-height: 225px;
@@ -421,8 +436,8 @@ ul.products {
   }
 }
 
-.product-long-description  {
-  h1,h2,h3,h4,h5,h6 {
+.product-long-description {
+  h1, h2, h3, h4, h5, h6 {
     color: var(--color1);
   }
 }
