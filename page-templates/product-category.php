@@ -64,6 +64,91 @@ yoast_breadcrumbs();
             </div>
 
             <?php
+            $badges = get_field('enable_badges_section');
+            $badge_instructions = get_field('badge_instructions');
+            $badge_project_profiles = get_field('badge_project_profiles');
+            $badge_data_sheet = get_field('badge_data_sheet');
+            $badge_safety_data_sheet = get_field('badge_safety_data_sheet');
+            $badge_photos = get_field('badge_photos');
+            $badge_shipping = get_field('badge_shipping');
+            $badge_color_chart = get_field('badge_color_chart');
+            $badge_download = get_field('badge_download');
+            $badge_reviews = get_field('badge_reviews');
+            $badge_videos = get_field('badge_videos');
+            $badge_designer = get_field('badge_designer');
+            $badge_calculator = get_field('badge_calculator');
+            $badge_sample = get_field('badge_sample');
+            $badge_warranty = get_field('badge_warranty');
+            $badge_custom1 = get_field('badge_custom_1');
+            $badge_custom2 = get_field('badge_custom_2');
+            $badge_custom3 = get_field('badge_custom_3');
+            ?>
+
+            <?php if (!empty($badges)) { ?>
+                <div class="hb-single-badges padding-block">
+                    <div class="hb-container">
+                        <div class="hb-single-badges__holder">
+
+                            <?php
+                            if (!empty($badge_instructions['enabled'][0])) {
+                                badge_output($badge_instructions);
+                            }
+                            if (!empty($badge_project_profiles['enabled'][0])) {
+                                badge_output($badge_project_profiles);
+                            }
+                            if (!empty($badge_data_sheet['enabled'][0])) {
+                                badge_output($badge_data_sheet);
+                            }
+                            if (!empty($badge_safety_data_sheet['enabled'][0])) {
+                                badge_output($badge_safety_data_sheet);
+                            }
+                            if (!empty($badge_photos['enabled'][0])) {
+                                badge_output($badge_photos);
+                            }
+                            if (!empty($badge_shipping['enabled'][0])) {
+                                badge_output($badge_shipping);
+                            }
+                            if (!empty($badge_color_chart['enabled'][0])) {
+                                badge_output($badge_color_chart);
+                            }
+                            if (!empty($badge_download['enabled'][0])) {
+                                badge_output($badge_download);
+                            }
+                            if (!empty($badge_reviews['enabled'][0])) {
+                                badge_output($badge_reviews);
+                            }
+                            if (!empty($badge_videos['enabled'][0])) {
+                                badge_output($badge_videos);
+                            }
+                            if (!empty($badge_designer['enabled'][0])) {
+                                badge_output($badge_designer);
+                            }
+                            if (!empty($badge_calculator['enabled'][0])) {
+                                badge_output($badge_calculator);
+                            }
+                            if (!empty($badge_sample['enabled'][0])) {
+                                badge_output($badge_sample);
+                            }
+                            if (!empty($badge_warranty['enabled'][0])) {
+                                badge_output($badge_warranty);
+                            }
+                            if (!empty($badge_custom1['enabled'][0])) {
+                                badge_output($badge_custom1);
+                            }
+                            if (!empty($badge_custom2['enabled'][0])) {
+                                badge_output($badge_custom2);
+                            }
+                            if (!empty($badge_custom3['enabled'][0])) {
+                                badge_output($badge_custom3);
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+
+            <?php
             $featured_products_title = get_field('featured_products_title');
             $featured_products_list = get_field('featured_products_list');
             ?>
