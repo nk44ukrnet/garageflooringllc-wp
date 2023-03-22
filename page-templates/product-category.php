@@ -147,6 +147,298 @@ yoast_breadcrumbs();
                 </div>
             <?php } ?>
 
+            <div class="hb-wide-block padding-block">
+                <div class="hb-container">
+                    <h2 class="colored">Wide optional block</h2>
+                    <p>
+                        <strong>Wide Text Block text 1</strong>.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet autem blanditiis commodi
+                        dolor eligendi et id ipsam maxime nihil omnis perspiciatis porro provident quia, reprehenderit
+                        saepe, sapiente tempora tempore ut vel? Ad dolor dolores exercitationem facilis iure nam porro
+                        quo tempora tenetur velit! At atque culpa deserunt ducimus iure magni nam nostrum odit officia
+                        perspiciatis, ratione reiciendis reprehenderit sed. Architecto asperiores blanditiis commodi
+                        corporis cum deleniti error expedita facilis, inventore ipsam neque nesciunt officiis? Accusamus
+                        amet animi culpa debitis dolorem dolores eum, iure neque optio pariatur porro praesentium
+                        provident quas reiciendis repellat sed sit ullam unde voluptates voluptatum. Accusamus animi
+                    </p>
+
+                    <div class="hb-wide-block__holder">
+                        <div class="hb-wide-block__item">
+                            <h3>Heading of the block (COLUMN 1)</h3>
+                            <p>
+                                <strong>Some Descrition of col 1</strong>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
+                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
+                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
+                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
+                                rem sint ullam voluptas!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
+                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
+                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
+                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
+                                rem sint ullam voluptas!
+                            </p>
+                        </div>
+                        <div class="hb-wide-block__item hb-wide-block__item_img">
+                            <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/GF60SC510-MB_0.jpg"
+                                 alt="Product" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="hb-products-loop padding-block-sm">
+                        <div class="hb-products-loop__holder">
+
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p>
+                        <strong>Wide Text Block text 2</strong>.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet autem blanditiis commodi
+                        dolor eligendi et id ipsam maxime nihil omnis perspiciatis porro provident quia, reprehenderit
+                        saepe, sapiente tempora tempore ut vel? Ad dolor dolores exercitationem facilis iure nam porro
+                        quo tempora tenetur velit! At atque culpa deserunt ducimus iure magni nam nostrum odit officia
+                        perspiciatis, ratione reiciendis reprehenderit sed. Architecto asperiores blanditiis commodi
+                        corporis cum deleniti error expedita facilis, inventore ipsam neque nesciunt officiis? Accusamus
+                        amet animi culpa debitis dolorem dolores eum, iure neque optio pariatur porro praesentium
+                        provident quas reiciendis repellat sed sit ullam unde voluptates voluptatum. Accusamus animi
+                    </p>
+
+                    <div class="hb-wide-block__holder">
+                        <div class="hb-wide-block__item">
+                            <h3>Heading of the block (COLUMN 2)</h3>
+                            <p>
+                                <strong>Some Descrition of col 2</strong>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
+                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
+                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
+                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
+                                rem sint ullam voluptas!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
+                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
+                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
+                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
+                                rem sint ullam voluptas!
+                            </p>
+                        </div>
+                        <div class="hb-wide-block__item hb-wide-block__item_img">
+                            <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/GF60SC510-MB_0.jpg"
+                                 alt="Product" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="hb-products-loop padding-block-sm">
+                        <div class="hb-products-loop__holder">
+
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+                            <div class="hb-products-loop__item">
+                                <div class="hb-products-loop__content">
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       id="id-29860" class="hb-index-products-list__img-link">
+                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
+                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
+                                             class="hb-products-loop__img">
+                                    </a>
+                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                       class="hb-index-products-list__title">
+                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
+                                            W</h3>
+                                    </a>
+                                    <div class="hb-products-loop__price">
+                                        <strong>
+                                            From: </strong>
+                                        $129.13
+                                    </div>
+                                    <p class="hb-products-loop__desc">
+                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
+                                </div>
+                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
+                                   class="btn btn_sm btn-color-light">Learn More</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <p>
+                        <strong>Wide Text Block text 3</strong>.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet autem blanditiis commodi
+                        dolor eligendi et id ipsam maxime nihil omnis perspiciatis porro provident quia, reprehenderit
+                        saepe, sapiente tempora tempore ut vel? Ad dolor dolores exercitationem facilis iure nam porro
+                        quo tempora tenetur velit! At atque culpa deserunt ducimus iure magni nam nostrum odit officia
+                        perspiciatis, ratione reiciendis reprehenderit sed. Architecto asperiores blanditiis commodi
+                        corporis cum deleniti error expedita facilis, inventore ipsam neque nesciunt officiis? Accusamus
+                        amet animi culpa debitis dolorem dolores eum, iure neque optio pariatur porro praesentium
+                        provident quas reiciendis repellat sed sit ullam unde voluptates voluptatum. Accusamus animi
+                    </p>
+                </div>
+            </div>
+
 
             <?php
             $featured_products_title = get_field('featured_products_title');
