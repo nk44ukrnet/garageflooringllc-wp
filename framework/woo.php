@@ -106,8 +106,6 @@ function badge_output($arr)
         <?php } ?>
 
     <?php } ?>
-<?php } ?>
+<?php }
 
-<?php
-//woo single product page
-require_once 'woo-single-product.php';
+//end of function

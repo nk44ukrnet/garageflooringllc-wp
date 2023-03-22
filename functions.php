@@ -193,3 +193,6 @@ require_once('framework/woo.php');
 
 //other custom code
 require_once('framework/other.php');
+
+//woo single product page
+require_once ('framework/woo-single-product.php');
