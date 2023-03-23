@@ -108,4 +108,4 @@ function badge_output($arr)
     <?php } ?>
 <?php }
 
-//end of function
+//end of badges function

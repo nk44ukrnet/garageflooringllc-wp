@@ -64,6 +64,12 @@ function show_svg_in_media_library( $response ) {
 
 //end of allow svg from wp-kama
 
+//enable admin bar when viewwing website
+if (current_user_can('administrator')) {
+    add_filter('show_admin_bar', '__return_true');
+}
+//add_filter('show_admin_bar', '__return_true');
+
 //yoast breadcrumbs
 function yoast_breadcrumbs(){
     if ( function_exists('yoast_breadcrumb') ) {

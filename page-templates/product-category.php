@@ -63,6 +63,7 @@ yoast_breadcrumbs();
                 </div>
             </div>
 
+            <!--            Badges-->
             <?php
             $badges = get_field('enable_badges_section');
             $badge_instructions = get_field('badge_instructions');
@@ -146,298 +147,96 @@ yoast_breadcrumbs();
                     </div>
                 </div>
             <?php } ?>
+            <!--            /Badges-->
 
-            <div class="hb-wide-block padding-block">
-                <div class="hb-container">
-                    <h2 class="colored">Wide optional block</h2>
-                    <p>
-                        <strong>Wide Text Block text 1</strong>.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet autem blanditiis commodi
-                        dolor eligendi et id ipsam maxime nihil omnis perspiciatis porro provident quia, reprehenderit
-                        saepe, sapiente tempora tempore ut vel? Ad dolor dolores exercitationem facilis iure nam porro
-                        quo tempora tenetur velit! At atque culpa deserunt ducimus iure magni nam nostrum odit officia
-                        perspiciatis, ratione reiciendis reprehenderit sed. Architecto asperiores blanditiis commodi
-                        corporis cum deleniti error expedita facilis, inventore ipsam neque nesciunt officiis? Accusamus
-                        amet animi culpa debitis dolorem dolores eum, iure neque optio pariatur porro praesentium
-                        provident quas reiciendis repellat sed sit ullam unde voluptates voluptatum. Accusamus animi
-                    </p>
+            <!--            Optional wide block 1 -->
+            <?php
+            $optional_block_1_enabled = get_field('optional_block_1_enabled');
+            ?>
+            <?php if (!empty($optional_block_1_enabled)) { ?>
+                <div class="hb-wide-block padding-block">
+                    <div class="hb-container">
+                        <?php $optional_block_1_heading = get_field('optional_block_1_heading'); ?>
+                        <?php if (!empty($optional_block_1_heading)) { ?>
+                            <h2 class="colored"><?php echo $optional_block_1_heading; ?></h2>
+                        <?php } ?>
+                        <?php if (have_rows('optional_block_1_repeater')) { ?>
 
-                    <div class="hb-wide-block__holder">
-                        <div class="hb-wide-block__item">
-                            <h3>Heading of the block (COLUMN 1)</h3>
-                            <p>
-                                <strong>Some Descrition of col 1</strong>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
-                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
-                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
-                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
-                                rem sint ullam voluptas!
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
-                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
-                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
-                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
-                                rem sint ullam voluptas!
-                            </p>
-                        </div>
-                        <div class="hb-wide-block__item hb-wide-block__item_img">
-                            <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/GF60SC510-MB_0.jpg"
-                                 alt="Product" loading="lazy">
-                        </div>
+                            <?php while (have_rows('optional_block_1_repeater')) {
+                                the_row();
+                                $sub_value_text_field = get_sub_field('text_field');
+                                $sub_value_column_1_content = get_sub_field('column_1_content');
+                                $sub_value_column_1_image = get_sub_field('column_1_image');
+                                $sub_value_image_alt_text = get_sub_field('image_alt_text');
+                                $sub_value_suggested_product_repeater = get_sub_field('suggested_product_repeater');
+                                ?>
+                                <?php if (!empty($sub_value_text_field)) { ?>
+                                    <?php echo $sub_value_text_field; ?>
+                                <?php } ?>
+
+                                <?php if (!empty($sub_value_column_1_content) || !empty($sub_value_column_1_image)) { ?>
+                                    <div class="hb-wide-block__holder">
+                                        <?php if (!empty($sub_value_column_1_content)) { ?>
+                                            <div class="hb-wide-block__item">
+                                                <?php echo $sub_value_column_1_content; ?>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if (!empty($sub_value_column_1_image)) { ?>
+                                            <div class="hb-wide-block__item hb-wide-block__item_img">
+                                                <img src="<?php echo $sub_value_column_1_image; ?>"
+                                                     alt="<?php echo $sub_value_image_alt_text; ?>" loading="lazy">
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+                                <?php if (have_rows('suggested_product_repeater')) { ?>
+                                    <div class="hb-products-loop padding-block-sm">
+                                        <div class="hb-products-loop__holder">
+                                            <?php while (have_rows('suggested_product_repeater')) {
+                                                the_row();
+                                                $select_product = get_sub_field('select_product');
+                                                $product = wc_get_product($select_product->ID);
+                                                ?>
+                                                <div class="hb-products-loop__item">
+                                                    <div class="hb-products-loop__content">
+                                                        <a href="<?php echo $select_product->guid; ?>"
+                                                           class="hb-index-products-list__img-link">
+                                                            <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
+                                                                 alt="<?php echo $select_product->post_title; ?>"
+                                                                 loading="lazy"
+                                                                 class="hb-products-loop__img">
+                                                        </a>
+                                                        <a href="<?php echo $select_product->guid; ?>"
+                                                           class="hb-index-products-list__title">
+                                                            <h3 class="hb-products-loop__title colored2"><?php echo $select_product->post_title; ?></h3>
+                                                        </a>
+                                                        <div class="hb-products-loop__price">
+                                                            <strong><?php _e('From: ', 'garageflooringllc'); ?></strong>
+                                                            <?php echo get_woocommerce_currency_symbol(); ?><?php echo $product->get_price(); ?>
+                                                        </div>
+                                                        <p class="hb-products-loop__desc">
+                                                            <?php echo wp_trim_words($select_product->post_content, 10); ?></p>
+                                                    </div>
+                                                    <a href="<?php echo $select_product->guid; ?>"
+                                                       class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
+
+                        <?php $optional_block_1_end_block_text = get_field('optional_block_1_end_block_text'); ?>
+
+                        <?php if (!empty($optional_block_1_end_block_text)) { ?>
+                            <?php echo $optional_block_1_end_block_text; ?>
+                        <?php } ?>
+
                     </div>
-
-                    <div class="hb-products-loop padding-block-sm">
-                        <div class="hb-products-loop__holder">
-
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <p>
-                        <strong>Wide Text Block text 2</strong>.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet autem blanditiis commodi
-                        dolor eligendi et id ipsam maxime nihil omnis perspiciatis porro provident quia, reprehenderit
-                        saepe, sapiente tempora tempore ut vel? Ad dolor dolores exercitationem facilis iure nam porro
-                        quo tempora tenetur velit! At atque culpa deserunt ducimus iure magni nam nostrum odit officia
-                        perspiciatis, ratione reiciendis reprehenderit sed. Architecto asperiores blanditiis commodi
-                        corporis cum deleniti error expedita facilis, inventore ipsam neque nesciunt officiis? Accusamus
-                        amet animi culpa debitis dolorem dolores eum, iure neque optio pariatur porro praesentium
-                        provident quas reiciendis repellat sed sit ullam unde voluptates voluptatum. Accusamus animi
-                    </p>
-
-                    <div class="hb-wide-block__holder">
-                        <div class="hb-wide-block__item">
-                            <h3>Heading of the block (COLUMN 2)</h3>
-                            <p>
-                                <strong>Some Descrition of col 2</strong>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
-                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
-                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
-                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
-                                rem sint ullam voluptas!
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aspernatur
-                                deserunt ducimus facere iure minima, quae, quisquam ratione totam, unde velit! Aliquam
-                                corporis molestiae quae quasi soluta tempora! Amet doloribus dolorum eos nihil odio
-                                placeat repudiandae sequi? Aliquid animi aspernatur dicta dignissimos eius, facilis in
-                                rem sint ullam voluptas!
-                            </p>
-                        </div>
-                        <div class="hb-wide-block__item hb-wide-block__item_img">
-                            <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/GF60SC510-MB_0.jpg"
-                                 alt="Product" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="hb-products-loop padding-block-sm">
-                        <div class="hb-products-loop__holder">
-
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-                            <div class="hb-products-loop__item">
-                                <div class="hb-products-loop__content">
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       id="id-29860" class="hb-index-products-list__img-link">
-                                        <img src="https://justink40.sg-host.com/wp-content/uploads/2023/03/FM-MM-MLB_0.jpg"
-                                             alt="MLB Motorcycle Mat 82.5″ L x 42″ W" loading="lazy"
-                                             class="hb-products-loop__img">
-                                    </a>
-                                    <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                       class="hb-index-products-list__title">
-                                        <h3 class="hb-products-loop__title colored2">MLB Motorcycle Mat 82.5″ L x 42″
-                                            W</h3>
-                                    </a>
-                                    <div class="hb-products-loop__price">
-                                        <strong>
-                                            From: </strong>
-                                        $129.13
-                                    </div>
-                                    <p class="hb-products-loop__desc">
-                                        Show off your team pride with Sports Licensing Solutions' motorcycle… </p>
-                                </div>
-                                <a href="https://justink40.sg-host.com/product/mlb-motorcycle-mat-82-5-l-x-42-w/"
-                                   class="btn btn_sm btn-color-light">Learn More</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <p>
-                        <strong>Wide Text Block text 3</strong>.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet autem blanditiis commodi
-                        dolor eligendi et id ipsam maxime nihil omnis perspiciatis porro provident quia, reprehenderit
-                        saepe, sapiente tempora tempore ut vel? Ad dolor dolores exercitationem facilis iure nam porro
-                        quo tempora tenetur velit! At atque culpa deserunt ducimus iure magni nam nostrum odit officia
-                        perspiciatis, ratione reiciendis reprehenderit sed. Architecto asperiores blanditiis commodi
-                        corporis cum deleniti error expedita facilis, inventore ipsam neque nesciunt officiis? Accusamus
-                        amet animi culpa debitis dolorem dolores eum, iure neque optio pariatur porro praesentium
-                        provident quas reiciendis repellat sed sit ullam unde voluptates voluptatum. Accusamus animi
-                    </p>
                 </div>
-            </div>
+            <?php } ?>
+            <!--            /Optional wide block 1 -->
 
 
             <?php
