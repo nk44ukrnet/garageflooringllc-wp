@@ -179,9 +179,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 //user code
 
-//other custom code
-require_once('framework/other.php');
-
 //acf
 require_once('framework/acf.php');
 
@@ -194,6 +191,5 @@ require_once('framework/shortcodes.php');
 //woocommerce custom code
 require_once('framework/woo.php');
 
-//woo single product page
-require_once ('framework/woo-single-product.php');
-
+//other custom code
+require_once('framework/other.php');
