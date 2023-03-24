@@ -8,9 +8,10 @@
  */
 
 get_header();
+yoast_breadcrumbs();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main padding-block-sm hb-container">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -22,7 +23,7 @@ get_header();
 					?>
 				</h1>
 			</header><!-- .page-header -->
-
+        <div class="hb-grid-of-posts-loop">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -33,12 +34,19 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content', 'loop-item' );
 
 			endwhile;
+?>
+            </div>  <!-- .hb-grid-of-posts-loop -->
 
-			the_posts_navigation();
-
+    <?php if(paginate_links()) {
+        ?>
+        <div class="hb-pagination padding-block-sm colored">
+            <?php echo paginate_links(); ?>
+        </div>
+        <?php } ?>
+<?php
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
