@@ -188,6 +188,10 @@ body {
 .yoast-breadcrumbs {
   margin-block: var(--gap-xsm);
 }
+.yoast-breadcrumbs span,
+.yoast-breadcrumbs a {
+  color: var(--color1);
+}
 .hb-products-loop__heading {
   margin-top: 0;
 }
@@ -202,6 +206,8 @@ body {
   background-color: var(--color-light);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 5px var(--color2-light2);
+  border-radius: var(--border-radius);
 }
 .hb-products-loop__item a {
   text-decoration: none;
@@ -216,6 +222,46 @@ body {
   max-width: 300px;
   height: 225px;
   object-fit: cover;
+}
+.hb-grid-of-posts-loop {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 370px));
+  justify-content: center;
+  gap: var(--gap-sm);
+}
+.hb-grid-of-posts-loop article {
+  padding: var(--gap-sm);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+.hb-grid-of-posts-loop article a.btn {
+  margin-top: auto;
+  display: table;
+  width: fit-content;
+}
+.hb-grid-of-posts-loop__featured img {
+  height: 225px;
+  object-fit: cover;
+  width: 100%;
+}
+.hb-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.hb-pagination > * {
+  color: var(--color1);
+}
+.hb-pagination a,
+.hb-pagination span {
+  padding: 5px;
+  text-decoration: none;
+}
+.hb-pagination .current {
+  font-weight: bold;
 }
 .hb-category-page .hb-category-page-hero__holder {
   display: flex;
@@ -315,5 +361,32 @@ body {
 }
 .hb-category-page .hb-category-page-testimonials .swiper-pagination-bullet {
   background: var(--color2);
+}
+.hb-category-page .hb-wide-block__holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+  justify-content: space-between;
+  margin-block: var(--gap-sm);
+}
+.hb-category-page .hb-wide-block .hb-wide-block__holder:nth-child(even) .hb-wide-block__item_img {
+  order: -1;
+}
+.hb-category-page .hb-wide-block__item {
+  flex: 1 1 300px;
+}
+.hb-category-page .hb-wide-block__item h1,
+.hb-category-page .hb-wide-block__item h2,
+.hb-category-page .hb-wide-block__item h3,
+.hb-category-page .hb-wide-block__item h4,
+.hb-category-page .hb-wide-block__item h5,
+.hb-category-page .hb-wide-block__item h6 {
+  margin-top: 0;
+  color: var(--color1);
+}
+.hb-category-page .hb-wide-block__item_img img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
 }
 /*# sourceMappingURL=_woo-category-page.css.map */
