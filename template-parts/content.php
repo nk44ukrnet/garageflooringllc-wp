@@ -13,9 +13,7 @@
 
     <?php if (!is_product()) { ?>
 
-        <div class="hb-grid-of-posts-loop__featured">
-            <?php garageflooringllc_post_thumbnail(); ?>
-        </div>
+        <?php garageflooringllc_post_thumbnail(); ?>
 
         <header class="entry-header colored">
             <?php
@@ -41,7 +39,7 @@
 
     <div class="entry-content">
         <?php
-//       echo wp_trim_words(get_the_content(), 25);
+        //       echo wp_trim_words(get_the_content(), 25);
         the_content(
             sprintf(
                 wp_kses(
