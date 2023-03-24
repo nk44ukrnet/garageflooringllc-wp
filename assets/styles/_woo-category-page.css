@@ -249,7 +249,7 @@ body {
   height: 225px;
   object-fit: cover;
   width: 100%;
-  max-width: 280px;
+  max-width: 330px;
 }
 .hb-pagination {
   display: flex;
