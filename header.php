@@ -30,11 +30,14 @@
 
         <div class="site-line">
             <div class="hb-container">
-                <div class="site-line__side advantages">
-                    <span><i class="fa-solid fa-check"></i> Free Shipping</span>
-                    <span><i class="fa-solid fa-check"></i> 110% Price Match Guarantee</span>
-                    <span><i class="fa-solid fa-check"></i> 30 Day Money Back Guarantee</span>
-                </div>
+
+                <?php $header_top_line_html = get_field('header_top_line_html', 'options'); ?>
+                <?php if (!empty($header_top_line_html)) { ?>
+                    <div class="site-line__side advantages">
+                        <?php echo $header_top_line_html; ?>
+                    </div>
+                <?php } ?>
+
                 <div class="site-line__side">
                     <?php
                     $my_account_url = get_permalink(get_option('woocommerce_myaccount_page_id'));
@@ -66,15 +69,16 @@
 
                         <button class="mob-menu-trigger"><i class="fa-solid fa-bars"></i></button>
                     </div>
-                    <div class="site-branding__contacts">
-                        <em>Questions?</em>
-                        <a href="tel:8009564301"><i class="fa-solid fa-mobile-screen"></i> 800.956.4301</a>
-                        <a href="mailto:service@garageflooringllc.com"><i class="fa-regular fa-envelope"></i> Email</a>
-                        <a href="#!"><i class="fa-regular fa-comments"></i> Live Chat</a>
-                    </div>
+                    <?php $header_contacts_html = get_field('header_contacts_html', 'options'); ?>
+                    <?php if (!empty($header_contacts_html)) { ?>
+                        <div class="site-branding__contacts">
+                            <?php echo $header_contacts_html; ?>
+                        </div>
+                    <?php } ?>
                     <nav class="site-branding__nav main-navigation" id="site-navigation">
-<!--                        <button class="menu-toggle" aria-controls="primary-menu"-->
-<!--                                aria-expanded="false">--><?php //esc_html_e('☰ Website Menu', 'garageflooringllc'); ?><!--</button>-->
+                        <!--                        <button class="menu-toggle" aria-controls="primary-menu"-->
+                        <!--                                aria-expanded="false">-->
+                        <?php //esc_html_e('☰ Website Menu', 'garageflooringllc'); ?><!--</button>-->
                         <?php
                         //desktop Menu
                         wp_nav_menu(
@@ -89,22 +93,25 @@
                         <button class="close-slinky-menu">&times;</button>
                         <?php
                         // Mobile menu
-                        wp_nav_menu( [
-                            'menu'              => 'header-menu',
-                            'theme_location'    => 'menu-1',
-                            'container'         => 'div',
-                            'container_class'   => 'mobile-menu slinky-menu',
-                            'container_id'      => 'primary-menu-slinky',
-                            'menu_class'        => 'active'
-                        ] );
+                        wp_nav_menu([
+                            'menu' => 'header-menu',
+                            'theme_location' => 'menu-1',
+                            'container' => 'div',
+                            'container_class' => 'mobile-menu slinky-menu',
+                            'container_id' => 'primary-menu-slinky',
+                            'menu_class' => 'active'
+                        ]);
                         ?>
                     </nav>
                 </div>
             </div><!-- .site-branding -->
         </div> <!--.hb-container-->
-        <div class="site-header__aftertext text-light text-center">
-            <div class="hb-container">
-                Garage Flooring, Expert Advice, Free Shipping, Samples & the Lowest Price Guaranteed!
+        <?php $header_text_line = get_field('header_text_line', 'options'); ?>
+        <?php if (!empty($header_text_line)) { ?>
+            <div class="site-header__aftertext text-light text-center">
+                <div class="hb-container">
+                    <?php echo $header_text_line; ?>
+                </div>
             </div>
-        </div>
+        <?php } ?>
     </header><!-- #masthead -->
