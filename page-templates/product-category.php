@@ -197,29 +197,31 @@ yoast_breadcrumbs();
                                                 $select_product = get_sub_field('select_product');
                                                 $product = wc_get_product($select_product->ID);
                                                 ?>
-                                                <div class="hb-products-loop__item">
-                                                    <div class="hb-products-loop__content">
-                                                        <a href="<?php echo $select_product->guid; ?>"
-                                                           class="hb-index-products-list__img-link">
-                                                            <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
-                                                                 alt="<?php echo $select_product->post_title; ?>"
-                                                                 loading="lazy"
-                                                                 class="hb-products-loop__img">
-                                                        </a>
-                                                        <a href="<?php echo $select_product->guid; ?>"
-                                                           class="hb-index-products-list__title">
-                                                            <h3 class="hb-products-loop__title colored2"><?php echo $select_product->post_title; ?></h3>
-                                                        </a>
-                                                        <div class="hb-products-loop__price">
-                                                            <strong><?php _e('From: ', 'garageflooringllc'); ?></strong>
-                                                            <?php echo get_woocommerce_currency_symbol(); ?><?php echo $product->get_price(); ?>
+                                                <?php if (!empty($select_product)) { ?>
+                                                    <div class="hb-products-loop__item">
+                                                        <div class="hb-products-loop__content">
+                                                            <a href="<?php echo $select_product->guid; ?>"
+                                                               class="hb-index-products-list__img-link">
+                                                                <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
+                                                                     alt="<?php echo $select_product->post_title; ?>"
+                                                                     loading="lazy"
+                                                                     class="hb-products-loop__img">
+                                                            </a>
+                                                            <a href="<?php echo $select_product->guid; ?>"
+                                                               class="hb-index-products-list__title">
+                                                                <h3 class="hb-products-loop__title colored2"><?php echo $select_product->post_title; ?></h3>
+                                                            </a>
+                                                            <div class="hb-products-loop__price">
+                                                                <strong><?php _e('From: ', 'garageflooringllc'); ?></strong>
+                                                                <?php echo get_woocommerce_currency_symbol(); ?><?php echo $product->get_price(); ?>
+                                                            </div>
+                                                            <p class="hb-products-loop__desc">
+                                                                <?php echo wp_trim_words($select_product->post_content, 10); ?></p>
                                                         </div>
-                                                        <p class="hb-products-loop__desc">
-                                                            <?php echo wp_trim_words($select_product->post_content, 10); ?></p>
+                                                        <a href="<?php echo $select_product->guid; ?>"
+                                                           class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
                                                     </div>
-                                                    <a href="<?php echo $select_product->guid; ?>"
-                                                       class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
-                                                </div>
+                                                <?php } ?>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -257,30 +259,32 @@ yoast_breadcrumbs();
                                     $sub_val_product = get_sub_field('product');
                                     $product = wc_get_product($sub_val_product->ID);
                                     ?>
+                                    <?php if (!empty($sub_val_product)) { ?>
+                                        <div class="hb-category-page-featured__item">
 
-                                    <div class="hb-category-page-featured__item">
+                                            <div class="hb-category-page-featured__content">
+                                                <a href="<?php echo $sub_val_product->guid; ?>">
+                                                    <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
+                                                         alt="<?php echo $sub_val_product->post_title; ?>"
+                                                         loading="lazy" class="hb-category-page-featured__img">
+                                                </a>
+                                                <a href="<?php echo $sub_val_product->guid; ?>">
+                                                    <h3 class="hb-category-page-featured__title colored2"><?php echo $sub_val_product->post_title; ?></h3>
+                                                </a>
+                                                <p class="hb-category-page-featured__price">
+                                                    <strong><?php _e('From: ', 'garageflooringllc'); ?></strong>
+                                                    <?php echo get_woocommerce_currency_symbol(); ?><?php echo $product->get_price(); ?>
+                                                </p>
+                                                <p class="hb-single-product-accessories__desc">
+                                                    <?php echo wp_trim_words($sub_val_product->post_content, 10); ?>
+                                                </p>
+                                            </div>
+                                            <a href="<?php echo $sub_val_product->guid; ?>"
+                                               class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
 
-                                        <div class="hb-category-page-featured__content">
-                                            <a href="<?php echo $sub_val_product->guid; ?>">
-                                                <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
-                                                     alt="<?php echo $sub_val_product->post_title; ?>"
-                                                     loading="lazy" class="hb-category-page-featured__img">
-                                            </a>
-                                            <a href="<?php echo $sub_val_product->guid; ?>">
-                                                <h3 class="hb-category-page-featured__title colored2"><?php echo $sub_val_product->post_title; ?></h3>
-                                            </a>
-                                            <p class="hb-category-page-featured__price">
-                                                <strong><?php _e('From: ', 'garageflooringllc'); ?></strong>
-                                                <?php echo get_woocommerce_currency_symbol(); ?><?php echo $product->get_price(); ?>
-                                            </p>
-                                            <p class="hb-single-product-accessories__desc">
-                                                <?php echo wp_trim_words($sub_val_product->post_content, 10); ?>
-                                            </p>
                                         </div>
-                                        <a href="<?php echo $sub_val_product->guid; ?>"
-                                           class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
+                                    <?php } ?>
 
-                                    </div>
                                 <?php } //while ?>
                             </div> <!-- __holder -->
                         <?php } //if ?>
