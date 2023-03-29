@@ -1214,6 +1214,9 @@ ul.products img {
   width: fit-content;
   color: var(--color-light);
 }
+.button.wp-element-button.product_type_simple.add_to_cart_button {
+  color: var(--color-light) !important;
+}
 .hb-on-sale-wrapper {
   position: relative;
 }
