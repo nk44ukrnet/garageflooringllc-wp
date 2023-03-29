@@ -621,6 +621,7 @@ ul.products img {
 .hb-single-product-accessories .product .button.wp-element-button.single_add_to_cart_button.button.alt.wp-element-button {
   margin-top: auto;
   width: fit-content;
+  color: var(--color-light);
 }
 .hb-single-product-warning {
   background-color: var(--color2-light3);
