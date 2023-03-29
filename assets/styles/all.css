@@ -1214,6 +1214,14 @@ ul.products img {
   width: fit-content;
   color: var(--color-light);
 }
+.hb-on-sale-wrapper {
+  position: relative;
+}
+.hb-on-sale-wrapper span.onsale {
+  right: 0;
+  left: unset;
+  transform: translateY(-50%);
+}
 .hb-single-product-warning {
   background-color: var(--color2-light3);
   margin-block: var(--gap-lg) 0;

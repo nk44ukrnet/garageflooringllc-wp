@@ -455,4 +455,10 @@ function single_product_pre_footer_html()
     <?php
 }
 
+//on sale add wrapper
+add_filter('woocommerce_sale_flash', 'ds_change_sale_text');
+function ds_change_sale_text() {
+    $saleText = __('Sale!', 'garageflooringlllc');
+    return '<div class="hb-container hb-on-sale-wrapper"><span class="onsale">' . $saleText . '</span></div>';
+}
 //------------------end of single product------------------//
