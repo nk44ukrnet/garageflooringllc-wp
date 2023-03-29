@@ -156,7 +156,6 @@ function single_product_container_end()
     ?>
 
 
-
     <?php if (!empty($badges)) { ?>
     <div class="hb-single-badges padding-block">
         <div class="hb-container">
@@ -388,7 +387,7 @@ function single_product_pre_footer_html()
                         $sub_val_product = get_sub_field('select_product');
                         $product = wc_get_product($sub_val_product->ID);
                         ?>
-                            <?php if ( !empty($sub_val_product) || !empty($product) ) { ?>
+                        <?php if (!empty($sub_val_product) || !empty($product)) { ?>
                             <li class="product">
                                 <a href="<?php echo $sub_val_product->guid; ?>" class="woocommerce-LoopProduct-link">
                                     <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
@@ -411,7 +410,7 @@ function single_product_pre_footer_html()
                                     <?php _e('Learn More', 'garageflooringllc'); ?>
                                 </a>
                             </li>
-                            <?php } ?>
+                        <?php } ?>
                         <?php
                         ?>
                     <?php } ?>
@@ -457,8 +456,14 @@ function single_product_pre_footer_html()
 
 //on sale add wrapper
 add_filter('woocommerce_sale_flash', 'ds_change_sale_text');
-function ds_change_sale_text() {
+function ds_change_sale_text($prev)
+{
     $saleText = __('Sale!', 'garageflooringlllc');
-    return '<div class="hb-container hb-on-sale-wrapper"><span class="onsale">' . $saleText . '</span></div>';
+    if (is_product()) {
+        return '<div class="hb-container hb-on-sale-wrapper"><span class="onsale">' . $saleText . '</span></div>';
+
+    }
+    return $prev;
 }
+
 //------------------end of single product------------------//
