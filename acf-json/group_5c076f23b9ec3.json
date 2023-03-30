@@ -1,0 +1,230 @@
+{
+    "key": "group_5c076f23b9ec3",
+    "title": "Custom Product Content",
+    "fields": [
+        {
+            "key": "field_56494366cf1aa",
+            "label": "Intro Title",
+            "name": "product_intro_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter product intro title.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Product intro title...",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5649449ccf1ab",
+            "label": "Intro Image",
+            "name": "product_intro_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Select product intro image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "full",
+            "library": "all",
+            "return_format": "url",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_56494519cf1ac",
+            "label": "Intro Paragraph",
+            "name": "product_intro_paragraph",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Enter product intro paragraph(s).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_56495b1d9f9b5",
+            "label": "SKU Shortcode",
+            "name": "product_sku_shortcode",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Enter product SKU shortcode(s).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Product SKU shortcode(s)...",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_56495bf978975",
+            "label": "Carousel Image",
+            "name": "product_carousel_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Select product carousel image(s).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "full",
+            "library": "all",
+            "return_format": "url",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_56495c4278976",
+            "label": "Details Left Column",
+            "name": "product_details_left_column",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Enter product Details (left column).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_56495c8178977",
+            "label": "Details Right Column",
+            "name": "product_details_right_column",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Enter product Details (right column).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_56495cbdb1879",
+            "label": "Include Sample Form",
+            "name": "include_sample_form",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Include Sample Form on page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_56495d1cf719e",
+            "label": "Include Calculator Form",
+            "name": "include_calculator_form",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Include Calculator Form on page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "custom-product.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1680184454
+}

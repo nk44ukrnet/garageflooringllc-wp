@@ -398,6 +398,207 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
+                },
+                {
+                    "key": "field_64258905f9eb8",
+                    "label": "Is it direct URL or POPUP?",
+                    "name": "is_it_direct_url_or_popup",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_640f3ee4f6366",
+                                "operator": "==",
+                                "value": "Yes"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "url": "url",
+                        "popup": "popup"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_64258958f9eb9",
+                    "label": "Specify only URL, leave text blank",
+                    "name": "specify_only_url_leave_text_blank",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_640f3ee4f6366",
+                                "operator": "==",
+                                "value": "Yes"
+                            },
+                            {
+                                "field": "field_64258905f9eb8",
+                                "operator": "==",
+                                "value": "url"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_642589b2f9ebb",
+                    "label": "Popup Content",
+                    "name": "popup_content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_640f3ee4f6366",
+                                "operator": "==",
+                                "value": "Yes"
+                            },
+                            {
+                                "field": "field_64258905f9eb8",
+                                "operator": "==",
+                                "value": "popup"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_642589e8f9ebd",
+                    "label": "Do you want to use default icon or specific image instead?",
+                    "name": "do_you_want_to_use_default_icon_for_specific_image_instead",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_640f3ee4f6366",
+                                "operator": "==",
+                                "value": "Yes"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Default Icon": "Default Icon",
+                        "Specific Image": "Specific Image"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_64258a29f9ebe",
+                    "label": "Icon HTML",
+                    "name": "icon_html",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_640f3ee4f6366",
+                                "operator": "==",
+                                "value": "Yes"
+                            },
+                            {
+                                "field": "field_642589e8f9ebd",
+                                "operator": "==",
+                                "value": "Default Icon"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "<i class=\"fa-regular fa-address-card\"><\/i>",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_64258a6af9ec0",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_640f3ee4f6366",
+                                "operator": "==",
+                                "value": "Yes"
+                            },
+                            {
+                                "field": "field_642589e8f9ebd",
+                                "operator": "==",
+                                "value": "Specific Image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
                 }
             ]
         },
@@ -4625,5 +4826,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680104851
+    "modified": 1680181980
 }
