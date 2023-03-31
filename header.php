@@ -17,6 +17,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
+    <?php if(is_product()) {
+        $product_meta = get_field('product_meta');
+        if(!empty($product_meta)) {
+            echo $product_meta;
+        }
+    } ?>
+
     <?php wp_head(); ?>
 </head>
 
