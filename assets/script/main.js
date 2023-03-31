@@ -245,4 +245,36 @@ window.addEventListener('DOMContentLoaded', function () {
         console.log('lightbox lunch on hash change error ', e);
     }
 
+    //hb calc1
+    try {
+        let tile = '12';
+        let hbCalc1 = document.querySelectorAll('.hb-calc1');
+        if (hbCalc1) {
+            console.log('asd')
+            hbCalc1.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    let current = e.target;
+                    if(current.classList.contains('hb-calc1-trigger')) {
+                        let val1 = item.querySelector('.hb-calc1-roomLength');
+                        let val2 = item.querySelector('.hb-calc1-roomDepth');
+                        if(val1 && val2) {
+                            val1 = val1.value;
+                            val2 = val2.value;
+                            let width = Math.ceil(val1 / tile);
+                            let depth = Math.ceil(val2 / tile);
+                            let totalTiles = width * depth;
+
+                            let output = item.querySelector('.hb-calc1-output');
+                            if(output) {
+                                output.innerHTML = `Based on the information provided, it will take  ${totalTiles} tiles to cover your garage floor. We also suggest ordering female edges for the garage door`;
+                            }
+                        }
+                    }
+                })
+            })
+        }
+    } catch (e) {
+        console.log('tiles calc error (hb-calc1) ', e);
+    }
+
 });
