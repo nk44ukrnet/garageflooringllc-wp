@@ -1,4 +1,5 @@
 @import "_variables";
+@import "_base";
 
 .woocommerce {
 
@@ -6,6 +7,10 @@
     &:not(header, footer) {
       color: var(--color2);
     }
+  }
+
+  .wc-proceed-to-checkout {
+    .text-light();
   }
 
   .woocommerce-notices-wrapper {

@@ -729,6 +729,12 @@ body {
 .woocommerce a:not(header, footer) {
   color: var(--color2);
 }
+.woocommerce .wc-proceed-to-checkout {
+  color: var(--color-light) !important;
+}
+.woocommerce .wc-proceed-to-checkout a {
+  color: var(--color-light) !important;
+}
 .woocommerce .woocommerce-notices-wrapper {
   width: 100%;
   max-width: 1200px;
