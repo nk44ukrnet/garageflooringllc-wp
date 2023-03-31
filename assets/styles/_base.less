@@ -43,6 +43,7 @@ body {
 
 .text-light {
   color: var(--color-light) !important;
+
   a {
     color: var(--color-light) !important;
   }
@@ -89,9 +90,11 @@ body {
     font-size: 14px;
     line-height: 100%;
   }
+
   &.btn-color-light {
     color: var(--color-light) !important;
   }
+
   &.btn-bold {
     font-weight: bold;
   }
@@ -180,6 +183,7 @@ body {
 //breadcrumbs
 .yoast-breadcrumbs {
   margin-block: var(--gap-xsm);
+
   span, a {
     color: var(--color1);
   }
@@ -205,9 +209,11 @@ body {
     background-color: var(--color-light);
     display: flex;
     flex-direction: column;
+
     a {
       text-decoration: none;
     }
+
     box-shadow: 0 0 5px var(--color2-light2);
     border-radius: var(--border-radius);
   }
@@ -266,14 +272,31 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+
   & > * {
     color: var(--color1);
   }
+
   a, span {
     padding: 5px;
     text-decoration: none;
   }
+
   .current {
     font-weight: bold;
+  }
+}
+
+//hb-calc1
+.hb-calc1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--gap-xsm);
+
+  input {
+    margin-block: 10px;
+    border: 1px solid var(--color1);
+    padding: 5px;
   }
 }

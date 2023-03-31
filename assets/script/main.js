@@ -247,17 +247,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //hb calc1
     try {
-        let tile = '12';
         let hbCalc1 = document.querySelectorAll('.hb-calc1');
         if (hbCalc1) {
-            console.log('asd')
             hbCalc1.forEach(item => {
+                // let tile = '12';
+                let tile = item.dataset.tile;
+
                 item.addEventListener('click', function (e) {
                     let current = e.target;
-                    if(current.classList.contains('hb-calc1-trigger')) {
+                    if (current.classList.contains('hb-calc1-trigger')) {
                         let val1 = item.querySelector('.hb-calc1-roomLength');
                         let val2 = item.querySelector('.hb-calc1-roomDepth');
-                        if(val1 && val2) {
+                        if (val1 && val2) {
                             val1 = val1.value;
                             val2 = val2.value;
                             let width = Math.ceil(val1 / tile);
@@ -265,8 +266,8 @@ window.addEventListener('DOMContentLoaded', function () {
                             let totalTiles = width * depth;
 
                             let output = item.querySelector('.hb-calc1-output');
-                            if(output) {
-                                output.innerHTML = `Based on the information provided, it will take  ${totalTiles} tiles to cover your garage floor. We also suggest ordering female edges for the garage door`;
+                            if (output) {
+                                output.innerHTML = `Based on the information provided, it will take  <strong>${totalTiles}</strong> tiles to cover your garage floor. We also suggest ordering female edges for the garage door`;
                             }
                         }
                     }

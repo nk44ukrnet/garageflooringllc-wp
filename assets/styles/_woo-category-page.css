@@ -267,6 +267,17 @@ body {
 .hb-pagination .current {
   font-weight: bold;
 }
+.hb-calc1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--gap-xsm);
+}
+.hb-calc1 input {
+  margin-block: 10px;
+  border: 1px solid var(--color1);
+  padding: 5px;
+}
 .hb-category-page .hb-category-page-hero__holder {
   display: flex;
   flex-wrap: wrap;
