@@ -54,9 +54,11 @@ yoast_breadcrumbs();
                                 the_row();
                                 $sub_field_link = get_sub_field('select_desired_link');
                                 ?>
-                                <a href="<?php echo $sub_field_link['url']; ?>"
-                                   title="<?php echo $sub_field_link['title']; ?>"
-                                   class="btn btn_sm btn-color-light btn-bold"><?php echo $sub_field_link['title']; ?></a>
+                                    <?php if (
+                                            !empty($sub_field_link['url']) && !empty($sub_field_link['title']) && !empty($sub_field_link) ) { ?>
+                                    <a href="<?php echo $sub_field_link['url']; ?>"
+                                       class="btn btn_sm btn-color-light btn-bold"><?php echo $sub_field_link['title']; ?></a>
+                                    <?php } ?>
                             <?php } ?>
                         </div>
                     <?php } ?>

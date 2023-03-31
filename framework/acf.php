@@ -19,12 +19,12 @@ if(function_exists('acf_add_options_page')) {
         'parent_slug'   => 'theme-general-settings',
     ));
 
-    add_filter('acf/settings/save_json', function() {
-        return get_stylesheet_directory() . '/acf-json';
-    });
-
-    add_filter('acf/settings/load_json', function($paths) {
-        return get_stylesheet_directory() . '/acf-json';
-    });
+//    add_filter('acf/settings/save_json', function() {
+//        return get_stylesheet_directory() . '/acf-json';
+//    });
+//
+//    add_filter('acf/settings/load_json', function($paths) {
+//        return get_stylesheet_directory() . '/acf-json';
+//    });
 
 }
