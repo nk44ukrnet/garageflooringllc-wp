@@ -357,6 +357,7 @@ yoast_breadcrumbs();
             <!--testimonials-->
             <?php
             $testimonials_heading = get_field('testimonials_heading');
+            $extra_text = get_field('extra_text');
             ?>
             <?php if (!empty($testimonials_heading) || have_rows('testimonials_repeater')) { ?>
                 <div class="hb-category-page-testimonials padding-block">
@@ -366,6 +367,10 @@ yoast_breadcrumbs();
                             <h2 class="hb-category-page-testimonials__heading text-center colored2">
                                 <?php echo $testimonials_heading; ?>
                             </h2>
+                        <?php } ?>
+
+                        <?php if ( !empty($extra_text) ) { ?>
+                        <?php echo $extra_text; ?>
                         <?php } ?>
 
                         <?php
@@ -421,20 +426,6 @@ yoast_breadcrumbs();
                 </div>
             <?php } ?>
             <!--/testimonials-->
-
-            <!-- bottom extra text -->
-            <?php
-            $extra_text = get_field('extra_text');
-            ?>
-            <?php if (!empty($extra_text)) { ?>
-                <div class="hb-category-page-info padding-block">
-                    <div class="hb-container">
-                        <?php echo $extra_text; ?>
-                    </div>
-                </div>
-            <?php } ?>
-
-            <!-- /bottom extra text -->
 
             <?php
             //the_content();
