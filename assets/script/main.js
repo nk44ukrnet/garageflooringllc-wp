@@ -207,6 +207,33 @@ window.addEventListener('DOMContentLoaded', function () {
         console.log('testimonials swiper error ', e);
     }
 
+
+    try {
+        //hb-regular-swiper-swiper
+        let pageSwiperTestimonials = document.querySelectorAll('.hb-regular-swiper-swiper');
+        if (pageSwiperTestimonials) {
+            const swiper = new Swiper('.hb-regular-swiper-swiper', {
+                // Optional parameters
+                //loop: true,
+                clickable: true,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+            });
+        }
+    } catch (e) {
+        console.log('hb-regular-swiper-swiper error ', e);
+    }
     //single product open lightbox when click on thumbnails
     // try {
     //     document.addEventListener('click', function (e) {
