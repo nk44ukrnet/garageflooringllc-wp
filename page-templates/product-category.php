@@ -54,11 +54,11 @@ yoast_breadcrumbs();
                                 the_row();
                                 $sub_field_link = get_sub_field('select_desired_link');
                                 ?>
-                                    <?php if (
-                                            !empty($sub_field_link['url']) && !empty($sub_field_link['title']) && !empty($sub_field_link) ) { ?>
+                                <?php if (
+                                    !empty($sub_field_link['url']) && !empty($sub_field_link['title']) && !empty($sub_field_link)) { ?>
                                     <a href="<?php echo $sub_field_link['url']; ?>"
                                        class="btn btn_sm btn-color-light btn-bold"><?php echo $sub_field_link['title']; ?></a>
-                                    <?php } ?>
+                                <?php } ?>
                             <?php } ?>
                         </div>
                     <?php } ?>
@@ -435,6 +435,86 @@ yoast_breadcrumbs();
             <?php } ?>
 
             <!-- /bottom extra text -->
+
+            <!-- optional block products manual -->
+            <?php
+            $enable_optional_block_products = get_field('enable_optional_block_products');
+            $optional_block_products_title = get_field('optional_block_products_title');
+            $optional_block_products_description = get_field('optional_block_products_description');
+            ?>
+            <?php if (!empty($enable_optional_block_products)) { ?>
+                <div class="hb-category-page-products-manual padding-block-sm">
+                    <div class="hb-container">
+                        <?php if (!empty($optional_block_products_title)) { ?>
+                            <h2 class="hb-category-page-products-manual__heading colored"><?php echo $optional_block_products_title; ?></h2>
+                        <?php } ?>
+                        <?php if (!empty($optional_block_products_description)) { ?>
+                            <div class="hb-category-page-products-manual__intro">
+                                <?php echo $optional_block_products_description; ?>
+                            </div>
+                        <?php } ?>
+                        <?php
+                        if (have_rows('repeater_name')) {
+                            ?>
+                            <!--block start-->
+                            <div class="hb-category-page-products-manual__holder padding-block-sm">
+                                <?php
+                                while (have_rows('repeater_name')) {
+                                    the_row();
+                                    $sub_field_extra_promo_field = get_sub_field('extra_promo_field');
+                                    $sub_field_title = get_sub_field('title');
+                                    $sub_field_description = get_sub_field('description');
+                                    $sub_field_image_url = get_sub_field('image');
+                                    $sub_field_link = get_sub_field('link');
+
+                                    $link_url = '#!';
+                                    if(!empty($sub_field_link['url'])) {
+                                        $link_url = $sub_field_link['url'];
+                                    }
+                                    ?>
+                                    <div class="hb-category-page-products-manual__item">
+                                        <?php if (!empty($sub_field_extra_promo_field)) { ?>
+                                            <div class="hb-category-page-products-manual__promo"><?php echo $sub_field_extra_promo_field; ?></div>
+                                        <?php } ?>
+                                        <?php if (!empty($sub_field_title)) { ?>
+                                            <h2>
+                                                <a href="<?php echo $link_url; ?>" class="colored text-no-underline">
+                                                    <?php echo $sub_field_title; ?>
+                                                </a>
+                                            </h2>
+                                        <?php } ?>
+
+                                        <div class="hb-category-page-products-manual__inner">
+                                            <?php if (!empty($sub_field_description)) { ?>
+                                                <div class="hb-category-page-products-manual__text">
+                                                    <?php echo $sub_field_description; ?>
+                                                </div>
+                                            <?php } ?>
+                                            <?php if (!empty($sub_field_image_url)) { ?>
+                                                <img src="<?php echo $sub_field_image_url; ?>"
+                                                     alt="<?php echo esc_html($sub_field_title); ?>" loading="lazy" class="hb-category-page-products-manual__img">
+                                            <?php } ?>
+                                        </div>
+                                        <?php if ( !empty($sub_field_link) ) { ?>
+                                            <div class="hb-category-page-products-manual__bot">
+                                                <a href="<?php echo $sub_field_link['url']; ?>" class="btn btn_sm text-light"><?php echo $sub_field_link['title']; ?></a>
+                                            </div>
+                                        <?php } ?>
+
+                                    </div>
+                                    <!--    Items -->
+                                    <?php
+                                }
+                                ?>
+                            </div>
+                            <!-- block end -->
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            <?php } ?>
+            <!-- /optional block products manual -->
 
             <?php
             //the_content();
