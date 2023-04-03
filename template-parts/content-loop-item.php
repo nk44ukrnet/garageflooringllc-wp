@@ -19,5 +19,5 @@
         </div>
     </div>
     <a href="<?php echo get_the_permalink(); ?>"
-       class="hb-btn btn btn_sm"><?php _e('Read More', 'garageflooringllc'); ?></a>
+       class="hb-btn btn btn_sm text-light"><?php _e('Read More', 'garageflooringllc'); ?></a>
 </article>
