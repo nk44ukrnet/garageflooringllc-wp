@@ -749,6 +749,7 @@ ul.products img {
   color: var(--color-light);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  display: table;
 }
 @media (min-width: 768px) {
   .hb-category-page-products-manual__promo {
