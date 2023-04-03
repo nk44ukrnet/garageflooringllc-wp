@@ -477,7 +477,7 @@ yoast_breadcrumbs();
                                             <div class="hb-category-page-products-manual__promo"><?php echo $sub_field_extra_promo_field; ?></div>
                                         <?php } ?>
                                         <?php if (!empty($sub_field_title)) { ?>
-                                            <h2>
+                                            <h2 class="colored">
                                                 <a href="<?php echo $link_url; ?>" class="colored text-no-underline">
                                                     <?php echo $sub_field_title; ?>
                                                 </a>
