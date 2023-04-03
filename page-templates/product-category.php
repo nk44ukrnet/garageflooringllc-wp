@@ -454,12 +454,12 @@ yoast_breadcrumbs();
                             </div>
                         <?php } ?>
                         <?php
-                        if (have_rows('repeater_name')) {
+                        if (have_rows('optional_block_products_repeater')) {
                             ?>
                             <!--block start-->
                             <div class="hb-category-page-products-manual__holder padding-block-sm">
                                 <?php
-                                while (have_rows('repeater_name')) {
+                                while (have_rows('optional_block_products_repeater')) {
                                     the_row();
                                     $sub_field_extra_promo_field = get_sub_field('extra_promo_field');
                                     $sub_field_title = get_sub_field('title');
