@@ -468,39 +468,43 @@ yoast_breadcrumbs();
                                     $sub_field_link = get_sub_field('link');
 
                                     $link_url = '#!';
-                                    if(!empty($sub_field_link['url'])) {
+                                    if (!empty($sub_field_link['url'])) {
                                         $link_url = $sub_field_link['url'];
                                     }
                                     ?>
                                     <div class="hb-category-page-products-manual__item">
-                                        <?php if (!empty($sub_field_extra_promo_field)) { ?>
-                                            <div class="hb-category-page-products-manual__promo"><?php echo $sub_field_extra_promo_field; ?></div>
-                                        <?php } ?>
-                                        <?php if (!empty($sub_field_title)) { ?>
-                                            <h2 class="colored">
-                                                <a href="<?php echo $link_url; ?>" class="colored text-no-underline">
-                                                    <?php echo $sub_field_title; ?>
-                                                </a>
-                                            </h2>
-                                        <?php } ?>
+                                        <div class="hb-category-page-products-manual__content">
+                                            <?php if (!empty($sub_field_extra_promo_field)) { ?>
+                                                <div class="hb-category-page-products-manual__promo"><?php echo $sub_field_extra_promo_field; ?></div>
+                                            <?php } ?>
+                                            <?php if (!empty($sub_field_title)) { ?>
+                                                <h2 class="colored">
+                                                    <a href="<?php echo $link_url; ?>"
+                                                       class="colored text-no-underline">
+                                                        <?php echo $sub_field_title; ?>
+                                                    </a>
+                                                </h2>
+                                            <?php } ?>
 
-                                        <div class="hb-category-page-products-manual__inner">
-                                            <?php if (!empty($sub_field_description)) { ?>
-                                                <div class="hb-category-page-products-manual__text">
-                                                    <?php echo $sub_field_description; ?>
-                                                </div>
-                                            <?php } ?>
-                                            <?php if (!empty($sub_field_image_url)) { ?>
-                                                <img src="<?php echo $sub_field_image_url; ?>"
-                                                     alt="<?php echo esc_html($sub_field_title); ?>" loading="lazy" class="hb-category-page-products-manual__img">
-                                            <?php } ?>
+                                            <div class="hb-category-page-products-manual__inner">
+                                                <?php if (!empty($sub_field_description)) { ?>
+                                                    <div class="hb-category-page-products-manual__text">
+                                                        <?php echo $sub_field_description; ?>
+                                                    </div>
+                                                <?php } ?>
+                                                <?php if (!empty($sub_field_image_url)) { ?>
+                                                    <img src="<?php echo $sub_field_image_url; ?>"
+                                                         alt="<?php echo esc_html($sub_field_title); ?>" loading="lazy"
+                                                         class="hb-category-page-products-manual__img">
+                                                <?php } ?>
+                                            </div>
                                         </div>
-                                        <?php if ( !empty($sub_field_link) ) { ?>
+                                        <?php if (!empty($sub_field_link)) { ?>
                                             <div class="hb-category-page-products-manual__bot">
-                                                <a href="<?php echo $sub_field_link['url']; ?>" class="btn btn_sm text-light"><?php echo $sub_field_link['title']; ?></a>
+                                                <a href="<?php echo $sub_field_link['url']; ?>"
+                                                   class="btn btn_sm text-light"><?php echo $sub_field_link['title']; ?></a>
                                             </div>
                                         <?php } ?>
-
                                     </div>
                                     <!--    Items -->
                                     <?php
