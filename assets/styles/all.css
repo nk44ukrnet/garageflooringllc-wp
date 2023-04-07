@@ -1087,6 +1087,8 @@ table.variations tr .value select {
   padding: var(--gap-sm);
   border: 1px solid var(--color1);
   border-radius: 50%;
+  width: 66.6px;
+  height: 66.6px;
   transition: var(--transition);
 }
 .hb-single-badges i:hover {
