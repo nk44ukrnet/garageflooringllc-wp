@@ -217,8 +217,11 @@ yoast_breadcrumbs();
                                                                 <strong><?php _e('From: ', 'garageflooringllc'); ?></strong>
                                                                 <?php echo get_woocommerce_currency_symbol(); ?><?php echo $product->get_price(); ?>
                                                             </div>
-                                                            <p class="hb-products-loop__desc">
-                                                                <?php echo wp_trim_words($select_product->post_content, 10); ?></p>
+                                                            <?php if ( !empty($select_product->post_content) ) { ?>
+                                                                <p class="hb-products-loop__desc">
+                                                                    <?php echo wp_trim_words($select_product->post_content, 10); ?>
+                                                                </p>
+                                                            <?php } ?>
                                                         </div>
                                                         <a href="<?php echo $select_product->guid; ?>"
                                                            class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
@@ -305,6 +308,8 @@ yoast_breadcrumbs();
                     'posts_per_page' => -1,
                     'post_type' => 'product',
                     'product_cat' => $select_product_category->slug,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
                 );
                 $loop = new WP_Query($args);
                 ?>
