@@ -26,5 +26,22 @@
 <div id="page" class="site hb-wrapper">
 
     <div class="hb-header-front">
-
+        <div class="hb-container1">
+            <div class="hb-header-front__holder">
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="hb-header-front__logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gfllc-logo-wh.png"
+                         alt="Garageflooringllc" width="302">
+                </a>
+                <nav>
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-6',
+                            'menu_id' => 'primary-menu',
+                        )
+                    );
+                    ?>
+                </nav>
+            </div>
+        </div>
     </div>

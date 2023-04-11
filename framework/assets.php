@@ -11,7 +11,7 @@ function theme_files()
 
     wp_register_style('normalize', get_template_directory_uri() . '/assets/styles/vendor/normalize.min.css', NULL, '1', 'all');
     wp_register_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css', NULL, '1', 'all');
-    wp_register_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap', NULL, '1', 'all');
+    wp_register_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&family=Oswald:wght@300;400;500;600;700&&family=Roboto:wght@400;500;700;900&display=swap', NULL, '1', 'all');
     wp_register_style('swiper-style', get_template_directory_uri() . '/assets/styles/vendor/swiper-bundle.css', NULL, '1', 'all');
     wp_register_style('slinky-styles', get_template_directory_uri() . '/assets/styles/vendor/slinky.min.css', NULL, '1', 'all');
     wp_register_style('add-search-plugin-css-url', 'https://cdn.jsdelivr.net/npm/addsearch-search-ui@0.7/dist/addsearch-search-ui.min.css', NULL, '1', 'all');
