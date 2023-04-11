@@ -16,37 +16,28 @@
     <?php echo $footer_start_additional_scripts; ?>
 <?php } ?>
 <footer id="colophon" class="site-footer">
-    <!--    <div class="footer-badges">-->
-    <!--        <div class="hb-container">-->
-    <!--            <img src="-->
-    <?php //echo get_template_directory_uri(); ?><!--/assets/img/footer-badge1.jpg" alt="Badge"-->
-    <!--                 loading="lazy">-->
-    <!--            <img src="-->
-    <?php //echo get_template_directory_uri(); ?><!--/assets/img/footer-badge2.jpg" alt="Badge"-->
-    <!--                 loading="lazy">-->
-    <!--            <img src="-->
-    <?php //echo get_template_directory_uri(); ?><!--/assets/img/footer-badge3.jpg" alt="Badge"-->
-    <!--                 loading="lazy">-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <?php if (have_rows('footer_badges', 'options')) {
-        ?>
-        <div class="footer-badges">
-            <div class="hb-container">
-                <?php
-                while (have_rows('footer_badges', 'options')) {
-                    the_row();
-                    $sub_field_img = get_sub_field('image');
-                    $sub_field_alt = get_sub_field('alt_text');
-                    ?>
-                    <?php if (!empty($sub_field_img)) { ?>
-                        <img src="<?php echo $sub_field_img; ?>"
-                             alt="<?php esc_html_e($sub_field_alt, 'garageflooringllc'); ?>" loading="lazy">
+
+    <?php if (!is_front_page()) { ?>
+        <?php if (have_rows('footer_badges', 'options')) {
+            ?>
+            <div class="footer-badges">
+                <div class="hb-container">
+                    <?php
+                    while (have_rows('footer_badges', 'options')) {
+                        the_row();
+                        $sub_field_img = get_sub_field('image');
+                        $sub_field_alt = get_sub_field('alt_text');
+                        ?>
+                        <?php if (!empty($sub_field_img)) { ?>
+                            <img src="<?php echo $sub_field_img; ?>"
+                                 alt="<?php esc_html_e($sub_field_alt, 'garageflooringllc'); ?>" loading="lazy">
+                        <?php } ?>
                     <?php } ?>
-                <?php } ?>
-            </div> <!--/hb-container-->
-        </div> <!--/footer-badges-->
+                </div> <!--/hb-container-->
+            </div> <!--/footer-badges-->
+        <?php } ?>
     <?php } ?>
+
     <?php $footer_text_line = get_field('footer_text_line', 'options'); ?>
     <?php if (!empty($footer_text_line)) { ?>
         <div class="footer-line text-center">
@@ -182,7 +173,7 @@
 
     <?php $footer_copyright_text = get_field('footer_copyright_text', 'options'); ?>
 
-    <?php if( !empty($footer_copyright_text) ) { ?>
+    <?php if (!empty($footer_copyright_text)) { ?>
         <div class="site-footer__copyright">
             <div class="hb-container">
                 &copy; 2011 - <?php echo date('Y'); ?>

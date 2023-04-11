@@ -2,7 +2,7 @@
 /*
  * Template Name: Home page
  */
-get_header('front');
+get_header();
 ?>
 <?php if (have_posts()) {
     while (have_posts()) {
@@ -344,6 +344,81 @@ get_header('front');
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="hb-front-customers">
+
+            <div class="hb-container2 text-center">
+
+                <h2 class="hb-front-customers__heading ">See what our happy customers have to say</h2>
+
+                <div class="hb-front-customers__holder">
+                    <div class="hb-front-customers__item">
+                        <div class="hb-front-customers__rating">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                        </div>
+                        <div class="hb-front-customers__text">
+                            Amazing service and product, shopped and compared various similar brands…very happy with my
+                            choice. Online tool simple to use for design of your floor too. I came up 4 tiles short
+                            because of my error , I called and they send me the 4 additional at no cost !!! A++++ great
+                            experience would recommend to anyone.
+                        </div>
+                    </div>
+                    <div class="hb-front-customers__item">
+                        <div class="hb-front-customers__rating">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                        </div>
+                        <div class="hb-front-customers__text">
+                            Delivery was super fast and the packaging was great. All materials for my 700 square foot
+                            garage were clearly labeled. The directions were good but I wish I had used about 30% less
+                            paint chips than I did. Still, it turned out great despite fight temps in the 40s.
+                        </div>
+                    </div>
+                    <div class="hb-front-customers__item">
+                        <div class="hb-front-customers__rating">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
+                                 height="22" alt="star" loading="lazy">
+                        </div>
+                        <div class="hb-front-customers__text">
+                            TrueLock HD Diamond tiles from Garage Flooring was the "shock and awe" portion of a total
+                            garage redo! Flooring and service exceeded expectations!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hb-front-customers__more">
+                    <a href="#!" class="hb-front-customers__btn">Read More Reviews</a>
+                    <a href="#!" class="hb-front-customers__btn">View Customer Projects</a>
+                </div>
+
+            </div>
+
         </div>
 
         <?php

@@ -3,7 +3,9 @@
 @header-front-bp: 978px;
 
 .site-header {
-  padding-bottom: var(--gap-sm);
+  &:not(.header_is_front) {
+    padding-bottom: var(--gap-sm);
+  }
 
   .site-line {
 

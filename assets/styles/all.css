@@ -362,7 +362,7 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
-.site-header {
+.site-header:not(.header_is_front) {
   padding-bottom: var(--gap-sm);
 }
 .site-header .site-line {
@@ -1352,6 +1352,60 @@ body {
   font-family: var(--font3);
   font-size: 16px;
   line-height: 18px;
+}
+.hb-front-customers {
+  background-color: var(--color-dark4);
+  background-image: url(../img/front-customers-bg.png);
+  background-size: cover;
+  color: var(--color-light);
+}
+.hb-front-customers .hb-container2 {
+  padding-block: 108px 78px;
+}
+.hb-front-customers__heading {
+  margin: 0;
+  font-family: var(--font2);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 32px;
+}
+.hb-front-customers__holder {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--gap-md);
+}
+.hb-front-customers__item {
+  flex: 1 1 300px;
+}
+.hb-front-customers__rating {
+  margin-bottom: 40px;
+}
+.hb-front-customers__text {
+  font-family: var(--font3);
+  font-size: 16px;
+}
+.hb-front-customers__more {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--gap-sm);
+  width: 100%;
+  max-width: 785px;
+  margin-inline: auto;
+  margin-top: 70px;
+}
+.hb-front-customers__btn {
+  flex: 0 1 364px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--color10);
+  padding: 13px;
+  line-height: 100%;
 }
 .woocommerce a:not(header, footer) {
   color: var(--color2);

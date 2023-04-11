@@ -33,7 +33,13 @@
     <a class="skip-link screen-reader-text"
        href="#primary"><?php esc_html_e('Skip to content', 'garageflooringllc'); ?></a>
 
-    <header id="masthead" class="site-header">
+    <?php
+    $header_extra_css = '';
+    if(is_front_page()) {
+        $header_extra_css = 'header_is_front';
+    }
+    ?>
+    <header id="masthead" class="site-header <?php echo $header_extra_css; ?>">
 
         <div class="site-line">
             <div class="hb-container">
