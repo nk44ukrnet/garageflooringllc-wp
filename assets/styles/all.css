@@ -1407,6 +1407,24 @@ body {
   padding: 13px;
   line-height: 100%;
 }
+.hb-front-badges {
+  background-color: var(--color-dark4);
+  background-image: url(../img/front-badges-bg.png);
+  background-size: cover;
+  padding-block: 40px;
+}
+.hb-front-badges .hb-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+@media (max-width: 768px) {
+  .hb-front-badges .hb-container2 {
+    gap: var(--gap-sm);
+  }
+}
 .woocommerce a:not(header, footer) {
   color: var(--color2);
 }

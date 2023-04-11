@@ -603,3 +603,20 @@
   }
 }
 
+.hb-front-badges {
+  background-color: var(--color-dark4);
+  background-image: url(../img/front-badges-bg.png);
+  background-size: cover;
+
+  padding-block: 40px;
+  .hb-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-lg);
+    @media (max-width: @mobile) {
+      gap: var(--gap-sm);
+    }
+  }
+}

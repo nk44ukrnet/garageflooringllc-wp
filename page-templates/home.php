@@ -421,6 +421,14 @@ get_header();
 
         </div>
 
+        <div class="hb-front-badges">
+            <div class="hb-container2">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hb-front-badges1.png" alt="Badge" loading="lazy">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hb-front-badges2.png" alt="Badge" loading="lazy">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hb-front-badges3.png" alt="Badge" loading="lazy">
+            </div>
+        </div>
+
         <?php
     }
 }
