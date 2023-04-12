@@ -1041,7 +1041,7 @@ body {
   flex-wrap: wrap;
   padding-bottom: 243px;
 }
-@media (max-width: 1271px) {
+@media (max-width: 1300px) {
   .hb-front-savings__top {
     padding-bottom: 20px;
   }
@@ -1063,6 +1063,11 @@ body {
   left: -30px;
   background-color: var(--color9v1);
   pointer-events: none;
+}
+@media (max-width: 1300px) {
+  .hb-front-savings__highlight::before {
+    display: none;
+  }
 }
 @media (max-width: 1271px) {
   .hb-front-savings__highlight {

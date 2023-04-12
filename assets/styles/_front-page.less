@@ -219,7 +219,7 @@
     flex-wrap: wrap;
     padding-bottom: 243px;
 
-    @media (max-width: 1271px) {
+    @media (max-width: 1300px) {
       padding-bottom: 20px;
     }
   }
@@ -244,12 +244,19 @@
       pointer-events: none;
     }
 
+    @media (max-width: 1300px) {
+      &::before {
+        display: none;
+      }
+    }
+
     @media (max-width: 1271px) {
       padding: 20px;
       width: 100%;
       background-color: var(--color9v1);
       margin-bottom: 20px;
       &::before {
+        display: none;
         width: calc(100% + 20px);
         height: 100%;
         left: -20px;
