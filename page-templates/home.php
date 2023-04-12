@@ -11,8 +11,6 @@ get_header();
 
         <div class="hb-front-hero">
             <div class="hb-container2">
-                <p class="hb-front-hero__pre-title font2">Your Go-to Expert for </p>
-                <h1 class="hb-front-hero__title font2">Garage Flooring</h1>
 
                 <div class="hb-front-hero__holder">
 
@@ -65,6 +63,12 @@ get_header();
                     </a>
 
                 </div>
+
+                <p class="hb-front-hero__pre-title font2">Your Go-to Expert for </p>
+                <h1 class="hb-front-hero__title font2">Garage Flooring</h1>
+
+
+
             </div>
         </div>
 
