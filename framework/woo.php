@@ -457,10 +457,11 @@ function single_product_pre_footer_html()
                         the_row();
                         $sub_val_product = get_sub_field('select_product');
                         $product = wc_get_product($sub_val_product->ID);
+                        $product_link = get_permalink( $sub_val_product->ID );
                         ?>
                         <?php if (!empty($sub_val_product) || !empty($product)) { ?>
                             <li class="product">
-                                <a href="<?php echo $sub_val_product->guid; ?>" class="woocommerce-LoopProduct-link">
+                                <a href="<?php echo $product_link; ?>" class="woocommerce-LoopProduct-link">
                                     <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
                                          alt="<?php echo $sub_val_product->post_title; ?>" loading="lazy">
                                     <span class="price">
@@ -476,7 +477,7 @@ function single_product_pre_footer_html()
                                         <?php echo wp_trim_words($sub_val_product->post_content, 10); ?>
                                     </p>
                                 </a>
-                                <a href="<?php echo $sub_val_product->guid; ?>"
+                                <a href="<?php echo $product_link; ?>"
                                    class="button wp-element-button single_add_to_cart_button button alt wp-element-button text-light">
                                     <?php _e('Learn More', 'garageflooringllc'); ?>
                                 </a>

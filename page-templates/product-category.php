@@ -198,18 +198,19 @@ yoast_breadcrumbs();
                                                 the_row();
                                                 $select_product = get_sub_field('select_product');
                                                 $product = wc_get_product($select_product->ID);
+                                                $product_url = get_permalink( $select_product->ID );
                                                 ?>
                                                 <?php if (!empty($select_product)) { ?>
                                                     <div class="hb-products-loop__item">
                                                         <div class="hb-products-loop__content">
-                                                            <a href="<?php echo $select_product->guid; ?>"
+                                                            <a href="<?php echo $product_url; ?>"
                                                                class="hb-index-products-list__img-link">
                                                                 <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
                                                                      alt="<?php echo $select_product->post_title; ?>"
                                                                      loading="lazy"
                                                                      class="hb-products-loop__img">
                                                             </a>
-                                                            <a href="<?php echo $select_product->guid; ?>"
+                                                            <a href="<?php echo $product_url; ?>"
                                                                class="hb-index-products-list__title">
                                                                 <h3 class="hb-products-loop__title colored2"><?php echo $select_product->post_title; ?></h3>
                                                             </a>
@@ -223,7 +224,7 @@ yoast_breadcrumbs();
                                                                 </p>
                                                             <?php } ?>
                                                         </div>
-                                                        <a href="<?php echo $select_product->guid; ?>"
+                                                        <a href="<?php echo $product_url; ?>"
                                                            class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
                                                     </div>
                                                 <?php } ?>
@@ -263,17 +264,18 @@ yoast_breadcrumbs();
                                     the_row();
                                     $sub_val_product = get_sub_field('product');
                                     $product = wc_get_product($sub_val_product->ID);
+                                    $product_url = get_permalink( $sub_val_product->ID );
                                     ?>
                                     <?php if (!empty($sub_val_product)) { ?>
                                         <div class="hb-category-page-featured__item">
 
                                             <div class="hb-category-page-featured__content">
-                                                <a href="<?php echo $sub_val_product->guid; ?>">
+                                                <a href="<?php echo $product_url; ?>">
                                                     <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
                                                          alt="<?php echo $sub_val_product->post_title; ?>"
                                                          loading="lazy" class="hb-category-page-featured__img">
                                                 </a>
-                                                <a href="<?php echo $sub_val_product->guid; ?>">
+                                                <a href="<?php echo $product_url; ?>">
                                                     <h3 class="hb-category-page-featured__title colored2"><?php echo $sub_val_product->post_title; ?></h3>
                                                 </a>
                                                 <p class="hb-category-page-featured__price">
@@ -284,7 +286,7 @@ yoast_breadcrumbs();
                                                     <?php echo wp_trim_words($sub_val_product->post_content, 10); ?>
                                                 </p>
                                             </div>
-                                            <a href="<?php echo $sub_val_product->guid; ?>"
+                                            <a href="<?php echo $product_url; ?>"
                                                class="btn btn_sm btn-color-light"><?php _e('Learn More', 'garageflooringllc'); ?></a>
 
                                         </div>
