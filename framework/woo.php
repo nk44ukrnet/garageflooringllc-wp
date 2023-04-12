@@ -456,10 +456,11 @@ function single_product_pre_footer_html()
                     while (have_rows('accessories_repeater')) {
                         the_row();
                         $sub_val_product = get_sub_field('select_product');
-                        $product = wc_get_product($sub_val_product->ID);
-                        $product_link = get_permalink( $sub_val_product->ID );
                         ?>
-                        <?php if (!empty($sub_val_product) || !empty($product)) { ?>
+                        <?php if (!empty($sub_val_product)) {
+                            $product = wc_get_product($sub_val_product->ID);
+                            $product_link = get_permalink( $sub_val_product->ID );
+                            ?>
                             <li class="product">
                                 <a href="<?php echo $product_link; ?>" class="woocommerce-LoopProduct-link">
                                     <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"

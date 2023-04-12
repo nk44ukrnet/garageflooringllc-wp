@@ -197,10 +197,11 @@ yoast_breadcrumbs();
                                             <?php while (have_rows('suggested_product_repeater')) {
                                                 the_row();
                                                 $select_product = get_sub_field('select_product');
-                                                $product = wc_get_product($select_product->ID);
-                                                $product_url = get_permalink( $select_product->ID );
                                                 ?>
-                                                <?php if (!empty($select_product)) { ?>
+                                                <?php if (!empty($select_product)) {
+                                                    $product = wc_get_product($select_product->ID);
+                                                    $product_url = get_permalink( $select_product->ID );
+                                                    ?>
                                                     <div class="hb-products-loop__item">
                                                         <div class="hb-products-loop__content">
                                                             <a href="<?php echo $product_url; ?>"
@@ -263,10 +264,11 @@ yoast_breadcrumbs();
                                 <?php while (have_rows('featured_products_list')) {
                                     the_row();
                                     $sub_val_product = get_sub_field('product');
-                                    $product = wc_get_product($sub_val_product->ID);
-                                    $product_url = get_permalink( $sub_val_product->ID );
                                     ?>
-                                    <?php if (!empty($sub_val_product)) { ?>
+                                    <?php if (!empty($sub_val_product)) {
+                                        $product = wc_get_product($sub_val_product->ID);
+                                        $product_url = get_permalink( $sub_val_product->ID );
+                                        ?>
                                         <div class="hb-category-page-featured__item">
 
                                             <div class="hb-category-page-featured__content">
