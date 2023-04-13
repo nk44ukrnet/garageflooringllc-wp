@@ -1104,6 +1104,9 @@ body {
   border: 23px solid var(--color-dark4);
   background-color: var(--color-dark4);
   flex: 0 1 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .hb-front-savings__item img {
   width: 100%;
