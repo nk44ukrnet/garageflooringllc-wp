@@ -499,74 +499,6 @@ body {
   padding-block: var(--gap-xsm);
   font-weight: 500;
 }
-.hb-header-front {
-  background-color: var(--color-dark4);
-  width: 100%;
-  min-height: 160px;
-  padding-block: 30px;
-}
-@media (max-width: 978px) {
-  .hb-header-front {
-    padding-block: 15px;
-  }
-}
-.hb-header-front__holder {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--gap-sm);
-}
-@media (max-width: 768px) {
-  .hb-header-front__holder {
-    justify-content: center;
-  }
-}
-.hb-header-front nav ul {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  column-gap: 40px;
-  row-gap: var(--gap-sm);
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-@media (max-width: 978px) {
-  .hb-header-front nav ul {
-    gap: var(--gap-sm);
-  }
-}
-.hb-header-front nav ul li {
-  color: var(--color-light);
-}
-.hb-header-front nav ul li.current-menu-item {
-  color: var(--color9);
-}
-.hb-header-front nav ul li.shop-now {
-  padding: 15px 70px;
-  background-color: var(--color10);
-}
-@media (max-width: 978px) {
-  .hb-header-front nav ul li.shop-now {
-    padding: 10px 20px;
-  }
-}
-.hb-header-front nav ul a {
-  text-decoration: none;
-  font-family: var(--font2);
-  font-size: 25px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  line-height: 100%;
-  font-weight: 600;
-  color: var(--color-light);
-}
-@media (max-width: 978px) {
-  .hb-header-front nav ul a {
-    font-size: 14px;
-  }
-}
 .main-navigation a {
   color: var(--color-dark);
 }
@@ -862,7 +794,6 @@ body {
 }
 .hb-front-hero {
   background-color: var(--color-dark4);
-  background-image: url(../img/hero-bg0.png);
   background-size: cover;
   background-position: top center;
   position: relative;
@@ -1417,6 +1348,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: var(--gap-sm);
   width: 100%;
   max-width: 785px;
@@ -2006,6 +1938,12 @@ ul.products img {
 .product-long-description h5,
 .product-long-description h6 {
   color: var(--color1);
+}
+.woocommerce .single_add_to_cart_button.button.alt.wp-element-button {
+  background-color: var(--color9v1);
+}
+.woocommerce .single_add_to_cart_button.button.alt.wp-element-button:hover {
+  background-color: var(--color9v1);
 }
 .hb-category-page .hb-category-page-hero__holder {
   display: flex;

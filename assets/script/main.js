@@ -40,8 +40,9 @@ window.addEventListener('DOMContentLoaded', function () {
                 targetPlusClass = 'quantity-plus',
                 targetMinusClass = 'quantity-minus';
 
-            function runValModification(cssClassName) {
-                let quantityInput = document.querySelector('input.qty');
+            function runValModification(cssClassName, element) {
+                // let quantityInput = document.querySelector('input.qty');
+                let quantityInput = element;
                 if (quantityInput) {
                     let val = quantityInput.value;
                     val = val.trim();
@@ -74,11 +75,33 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
             if (current.classList.contains(targetPlusClass)) {
-                runValModification(targetPlusClass);
+                //quantity
+                if (current.closest('.quantity')) {
+                    let el = current.closest('.quantity');
+                    if(el) {
+                        el = el.querySelector('input.qty');
+                        runValModification(targetPlusClass, el);
+                    }
+                }
+                // if (current.closest('input.qty')) {
+                //     el = current.closest('input.qty');
+                //     runValModification(targetPlusClass, el);
+                // }
             }
 
             if (current.classList.contains(targetMinusClass)) {
-                runValModification(targetMinusClass);
+                // if (current.closest('input.qty')) {
+                //     el = current.closest('input.qty');
+                //     runValModification(targetMinusClass, el);
+                // }
+                // runValModification(targetMinusClass);
+                if (current.closest('.quantity')) {
+                    let el = current.closest('.quantity');
+                    if(el) {
+                        el = el.querySelector('input.qty');
+                        runValModification(targetMinusClass, el);
+                    }
+                }
             }
         })
 

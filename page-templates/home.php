@@ -9,429 +9,440 @@ get_header();
         the_post();
         ?>
 
-        <div class="hb-front-hero">
-            <div class="hb-container2">
+        <?php
+        $enable_hero_section = get_field('enable_hero_section');
+        ?>
 
-                <div class="hb-front-hero__holder">
+        <?php if (!empty($enable_hero_section)) { ?>
 
-                    <a href="#!" class="hb-front-hero__item">
-                        <span class="hb-front-hero__cat-img-holder">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat1.png" alt="icon"
+            <?php $hero_background_image = get_field('hero_background_image'); ?>
+
+            <div class="hb-front-hero" style="background-image: url(<?php echo $hero_background_image; ?>)">
+                <div class="hb-container2">
+
+
+                    <?php if (have_rows('hero_categories_repeater')) {
+                        ?>            <!--block start-->
+                        <div class="hb-front-hero__holder">
+                            <?php while (have_rows('hero_categories_repeater')) {
+                                the_row();
+                                $sub_field_category_name_and_url = get_sub_field('category_name_and_url');
+                                $sub_field_category_image = get_sub_field('category_image');
+                                ?>
+                                <a href="<?php echo $sub_field_category_name_and_url['url']; ?>"
+                                   class="hb-front-hero__item">
+                                    <?php if (!empty($sub_field_category_image)) { ?>
+                                        <span class="hb-front-hero__cat-img-holder">
+                            <img src="<?php echo $sub_field_category_image; ?>"
+                                 alt="<?php echo $sub_field_category_name_and_url['title']; ?>"
                                  loading="lazy" class="hb-front-hero__cat-img">
                         </span>
-                        <p class="hb-front-hero__cat-name">Mats & Rolls</p>
-                    </a>
+                                    <?php } ?>
+                                    <p class="hb-front-hero__cat-name"><?php echo $sub_field_category_name_and_url['title']; ?></p>
+                                </a>
+                                <!--    Items -->
+                                <?php
+                            } ?>
+                        </div>
+                        <!-- block end -->
+                    <?php } ?>
 
-                    <a href="#!" class="hb-front-hero__item">
-                        <span class="hb-front-hero__cat-img-holder">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat2.png" alt="icon"
-                                 loading="lazy" class="hb-front-hero__cat-img">
-                        </span>
-                        <p class="hb-front-hero__cat-name">Tiles</p>
-                    </a>
+                    <?php $hero_text_before_heading = get_field('hero_text_before_heading'); ?>
 
-                    <a href="#!" class="hb-front-hero__item">
-                        <span class="hb-front-hero__cat-img-holder">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat3.png" alt="icon"
-                                 loading="lazy" class="hb-front-hero__cat-img">
-                        </span>
-                        <p class="hb-front-hero__cat-name">Coatings</p>
-                    </a>
+                    <?php if (!empty($hero_text_before_heading)) { ?>
+                        <p class="hb-front-hero__pre-title font2"><?php echo $hero_text_before_heading; ?></p>
+                    <?php } ?>
 
-                    <a href="#!" class="hb-front-hero__item">
-                        <span class="hb-front-hero__cat-img-holder">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat4.png" alt="icon"
-                                 loading="lazy" class="hb-front-hero__cat-img">
-                        </span>
-                        <p class="hb-front-hero__cat-name">Storage</p>
-                    </a>
+                    <?php $hero_heading_text = get_field('hero_heading_text'); ?>
 
-                    <a href="#!" class="hb-front-hero__item">
-                        <span class="hb-front-hero__cat-img-holder">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat5.png" alt="icon"
-                                 loading="lazy" class="hb-front-hero__cat-img">
-                        </span>
-                        <p class="hb-front-hero__cat-name">Accessories</p>
-                    </a>
+                    <?php if (!empty($hero_heading_text)) { ?>
+                        <h1 class="hb-front-hero__title font2"><?php echo $hero_heading_text; ?></h1>
+                    <?php } ?>
 
-                    <a href="#!" class="hb-front-hero__item">
-                        <span class="hb-front-hero__cat-img-holder">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cat6.png" alt="icon"
-                                 loading="lazy" class="hb-front-hero__cat-img">
-                        </span>
-                        <p class="hb-front-hero__cat-name">Samples</p>
-                    </a>
 
                 </div>
-
-                <p class="hb-front-hero__pre-title font2">Your Go-to Expert for </p>
-                <h1 class="hb-front-hero__title font2">Garage Flooring</h1>
-
-
-
             </div>
-        </div>
+        <?php } ?>
 
-        <div class="hb-front-savings">
-            <div class="hb-container2">
-                <div class="hb-front-savings__top">
-                    <div class="hb-front-savings__highlight">
-                        <span class="hb-front-savings__highlight-year">2023</span>
-                        <span class="hb-front-savings__highlight-slogan">Savings</span>
-                    </div>
-                    <div class="hb-front-savings__desc">
-                        <strong>Garage Flooring Your Garage</strong>
-                        <h2>Checkout Our Best Options for Durability and Attractiveness.</h2>
-                        <p>
-                            Garage Flooring LLC has been a nationally leading distributor of flooring and storage
-                            products for years, valuing the importance of our ability to cater to the necessities of
-                            every customer. At heart, we are a business dedicated to making your ideas and objectives a
-                            reality- from our reputable service to our efficient shipment system, we strive to meet all
-                            of your garage needs. Due to our popularity, we have expanded to serve customers across the
-                            nation through our website, offering the highest quality products at the most affordable
-                            prices in the industry. Check our the best garage flooring projects of 2021 — from our
-                            customers
-                        </p>
-                        <a href="#!" class="hb-front-savings__more">Save Up to 41% on Select Garage Flooring</a>
-                    </div>
-                </div>
-                <h2 class="hb-front-savings__heading">Featured Products</h2>
 
-                <div class="hb-front-savings__loop">
+        <?php $enable_saving_section = get_field('enable_saving_section'); ?>
 
-                    <div class="hb-front-savings__item">
-                        <div class="hb-front-savings__inner">
-                            <a href="#!">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg"
-                                     alt="Product" loading="lazy">
-                            </a>
-                            <div class="hb-front-savings__title">
-                                <h3>Product 1</h3>
-                                <span>$0.00</span>
-                            </div>
-                            <div class="hb-front-savings__info">
-                                <?php echo wp_trim_words('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias autem laudantium minima
-                            quaerat quos reprehenderit unde ut vero voluptatibus? Ad adipisci assumenda at cum eum
-                            facere illum inventore maxime minus molestiae molestias, officia optio perferendis
-                            reiciendis saepe sapiente similique sit soluta tempore veritatis, voluptas voluptate
-                            voluptatibus. Assumenda est, facere.', 25); ?>
-                            </div>
+        <?php if (!empty($enable_saving_section)) { ?>
+            <div class="hb-front-savings">
+                <div class="hb-container2">
+
+                    <div class="hb-front-savings__top">
+                        <?php
+                        $savings_text_under_year = get_field('savings_text_under_year');
+                        ?>
+                        <div class="hb-front-savings__highlight">
+                            <span class="hb-front-savings__highlight-year"><?php echo date('Y'); ?></span>
+                            <?php if (!empty($savings_text_under_year)) { ?>
+                                <span class="hb-front-savings__highlight-slogan"><?php echo $savings_text_under_year; ?></span>
+                            <?php } ?>
                         </div>
-                        <a href="#!" class="hb-front-savings__btn"><?php _e('Shop Now', 'garageflooringllc'); ?></a>
-                    </div>
+                        <div class="hb-front-savings__desc">
+                            <?php $savings_text_block_pre_heading = get_field('savings_text_block_pre_heading'); ?>
+                            <?php if (!empty($savings_text_block_pre_heading)) { ?>
+                                <strong><?php echo $savings_text_block_pre_heading; ?></strong>
+                            <?php } ?>
 
-                    <div class="hb-front-savings__item">
-                        <div class="hb-front-savings__inner">
-                            <a href="#!">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg"
-                                     alt="Product" loading="lazy">
-                            </a>
-                            <div class="hb-front-savings__title">
-                                <h3>Product 2</h3>
-                                <span>$0.00</span>
-                            </div>
-                            <div class="hb-front-savings__info">
-                                <?php echo wp_trim_words('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias autem laudantium minima
-                            quaerat quos reprehenderit unde ut vero voluptatibus? Ad adipisci assumenda at cum eum
-                            facere illum inventore maxime minus molestiae molestias, officia optio perferendis
-                            reiciendis saepe sapiente similique sit soluta tempore veritatis, voluptas voluptate
-                            voluptatibus. Assumenda est, facere.', 25); ?>
-                            </div>
+                            <?php $savings_text_block_heading = get_field('savings_text_block_heading'); ?>
+                            <?php if (!empty($savings_text_block_heading)) { ?>
+                                <h2><?php echo $savings_text_block_heading; ?></h2>
+                            <?php } ?>
+
+                            <?php $savings_text_block_text_content = get_field('savings_text_block_text_content'); ?>
+                            <?php if (!empty($savings_text_block_text_content)) { ?>
+                                <p>
+                                    <?php echo $savings_text_block_text_content; ?>
+                                </p>
+                            <?php } ?>
+
+                            <?php $savings_text_content_button = get_field('savings_text_content_button'); ?>
+                            <?php if (!empty($savings_text_content_button)) { ?>
+                                <a href="<?php echo $savings_text_content_button['url']; ?>"
+                                   class="hb-front-savings__more"><?php echo $savings_text_content_button['title']; ?></a>
+                            <?php } ?>
+
                         </div>
-                        <a href="#!" class="hb-front-savings__btn"><?php _e('Shop Now', 'garageflooringllc'); ?></a>
                     </div>
 
-                    <div class="hb-front-savings__item">
-                        <div class="hb-front-savings__inner">
-                            <a href="#!">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-sample.jpg"
-                                     alt="Product" loading="lazy">
-                            </a>
-                            <div class="hb-front-savings__title">
-                                <h3>Product 2</h3>
-                                <span>$0.00</span>
-                            </div>
-                            <div class="hb-front-savings__info">
-                                <?php echo wp_trim_words('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias autem laudantium minima
-                            quaerat quos reprehenderit unde ut vero voluptatibus? Ad adipisci assumenda at cum eum
-                            facere illum inventore maxime minus molestiae molestias, officia optio perferendis
-                            reiciendis saepe sapiente similique sit soluta tempore veritatis, voluptas voluptate
-                            voluptatibus. Assumenda est, facere.', 25); ?>
-                            </div>
+                    <?php $savings_pre_products_heading = get_field('savings_pre_products_heading'); ?>
+                    <?php if (!empty($savings_pre_products_heading)) { ?>
+                        <h2 class="hb-front-savings__heading"><?php echo $savings_pre_products_heading; ?></h2>
+                    <?php } ?>
+
+                    <?php if (have_rows('savings_products_repeater')) { ?>
+                        <!--block start-->
+                        <div class="hb-front-savings__loop">
+                            <?php while (have_rows('savings_products_repeater')) {
+                                the_row();
+                                $select_product = get_sub_field('select_product');
+                                ?>
+                                <?php if (!empty($select_product)) {
+                                    $product = wc_get_product($select_product->ID);
+                                    $product_url = get_permalink($select_product->ID);
+
+                                    $product_lowest_price = $product->get_price();
+                                    $variation_prices = '';
+
+                                    if ($product->get_variation_prices()) {
+                                        $variation_prices = $product->get_variation_prices();
+                                        $min_price = min($variation_prices['price']);
+                                        $max_price = max($variation_prices['price']);
+
+                                        if ($min_price == $max_price) {
+                                            $variation_prices = $product_lowest_price;
+                                        } else {
+                                            $variation_prices = $min_price . '-' . $max_price;
+                                        }
+                                    }
+                                    if (!$variation_prices) {
+                                        $variation_prices = $product_lowest_price;
+                                    }
+
+                                    ?>
+                                    <div class="hb-front-savings__item">
+                                        <div class="hb-front-savings__inner">
+                                            <a href="<?php echo $product_url; ?>">
+                                                <img src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>"
+                                                     alt="<?php echo $select_product->post_title; ?>" loading="lazy">
+                                            </a>
+                                            <div class="hb-front-savings__title">
+                                                <h3><?php echo $select_product->post_title; ?></h3>
+                                                <span><?php echo get_woocommerce_currency_symbol(); ?><?php echo $variation_prices; ?></span>
+                                            </div>
+                                            <div class="hb-front-savings__info">
+                                                <?php echo wp_trim_words($select_product->post_content, 10); ?>
+                                            </div>
+                                        </div>
+                                        <a href="<?php echo $product_url; ?>"
+                                           class="hb-front-savings__btn"><?php _e('Shop Now', 'garageflooringllc'); ?></a>
+                                    </div>
+                                <?php } ?>
+                                <!--    Items -->
+                            <?php } ?>
+                            <!-- block end -->
                         </div>
-                        <a href="#!" class="hb-front-savings__btn"><?php _e('Shop Now', 'garageflooringllc'); ?></a>
-                    </div>
+                    <?php } ?>
 
-                </div>
-
-            </div>
-        </div>
-
-        <div class="hb-front-text-img">
-            <div class="hb-front-text-img__item"
-                 style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/front-text-img-i1.png);">
-                <div class="hb-front-desk">
-                    <div class="hb-front-text-img__inner">
-                        <strong>Our Difference</strong>
-                        <h2>Jealous neighbors are our best customers.™</h2>
-                        <p>
-                            When Justin Krauss entered the industry over 15 years ago, it was in its infancy;
-                            there was a limited spectrum of offered products and very little competition. Today,
-                            the industry has expanded such that products are available online and at major
-                            retailers. Despite the growth of the industry, we have maintained our hands-on
-                            approach, our knowledgeable team of customer service associates, and our ability and
-                            willingness to treat each and every garage like it is the most important project we
-                            have — because we know it is the most important project you have! If you are looking
-                            for the guaranteed lowest prices, the best customer service, the highest quality
-                            products, and people who are passionate about helping you achieve your garage needs,
-                            you have come to the right place. Don’t take our word for it, have a look at our
-                            customer reviews.
-                        </p>
-                        <a href="#!" class="hb-front-desk__more">Save Up to 41% on Select Garage Flooring</a>
-                    </div>
                 </div>
             </div>
-            <div class="hb-front-text-img__item hb-front-text-img__item_img">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-text-img-car.png" alt="Product"
-                     loading="lazy">
-            </div>
-        </div>
+        <?php } ?>
 
-        <div class="hb-front-help font2 text-center">
-            <div class="hb-container2">
-                <p class="hb-front-help__start">We Can Help!</p>
-                <h2 class="hb-front-help__heading">The Dream Garage Starts With The Garage Floor</h2>
-                <div class="hb-front-help__text">
-                    What is your dream garage flooring? is it garage floor tiles or epoxy coatings? Are you looking for
-                    commercial-grade garage flooring and something that is “car jack approved” or are you more worried
-                    about the rolling weight load and potential for tire marks? Let’s have a look at some different
-                    features that may be part of that perfect garage.
-                </div>
-                <div class="hb-front-help__holder">
-                    <div class="hb-front-help__item">
-                        <div class="hb-front-help__icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-help-i1.png"
-                                 alt="Icon" loading="lazy" class="hb-front-help__img">
-                        </div>
-                        <h3 class="hb-front-help__title">Slip Resistant</h3>
-                        <div class="hb-front-help__info">
-                            How important is slip resistance for you? The answer may depend on your age, your climate or
-                            how you use the garage. While all garage flooring should have some degree of slip resistance
-                            the wrong garage floor tiles or an epoxy coating without anti-slip can become dangerous.
-                            Floor tiles such as diamond tiles have great traction for parking the car, but perhaps not
-                            enough traction for washing it. Small coin tiles have better traction. How much rain or
-                            moisture is in garages should be a key factor.
-                        </div>
-                    </div>
+        <?php $enable_info_block_1 = get_field('enable_info_block_1'); ?>
+        <?php if (!empty($enable_info_block_1)) {
+            $info_block_1 = get_field('info_block_1');
 
-                    <div class="hb-front-help__item">
-                        <div class="hb-front-help__icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-help-i2.png"
-                                 alt="Icon" loading="lazy" class="hb-front-help__img">
-                        </div>
-                        <h3 class="hb-front-help__title">Easy to Clean Material</h3>
-                        <div class="hb-front-help__info">
-                            How important is slip resistance for you? The answer may depend on your age, your climate or
-                            how you use the garage. While all garage flooring should have some degree of slip resistance
-                            the wrong garage floor tiles or an epoxy coating without anti-slip can become dangerous.
-                            Floor tiles such as diamond tiles have great traction for parking the car, but perhaps not
-                            enough traction for washing it. Small coin tiles have better traction. How much rain or
-                            moisture is in garages should be a key factor.
-                        </div>
-                    </div>
+            $info_block_text_background_image = $info_block_1['text_background_image'];
+            $info_block_pre_heading_text = $info_block_1['pre_heading_text'];
+            $info_block_heading = $info_block_1['heading'];
+            $info_block_text_content = $info_block_1['text_content'];
+            $info_block_button = $info_block_1['button'];
+            $info_block_side_image = $info_block_1['side_image'];
+            $info_block_side_image_alt_attribute = $info_block_1['side_image_alt_attribute'];
 
-                    <div class="hb-front-help__item">
-                        <div class="hb-front-help__icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-help-i3.png"
-                                 alt="Icon" loading="lazy" class="hb-front-help__img">
-                        </div>
-                        <h3 class="hb-front-help__title">Easy Installation</h3>
-                        <div class="hb-front-help__info">
-                            How important is slip resistance for you? The answer may depend on your age, your climate or
-                            how you use the garage. While all garage flooring should have some degree of slip resistance
-                            the wrong garage floor tiles or an epoxy coating without anti-slip can become dangerous.
-                            Floor tiles such as diamond tiles have great traction for parking the car, but perhaps not
-                            enough traction for washing it. Small coin tiles have better traction. How much rain or
-                            moisture is in garages should be a key factor.
-                        </div>
-                    </div>
+            ?>
+            <div class="hb-front-text-img">
+                <div class="hb-front-text-img__item"
+                     style="background-image: url(<?php echo $info_block_text_background_image; ?>)">
+                    <div class="hb-front-desk">
+                        <div class="hb-front-text-img__inner">
 
-                    <div class="hb-front-help__item">
-                        <div class="hb-front-help__icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-help-i4.png"
-                                 alt="Icon" loading="lazy" class="hb-front-help__img">
-                        </div>
-                        <h3 class="hb-front-help__title">Design vs Ultra Durable</h3>
-                        <div class="hb-front-help__info">
-                            How important is slip resistance for you? The answer may depend on your age, your climate or
-                            how you use the garage. While all garage flooring should have some degree of slip resistance
-                            the wrong garage floor tiles or an epoxy coating without anti-slip can become dangerous.
-                            Floor tiles such as diamond tiles have great traction for parking the car, but perhaps not
-                            enough traction for washing it. Small coin tiles have better traction. How much rain or
-                            moisture is in garages should be a key factor.
-                        </div>
-                    </div>
+                            <?php if (!empty($info_block_pre_heading_text)) { ?>
+                                <strong><?php echo $info_block_pre_heading_text; ?></strong>
+                            <?php } ?>
 
-                    <div class="hb-front-help__item">
-                        <div class="hb-front-help__icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-help-i5.png"
-                                 alt="Icon" loading="lazy" class="hb-front-help__img">
-                        </div>
-                        <h3 class="hb-front-help__title">Cost</h3>
-                        <div class="hb-front-help__info">
-                            Just like any other room in the house cost has to be a decision when considering what to do.
-                            Are you going to put the home on the market in a year or is this your forever home? Perhaps
-                            your spouse is not onboard and you need to grease the wheels a little. Perhaps you go with
-                            HDXT tile instead of Race Deck to save a few dollars.
-                        </div>
-                    </div>
+                            <?php if (!empty($info_block_heading)) { ?>
+                                <h2><?php echo $info_block_heading; ?></h2>
+                            <?php } ?>
 
-                    <div class="hb-front-help__item">
-                        <div class="hb-front-help__icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-help-i6.png"
-                                 alt="Icon" loading="lazy" class="hb-front-help__img">
-                        </div>
-                        <h3 class="hb-front-help__title">Conclusion</h3>
-                        <div class="hb-front-help__info">
-                            At the end of the day, we can help you find the perfect garage flooring for your style. A
-                            durable product that resists oil stains and can be installed easily. If you do auto
-                            maintenance in the shop we can show you the benefits of tiles or increase durability with a
-                            coating.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <?php if (!empty($info_block_text_content)) { ?>
+                                <p>
+                                    <?php echo $info_block_text_content; ?>
+                                </p>
+                            <?php } ?>
 
-        <div class="hb-front-text-img">
-            <div class="hb-front-text-img__item hb-front-text-img__item_img">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-text-img-i02.png" alt="Product"
-                     loading="lazy">
-            </div>
-            <div class="hb-front-text-img__item"
-                 style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/front-text-img-i2.png);">
-                <div class="hb-front-desk">
-                    <div class="hb-front-text-img__inner padding-block">
-                        <strong>Best Garage Flooring</strong>
-                        <h2>committed to our customers</h2>
-                        <p>
-                            Our experts are committed to making sure our customers find the perfect garage floor that
-                            fits their needs. We believe every customer deserves the best flooring options and are
-                            dedicated to providing high-quality service at affordable prices.
-                            <br><br>
-                            With us, you won’t have to worry about getting the wrong floor for your garage – just browse
-                            through our selection and find the right one!
-                            <br><br>
-                            Our vinyl flooring is available in a variety of colors, patterns, and styles. You can choose
-                            from a variety of textures and colors to match your garage’s décor. From our selections, you
-                            find vinyl flooring that is slip-resistant, making it ideal for wet areas.
-                            <br><br>
-                            Our extensive selection of flooring options ensures that you can find the right garage floor
-                            to match your style and budget.
-                            <br><br>
-                            We also offer a wide range of epoxy flooring options. Our epoxy flooring is durable, easy to
-                            clean, and slip-resistant. You can choose from a variety of colors and textures to match
-                            your garage’s décor.
-                            <br><br>
-                            Our rubber flooring is ideal for garages that have a lot of traffic. They are durable and
-                            slip. They are also perfect for Fitness centers, Health clubs, Resorts, Gyms and Entrances.
-                            <br><br>
-                            Our experienced team can help you choose the perfect flooring option to suit your lifestyle
-                            and enhance the look and feel of your garage.
-                            <br><br>
-                            We provide the highest quality flooring options at unbeatable prices. We’ve covered you if
-                            you’re looking for garage floor tiles, mats, interlocking tiles, or rubber flooring.
-                            <br><br>
-                            We offer free shipping and samples so you can find the perfect fit for your garage.
-                        </p>
-                        <a href="#!" class="hb-front-desk__more">More About Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hb-front-customers">
-
-            <div class="hb-container2 text-center">
-
-                <h2 class="hb-front-customers__heading ">See what our happy customers have to say</h2>
-
-                <div class="hb-front-customers__holder">
-                    <div class="hb-front-customers__item">
-                        <div class="hb-front-customers__rating">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                        </div>
-                        <div class="hb-front-customers__text">
-                            Amazing service and product, shopped and compared various similar brands…very happy with my
-                            choice. Online tool simple to use for design of your floor too. I came up 4 tiles short
-                            because of my error , I called and they send me the 4 additional at no cost !!! A++++ great
-                            experience would recommend to anyone.
-                        </div>
-                    </div>
-                    <div class="hb-front-customers__item">
-                        <div class="hb-front-customers__rating">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                        </div>
-                        <div class="hb-front-customers__text">
-                            Delivery was super fast and the packaging was great. All materials for my 700 square foot
-                            garage were clearly labeled. The directions were good but I wish I had used about 30% less
-                            paint chips than I did. Still, it turned out great despite fight temps in the 40s.
-                        </div>
-                    </div>
-                    <div class="hb-front-customers__item">
-                        <div class="hb-front-customers__rating">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png" width="23"
-                                 height="22" alt="star" loading="lazy">
-                        </div>
-                        <div class="hb-front-customers__text">
-                            TrueLock HD Diamond tiles from Garage Flooring was the "shock and awe" portion of a total
-                            garage redo! Flooring and service exceeded expectations!
+                            <?php if (!empty($info_block_button)) { ?>
+                                <a href="<?php echo $info_block_button['url']; ?>"
+                                   class="hb-front-desk__more"><?php echo $info_block_button['title']; ?></a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
 
-                <div class="hb-front-customers__more">
-                    <a href="#!" class="hb-front-customers__btn">Read More Reviews</a>
-                    <a href="#!" class="hb-front-customers__btn">View Customer Projects</a>
+                <?php if (!empty($info_block_side_image)) { ?>
+                    <div class="hb-front-text-img__item hb-front-text-img__item_img">
+                        <img src="<?php echo $info_block_side_image; ?>"
+                             alt="<?php echo $info_block_side_image_alt_attribute; ?>"
+                             loading="lazy">
+                    </div>
+                <?php } ?>
+
+            </div>
+        <?php } ?>
+
+        <?php $enable_we_can_help_block = get_field('enable_we_can_help_block'); ?>
+        <?php if (!empty($enable_we_can_help_block)) { ?>
+            <div class="hb-front-help font2 text-center">
+                <div class="hb-container2">
+                    <?php $we_can_help_pre_heading_text = get_field('we_can_help_pre_heading_text'); ?>
+                    <?php if (!empty($we_can_help_pre_heading_text)) { ?>
+                        <p class="hb-front-help__start"><?php echo $we_can_help_pre_heading_text; ?></p>
+                    <?php } ?>
+
+                    <?php $we_can_help_heading_text = get_field('we_can_help_heading_text'); ?>
+                    <?php if (!empty($we_can_help_heading_text)) { ?>
+                        <h2 class="hb-front-help__heading"><?php echo $we_can_help_heading_text; ?></h2>
+                    <?php } ?>
+
+                    <?php $we_can_help_text_content = get_field('we_can_help_text_content'); ?>
+                    <?php if (!empty($we_can_help_text_content)) { ?>
+                        <div class="hb-front-help__text">
+                            <?php echo $we_can_help_text_content; ?>
+                        </div>
+                    <?php } ?>
+
+
+                    <?php if (have_rows('we_can_help_repeater')) { ?>
+                        <!--block start-->
+                        <div class="hb-front-help__holder">
+                            <?php while (have_rows('we_can_help_repeater')) {
+                                the_row();
+                                $sub_field_icon = get_sub_field('icon');
+                                $sub_field_heading = get_sub_field('heading');
+                                $sub_field_text_content = get_sub_field('text_content');
+                                ?>
+                                <!--    Items -->
+                                <div class="hb-front-help__item">
+                                    <?php if (!empty($sub_field_icon)) { ?>
+                                        <div class="hb-front-help__icon">
+                                            <img src="<?php echo $sub_field_icon; ?>"
+                                                 alt="<?php echo $sub_field_heading; ?>" loading="lazy"
+                                                 class="hb-front-help__img">
+                                        </div>
+                                    <?php } ?>
+
+                                    <?php if (!empty($sub_field_heading)) { ?>
+                                        <h3 class="hb-front-help__title"><?php echo $sub_field_heading; ?></h3>
+                                    <?php } ?>
+
+                                    <?php if (!empty($sub_field_text_content)) { ?>
+                                        <div class="hb-front-help__info">
+                                            <?php echo $sub_field_text_content; ?>
+                                        </div>
+                                    <?php } ?>
+
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <!-- block end -->
+                    <?php } ?>
+                </div>
+            </div>
+        <?php } ?>
+
+
+        <?php $enable_info_block_2 = get_field('enable_info_block_2'); ?>
+        <?php if (!empty($enable_info_block_2)) {
+
+            $info_block_2 = get_field('info_block_2');
+
+            $info_block_text_background_image = $info_block_2['text_background_image'];
+            $info_block_pre_heading_text = $info_block_2['pre_heading_text'];
+            $info_block_heading = $info_block_2['heading'];
+            $info_block_text_content = $info_block_2['text_content'];
+            $info_block_button = $info_block_2['button'];
+            $info_block_side_image = $info_block_2['side_image'];
+            $info_block_side_image_alt_attribute = $info_block_2['side_image_alt_attribute'];
+            ?>
+            <div class="hb-front-text-img">
+                <?php if (!empty($info_block_side_image)) { ?>
+                    <div class="hb-front-text-img__item hb-front-text-img__item_img">
+                        <img src="<?php echo $info_block_side_image; ?>"
+                             alt="<?php echo $info_block_side_image_alt_attribute; ?>"
+                             loading="lazy">
+                    </div>
+                <?php } ?>
+                <div class="hb-front-text-img__item"
+                     style="background-image: url(<?php echo $info_block_text_background_image; ?>)">
+                    <div class="hb-front-desk">
+                        <div class="hb-front-text-img__inner padding-block">
+                            <?php if (!empty($info_block_pre_heading_text)) { ?>
+                                <strong><?php echo $info_block_pre_heading_text; ?></strong>
+                            <?php } ?>
+
+                            <?php if (!empty($info_block_heading)) { ?>
+                                <h2><?php echo $info_block_heading; ?></h2>
+                            <?php } ?>
+
+                            <?php if (!empty($info_block_text_content)) { ?>
+                                <p>
+                                    <?php echo $info_block_text_content; ?>
+                                </p>
+                            <?php } ?>
+
+                            <?php if (!empty($info_block_button)) { ?>
+                                <a href="<?php echo $info_block_button['url']; ?>"
+                                   class="hb-front-desk__more"><?php echo $info_block_button['title']; ?></a>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+
+
+        <?php $enable_customers_review = get_field('enable_customers_review'); ?>
+        <?php if (!empty($enable_customers_review)) { ?>
+            <div class="hb-front-customers">
+
+                <div class="hb-container2 text-center">
+
+                    <?php $customers_review_heading = get_field('customers_review_heading'); ?>
+                    <?php if (!empty($customers_review_heading)) { ?>
+                        <h2 class="hb-front-customers__heading "><?php echo $customers_review_heading; ?></h2>
+                    <?php } ?>
+
+                    <?php if (have_rows('customers_review_repeater')) {
+                        ?>
+                        <!--block start-->
+                        <div class="hb-front-customers__holder">
+                            <?php while (have_rows('customers_review_repeater')) {
+                                the_row();
+                                $number_of_stars = get_sub_field('number_of_stars_1-5');
+                                $text = get_sub_field('text');
+                                ?>
+
+                                <div class="hb-front-customers__item">
+                                    <?php if (!empty($number_of_stars)) { ?>
+                                        <div class="hb-front-customers__rating">
+                                            <?php
+                                            for ($i = 0; $i < intval($number_of_stars); $i++) {
+                                                ?>
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/front-star.png"
+                                                     width="23"
+                                                     height="22" alt="star" loading="lazy">
+                                            <?php } ?>
+                                        </div>
+                                    <?php } ?>
+
+                                    <?php if (!empty($text)) { ?>
+                                        <div class="hb-front-customers__text">
+                                            <?php echo $text; ?>
+                                        </div>
+                                    <?php } ?>
+
+                                </div>
+                                <!--    Items -->
+                            <?php } ?>
+                        </div>
+                        <!-- block end -->
+                    <?php } ?>
+
+                    <?php
+                    $customer_review_link_1 = get_field('customer_review_link_1');
+                    $customer_review_link_2 = get_field('customer_review_link_2');
+                    ?>
+
+                    <?php if (!empty($customer_review_link_1) || !empty($customer_review_link_2)) { ?>
+                        <div class="hb-front-customers__more">
+                            <?php if (!empty($customer_review_link_1)) { ?>
+                                <a href="<?php echo $customer_review_link_1['url']; ?>"
+                                   class="hb-front-customers__btn"><?php echo $customer_review_link_1['title']; ?></a>
+                            <?php } ?>
+
+                            <?php if (!empty($customer_review_link_2)) { ?>
+                                <a href="<?php echo $customer_review_link_2['url']; ?>"
+                                   class="hb-front-customers__btn"><?php echo $customer_review_link_2['title']; ?></a>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
                 </div>
 
             </div>
+        <?php } ?>
 
-        </div>
 
-        <div class="hb-front-badges">
-            <div class="hb-container2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hb-front-badges1.png" alt="Badge" loading="lazy">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hb-front-badges2.png" alt="Badge" loading="lazy">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hb-front-badges3.png" alt="Badge" loading="lazy">
+        <?php $enable_bottom_images = get_field('enable_bottom_images'); ?>
+        <?php if (!empty($enable_bottom_images)) { ?>
+            <div class="hb-front-badges">
+
+                <?php if (have_rows('bottom_images_repeater')) {
+                    ?>
+                    <!--block start-->
+                    <div class="hb-container2">
+                        <?php while (have_rows('bottom_images_repeater')) {
+                            the_row();
+                            $sub_field_image = get_sub_field('image');
+                            $sub_field_alt_text = get_sub_field('alt_text');
+                            ?>
+                            <!--    Items -->
+                            <?php if (!empty($sub_field_image)) { ?>
+                                <img src="<?php echo $sub_field_image; ?>" alt="<?php echo $sub_field_alt_text; ?>"
+                                     loading="lazy">
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
+                    <!-- block end -->
+                <?php } ?>
             </div>
-        </div>
+        <?php } ?>
+
+        <?php $enable_optional_block_1 = get_field('enable_optional_block_1'); ?>
+        <?php if (!empty($enable_optional_block_1)) { ?>
+            <?php $optional_block_1_content = get_field('optional_block_1_content'); ?>
+            <?php if (!empty($optional_block_1_content)) { ?>
+                <div class="hb-front-optional1 padding-block">
+                    <div class="hb-container">
+                        <?php echo $optional_block_1_content; ?>
+                    </div>
+                </div>
+            <?php } ?>
+
+        <?php } ?>
+
 
         <?php
     }
