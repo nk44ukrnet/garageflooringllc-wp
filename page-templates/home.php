@@ -20,6 +20,17 @@ get_header();
             <div class="hb-front-hero" style="background-image: url(<?php echo $hero_background_image; ?>)">
                 <div class="hb-container2">
 
+                    <?php $hero_text_before_heading = get_field('hero_text_before_heading'); ?>
+
+                    <?php if (!empty($hero_text_before_heading)) { ?>
+                        <p class="hb-front-hero__pre-title font2"><?php echo $hero_text_before_heading; ?></p>
+                    <?php } ?>
+
+                    <?php $hero_heading_text = get_field('hero_heading_text'); ?>
+
+                    <?php if (!empty($hero_heading_text)) { ?>
+                        <h1 class="hb-front-hero__title font2"><?php echo $hero_heading_text; ?></h1>
+                    <?php } ?>
 
                     <?php if (have_rows('hero_categories_repeater')) {
                         ?>            <!--block start-->
@@ -46,19 +57,6 @@ get_header();
                         </div>
                         <!-- block end -->
                     <?php } ?>
-
-                    <?php $hero_text_before_heading = get_field('hero_text_before_heading'); ?>
-
-                    <?php if (!empty($hero_text_before_heading)) { ?>
-                        <p class="hb-front-hero__pre-title font2"><?php echo $hero_text_before_heading; ?></p>
-                    <?php } ?>
-
-                    <?php $hero_heading_text = get_field('hero_heading_text'); ?>
-
-                    <?php if (!empty($hero_heading_text)) { ?>
-                        <h1 class="hb-front-hero__title font2"><?php echo $hero_heading_text; ?></h1>
-                    <?php } ?>
-
 
                 </div>
             </div>
