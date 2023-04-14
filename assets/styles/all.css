@@ -1033,7 +1033,8 @@ body {
 }
 @media (max-width: 1351px) {
   .hb-front-savings__highlight-year {
-    font-size: 120px;
+    font-size: 110px;
+    letter-spacing: 0px;
   }
 }
 .hb-front-savings__highlight-slogan {
@@ -1047,7 +1048,8 @@ body {
 }
 @media (max-width: 13511px) {
   .hb-front-savings__highlight-slogan {
-    font-size: 70px;
+    font-size: 60px;
+    letter-spacing: 0px;
   }
 }
 .hb-front-savings__desc {
