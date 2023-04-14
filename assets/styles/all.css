@@ -799,6 +799,11 @@ body {
   position: relative;
   background-repeat: no-repeat;
 }
+@media (max-width: 1336px) {
+  .hb-front-hero {
+    background-position: top center;
+  }
+}
 @media (max-width: 768px) {
   .hb-front-hero {
     background-size: cover;
