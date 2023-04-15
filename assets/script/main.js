@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 //quantity
                 if (current.closest('.quantity')) {
                     let el = current.closest('.quantity');
-                    if(el) {
+                    if (el) {
                         el = el.querySelector('input.qty');
                         runValModification(targetPlusClass, el);
                     }
@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 // runValModification(targetMinusClass);
                 if (current.closest('.quantity')) {
                     let el = current.closest('.quantity');
-                    if(el) {
+                    if (el) {
                         el = el.querySelector('input.qty');
                         runValModification(targetMinusClass, el);
                     }
@@ -293,6 +293,51 @@ window.addEventListener('DOMContentLoaded', function () {
         hashDetectLightBoxLunch(hash);
     } catch (e) {
         console.log('lightbox lunch on hash change error ', e);
+    }
+
+    //hidden input detect checkboxes
+    try {
+        let garageFlooringSamplesHidden = document.getElementById('garage-flooring-samples-hidden');
+        if (garageFlooringSamplesHidden) {
+            let checkBoxesOnThePage = document.querySelectorAll('input[type="checkbox"]');
+            checkBoxesOnThePage.forEach(item => {
+                item.addEventListener('change', e => {
+                    insertDataToHiddenInput(garageFlooringSamplesHidden, getAllNamesOfCheckedInputs(checkBoxesOnThePage));
+                })
+            })
+        }
+
+        function getAllNamesOfCheckedInputs(elements) {
+            let returnValue = '';
+            if (elements.length) {
+                elements.forEach(el => {
+                    if (el.checked) {
+                        let elementName = el.getAttribute('name');
+                        returnValue += elementName + '; ';
+                    }
+                })
+            }
+            if (returnValue) {
+                return cleanCheckboxName(returnValue);
+            } else {
+                return '';
+            }
+        }
+
+        function cleanCheckboxName(string) {
+            let clean = string;
+            clean = clean.replaceAll('-', ' ');
+            clean = clean.replaceAll('_', ' ');
+            return clean;
+        }
+
+        function insertDataToHiddenInput(input, data) {
+            if (input) {
+                input.setAttribute('value', data);
+            }
+        }
+    } catch (e) {
+        console.log('hidden input detect checkboxes error ', e);
     }
 
     //hb calc1

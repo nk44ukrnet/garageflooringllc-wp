@@ -392,3 +392,28 @@ body {
   }
 }
 
+.hb-plain-form {
+  width: 100%;
+  max-width: 600px;
+
+  .hb-plain-input {
+    label {
+      display: table;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: var(--gap-xsm);
+      border-color: var(--color1)
+    }
+
+    button[type="submit"] {
+      background: var(--color1);
+      color: var(--color-light);
+      border: none;
+      padding: var(--gap-xsm) var(--gap-sm);
+      cursor: pointer;
+    }
+  }
+}
