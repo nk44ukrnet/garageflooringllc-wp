@@ -296,6 +296,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     //hidden input detect checkboxes
+    //hidden input detect checkboxes
     try {
         let garageFlooringSamplesHidden = document.getElementById('garage-flooring-samples-hidden');
         if (garageFlooringSamplesHidden) {
